@@ -1,0 +1,9 @@
+<svg version="1.1" width="260" height="24" viewBox="0 0 260 24" xmlns="http://www.w3.org/2000/svg">
+    <title>Transits Now</title>
+    <style>
+<!--i widget_style/-->
+    </style>
+    <a href="{{v url/}}">
+        <text x="0" y="18" font-size="16">Sun <!--v sun_place/-->  Moon <!--v moon_place/--></text>
+    </a>
+</svg>

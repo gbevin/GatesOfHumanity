@@ -1,0 +1,1031 @@
+<svg version="1.1"
+     width="960" height="{{v height/}}"
+     preserveAspectRatio="xMinYMin meet"
+     viewBox="0 0 960 {{v height/}}"
+     xmlns="http://www.w3.org/2000/svg">
+    <title><!--v svg-title-->HD Chart<!--/v--></title>
+    <style>
+        text {
+            font-family: Helvetica, sans-serif;
+            font-size: 28px;
+            fill: white;
+            text-anchor: middle;
+        }
+        text.gate-on {
+            fill: black;
+            font-size: 18px;
+        }
+        text.gate-off {
+            fill: rgb(190,190,190);
+            font-size: 18px;
+        }
+        text.date,
+        text.coordinates{
+            fill: rgb(32,32,82);
+            font-size: 18px;
+        }
+        text.name-footer {
+            fill: rgb(32,32,82);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        line.properties-divider {
+            stroke: rgb(32,32,82);
+            stroke-opacity: 0.25;
+            stroke-width: 1;
+        }
+        text.property-name {
+            fill: rgb(32,32,82);
+            font-size: 18px;
+            font-weight: bold;
+            text-anchor: end;
+        }
+        text.property-value {
+            fill: rgb(32,32,82);
+            font-size: 18px;
+            text-anchor: start;
+        }
+        text.url-footer {
+            fill: rgb(32,32,82);
+            font-size: 15px;
+            opacity: 0.7;
+        }
+        text.legend-first,
+        text.legend-both,
+        text.legend-second {
+            fill: rgb(32,32,82);
+            font-size: 16px;
+        }
+        text.legend-first {
+            text-anchor: end;
+        }
+        text.legend-both,
+        text.legend-second {
+            text-anchor: start;
+        }
+        rect.legend-on {
+            fill: <!--v channel-on-color/-->;
+        }
+        rect.legend-design {
+            fill: <!--v channel-design-color/-->;
+        }
+        rect.legend-third {
+            fill: <!--v channel-third-color/-->;
+        }
+        text.title-footer {
+            fill: rgb(32,32,82);
+            font-size: 22px;
+            font-weight: bold;
+        }
+        text.design {
+            fill: #b02020;
+        }
+        .personality {
+            fill: rgb(32,32,82);
+        }
+        .design {
+            fill: #b02020;
+        }
+        .personality-now, .design-now {
+            fill: none;
+            stroke-width: 1.5;
+        }
+        .personality-now {
+            stroke: rgb(32,32,82);
+        }
+        .design-now {
+            stroke: #b02020;
+        }
+        a:link,
+        a:visited {
+            cursor: pointer;
+        }
+        a text,
+        text a {
+            text-decoration: underline;
+        }
+        .planet-gate {
+            fill: rgb(32,32,82);
+            font-size: 18px;
+            text-anchor: middle;
+        }
+        rect.small-off {
+            fill: white;
+        }
+        text.small-off {
+            fill: rgb(64,64,64);
+            font-size: 15px;
+        }
+        rect.small-on {
+            fill: black;
+        }
+        text.small-on {
+            fill: white;
+            font-size: 15px;
+        }
+        line {
+            stroke: black;
+            stroke-width: 1px;
+        }
+        line.main {
+            stroke-width: 2px;
+        }
+        line.planet {
+            stroke: white;
+            stroke-width: 3px;
+        }
+        line.hd-long {
+            stroke: #eeeeee;
+        }
+        line.hd-short {
+            stroke: #eeeeee;
+        }
+        line.iching0 {
+            stroke: rgb(30,30,80);
+            stroke-width: 5px;
+        }
+        line.iching1 {
+            stroke: rgb(138,138,188);
+            stroke-width: 5px;
+        }
+        line.gate-off {
+            stroke: rgb(220,220,220);
+        }
+        .center-off {
+            fill: white;
+        }
+        .gate-on-yellow {
+            fill: #ffe000;
+        }
+        .gate-on-green {
+            fill: #75ce28;
+        }
+        .gate-on-brown {
+            fill: #d6992d;
+        }
+        .gate-on-red {
+            fill: #ff5b3b;
+        }
+        .hd-center {
+            stroke: #cccccc;
+            stroke-width: 1;
+        }
+        .hd-channel-contour {
+            fill: none;
+            stroke: #eeeeee;
+            stroke-width: 1;
+        }
+        <!--v stripe-styles/-->
+        .hd-channel-on {
+            fill: <!--v channel-on-color/-->;
+        }
+        .hd-channel-design {
+            fill: <!--v channel-design-color/-->;
+        }
+        .hd-channel-third {
+            fill: <!--v channel-third-color/-->;
+        }
+        .stripe-on {
+            fill: <!--v channel-on-color/-->;
+        }
+        .stripe-design {
+            fill: <!--v channel-design-color/-->;
+        }
+        .stripe-third {
+            fill: <!--v channel-third-color/-->;
+        }
+        .hd-channel-off {
+            fill: white;
+        }
+        .hd-channel-on-stroke {
+            fill: <!--v channel-on-color/-->;
+            stroke: <!--v channel-on-color/-->;
+            stroke-width: 0.75px;
+        }
+        .hd-channel-design-stroke {
+            fill: <!--v channel-design-color/-->;
+            stroke: <!--v channel-design-color/-->;
+            stroke-width: 0.75px;
+        }
+        .hd-channel-third-stroke {
+            fill: <!--v channel-third-color/-->;
+            stroke: <!--v channel-third-color/-->;
+            stroke-width: 0.75px;
+        }
+        .hd-channel-off-stroke {
+            fill: white;
+            stroke: white;
+            stroke-width: 0.75px;
+        }
+        .hd-channel-hidden {
+            display: none;
+        }
+        use.design {
+            fill: #b02020;
+        }
+        /* a tap on a gate inside a center explores the center */
+        .small-on, .small-off {
+            pointer-events: none;
+        }
+        .hd-channel-contour {
+            pointer-events: none;
+        }
+        .explore-hit {
+            fill: black;
+            fill-opacity: 0;
+        }
+    </style>
+    <!--i planet_paths/-->
+    <defs>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:rgb(237,237,250);stop-opacity:1"/>
+            <stop offset="50%" style="stop-color:rgb(227,227,240);stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:rgb(204,204,229);stop-opacity:1"/>
+        </radialGradient>
+        <filter id="f1" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur result="offsetBlur" in="SourceAlpha" stdDeviation="10"/>
+            <feFlood flood-color="#000000" flood-opacity="0.5" result="offsetColor"/>
+            <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+            <feBlend in="SourceGraphic" in2="offsetBlur"/>
+        </filter>
+        <path id="exalt1" d="M 0 12 L 12 12 L 6 1 L 0 12 Z" class="personality"/>
+        <path id="detr1" d="M 0 0 L 12 0 L 6 11 L 0 0 Z" class="personality"/>
+        <path id="exalt2" d="M 0 12 L 12 12 L 6 1 L 0 12 Z" class="design"/>
+        <path id="detr2" d="M 0 0 L 12 0 L 6 11 L 0 0 Z" class="design"/>
+        <path id="exalt3" d="M 0 12 L 12 12 L 6 1 L 0 12 Z" class="personality"/>
+        <path id="detr3" d="M 0 0 L 12 0 L 6 11 L 0 0 Z" class="personality"/>
+        <path id="exalt4" d="M 0 12 L 12 12 L 6 1 L 0 12 Z" class="design"/>
+        <path id="detr4" d="M 0 0 L 12 0 L 6 11 L 0 0 Z" class="design"/>
+        <path id="exalt5" d="M 0 12 L 12 12 L 6 1 L 0 12 Z" class="personality"/>
+        <path id="detr5" d="M 0 0 L 12 0 L 6 11 L 0 0 Z" class="personality"/>
+        <path id="exalt6" d="M 0 12 L 12 12 L 6 1 L 0 12 Z" class="design"/>
+        <path id="detr6" d="M 0 0 L 12 0 L 6 11 L 0 0 Z" class="design"/>
+        <path id="exalt1-now" d="M 1 11.5 L 11 11.5 L 6 2 Z" class="personality-now"/>
+        <path id="detr1-now" d="M 1 0.5 L 11 0.5 L 6 10 Z" class="personality-now"/>
+        <path id="exalt2-now" d="M 1 11.5 L 11 11.5 L 6 2 Z" class="design-now"/>
+        <path id="detr2-now" d="M 1 0.5 L 11 0.5 L 6 10 Z" class="design-now"/>
+        <path id="exalt3-now" d="M 1 11.5 L 11 11.5 L 6 2 Z" class="personality-now"/>
+        <path id="detr3-now" d="M 1 0.5 L 11 0.5 L 6 10 Z" class="personality-now"/>
+        <path id="exalt4-now" d="M 1 11.5 L 11 11.5 L 6 2 Z" class="design-now"/>
+        <path id="detr4-now" d="M 1 0.5 L 11 0.5 L 6 10 Z" class="design-now"/>
+        <path id="exalt5-now" d="M 1 11.5 L 11 11.5 L 6 2 Z" class="personality-now"/>
+        <path id="detr5-now" d="M 1 0.5 L 11 0.5 L 6 10 Z" class="personality-now"/>
+        <path id="exalt6-now" d="M 1 11.5 L 11 11.5 L 6 2 Z" class="design-now"/>
+        <path id="detr6-now" d="M 1 0.5 L 11 0.5 L 6 10 Z" class="design-now"/>
+        <!--v stripe-patterns/-->
+    </defs>
+
+    <circle cx="480" cy="480" r="480" fill="rgb(148,148,196)" />
+    <circle cx="480" cy="480" r="448" fill="rgb(0,0,50)" />
+    <circle cx="480" cy="480" r="408" fill="white" />
+
+    <!--b stripe-style-->
+        .hd-channel-<!--v angle-id/-->.hd-channel-<!--v combo/--> {
+            fill: url(#channel-<!--v combo/-->-<!--v angle-id/-->);
+        }
+    <!--/b-->
+    <!--b stripe-stroke-style-->
+        .hd-channel-<!--v angle-id/-->.hd-channel-<!--v combo/-->-stroke {
+            fill: url(#channel-<!--v combo/-->-<!--v angle-id/-->);
+        }
+    <!--/b-->
+    <!--b stripe-pattern-->
+        <pattern id="channel-{{v combo/}}-{{v angle-id/}}" width="12" height="{{v stripes-height/}}" patternUnits="userSpaceOnUse" patternTransform="rotate({{v angle/}})"><!--v stripes/--></pattern>
+    <!--/b-->
+    <!--b stripe--><rect x="0" y="{{v stripe-y/}}" width="12" height="3" class="stripe-{{v side/}}"/><!--/b-->
+    <!--v astro-lines/-->
+    <!--b astro-line-->
+    <line class="main" x1="480" y1= "0" x2="480" y2="32" transform="rotate( {{v degree1/}} 480 480)" />
+    <line              x1="480" y1="22" x2="480" y2="32" transform="rotate( {{v degree2/}} 480 480)" />
+    <line              x1="480" y1="12" x2="480" y2="32" transform="rotate( {{v degree3/}} 480 480)" />
+    <line              x1="480" y1="22" x2="480" y2="32" transform="rotate( {{v degree4/}} 480 480)" />
+    <line              x1="480" y1="12" x2="480" y2="32" transform="rotate( {{v degree5/}} 480 480)" />
+    <line              x1="480" y1="22" x2="480" y2="32" transform="rotate( {{v degree6/}} 480 480)" />
+    <!--/b-->
+
+    <!--v signs/-->
+    <!--b sign-sagittarius-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M8.148,-9.953L8.148,-16.898L-1.49,-7.26L2.844,-2.926L1.367,-1.449L-2.967,-5.783L-8.764,0.014L-10.24,-1.463L-4.443,-7.26L-8.777,-11.594L-7.301,-13.07L-2.967,-8.736L6.672,-18.375L-0.273,-18.375L-0.273,-20.453L10.227,-20.453L10.227,-9.953L8.148,-9.953Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-scorpio-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M4.949,-3.705C4.949,-2.693 5.184,-1.903 5.653,-1.333C6.123,-0.763 6.763,-0.474 7.574,-0.465L8.791,-0.465L8.791,-2.078L8.846,-2.078L11.621,0.287L8.846,2.68L8.791,2.625L8.791,1.012L7.574,1.012C5.724,1.012 4.489,0.465 3.869,-0.629C3.468,-1.303 3.231,-2.178 3.158,-3.254L2.871,-14.055C2.898,-16.935 2.689,-18.38 2.242,-18.389C1.714,-18.38 1.146,-17.881 0.54,-16.892C-0.066,-15.903 -0.656,-14.497 -1.23,-12.674L-1.23,0L-3.295,0L-3.295,-12.605C-3.295,-15.531 -3.366,-17.238 -3.507,-17.726C-3.648,-18.213 -3.883,-18.452 -4.211,-18.443C-4.585,-18.452 -5.182,-17.94 -6.002,-16.905C-6.822,-15.871 -7.319,-14.374 -7.492,-12.414L-7.492,0L-9.529,0L-9.529,-14.889C-9.529,-16.62 -10.222,-18.357 -11.607,-20.098L-9.666,-20.098C-8.59,-19.378 -7.889,-18.215 -7.561,-16.611C-7.351,-17.459 -6.829,-18.311 -5.995,-19.168C-5.161,-20.025 -4.43,-20.453 -3.801,-20.453C-3.227,-20.453 -2.668,-20.002 -2.126,-19.1C-1.584,-18.197 -1.313,-17.163 -1.313,-15.996C-0.948,-17.081 -0.314,-18.095 0.588,-19.038C1.49,-19.981 2.283,-20.453 2.967,-20.453C3.532,-20.453 4.001,-20.073 4.375,-19.312C4.749,-18.55 4.936,-17.172 4.936,-15.176L4.936,-12.414L4.949,-3.719L4.949,-3.705Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-libra-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-10.213,-3.541L10.213,-3.541L10.213,-1.463L-10.213,-1.463L-10.213,-3.541ZM-2.598,-6.918L-10.213,-6.918L-10.213,-8.996L-5.373,-8.996C-5.984,-9.944 -6.289,-11.015 -6.289,-12.209C-6.289,-13.895 -5.703,-15.328 -4.532,-16.509C-3.361,-17.689 -1.932,-18.279 -0.246,-18.279C1.449,-18.279 2.887,-17.689 4.067,-16.509C5.248,-15.328 5.838,-13.895 5.838,-12.209C5.838,-11.015 5.528,-9.944 4.908,-8.996L10.213,-8.996L10.213,-6.918L2.105,-6.918L2.105,-8.996L2.092,-8.996C2.256,-9.115 2.415,-9.251 2.57,-9.406C3.354,-10.181 3.746,-11.12 3.746,-12.223C3.746,-13.335 3.359,-14.278 2.584,-15.053C1.809,-15.827 0.866,-16.215 -0.246,-16.215C-1.358,-16.215 -2.301,-15.827 -3.076,-15.053C-3.851,-14.278 -4.238,-13.335 -4.238,-12.223C-4.238,-11.12 -3.851,-10.181 -3.076,-9.406C-2.93,-9.251 -2.771,-9.115 -2.598,-8.996L-2.598,-6.918Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-virgo-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-3.254,-20.453C-2.68,-20.453 -2.121,-20.002 -1.579,-19.1C-1.037,-18.197 -0.766,-17.163 -0.766,-15.996C-0.401,-17.081 0.232,-18.095 1.135,-19.038C2.037,-19.981 2.83,-20.453 3.514,-20.453C4.079,-20.453 4.548,-20.073 4.922,-19.312C5.296,-18.55 5.482,-17.172 5.482,-15.176L5.482,-12.414C5.92,-13.553 6.437,-14.394 7.034,-14.937C7.631,-15.479 8.24,-15.75 8.859,-15.75C9.406,-15.75 9.908,-15.221 10.363,-14.164C10.819,-13.107 11.047,-11.334 11.047,-8.846C11.047,-5.127 9.311,-1.805 5.838,1.121C5.847,1.978 6.517,3.286 7.848,5.045L5.551,5.045C5.132,4.671 4.585,3.751 3.91,2.283C2.388,3.204 0.829,3.696 -0.766,3.76L-0.766,2.174C0.975,1.919 2.411,1.395 3.541,0.602L3.418,-2.365L3.418,-14.055C3.445,-16.935 3.236,-18.38 2.789,-18.389C2.26,-18.38 1.693,-17.881 1.087,-16.892C0.481,-15.903 -0.109,-14.497 -0.684,-12.674L-0.684,0L-2.748,0L-2.748,-12.605C-2.748,-15.531 -2.819,-17.238 -2.96,-17.726C-3.101,-18.213 -3.336,-18.452 -3.664,-18.443C-4.038,-18.452 -4.635,-17.94 -5.455,-16.905C-6.275,-15.871 -6.772,-14.374 -6.945,-12.414L-6.945,0L-8.982,0L-8.982,-14.889C-8.982,-16.62 -9.675,-18.357 -11.061,-20.098L-9.119,-20.098C-8.044,-19.378 -7.342,-18.215 -7.014,-16.611C-6.804,-17.459 -6.282,-18.311 -5.448,-19.168C-4.614,-20.025 -3.883,-20.453 -3.254,-20.453ZM5.482,-8.449L5.482,-0.793C7.834,-3.072 9.119,-5.751 9.338,-8.832C9.338,-10.591 9.231,-11.799 9.017,-12.455C8.802,-13.111 8.559,-13.417 8.285,-13.371C8.012,-13.371 7.549,-12.902 6.897,-11.963C6.246,-11.024 5.774,-9.853 5.482,-8.449Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-leo-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-5.551,-5.455C-4.885,-5.163 -4.211,-5.15 -3.527,-5.414C-2.844,-5.678 -2.354,-6.148 -2.058,-6.822C-1.761,-7.497 -1.745,-8.171 -2.01,-8.846C-2.274,-9.529 -2.743,-10.019 -3.418,-10.315C-4.092,-10.612 -4.771,-10.628 -5.455,-10.363C-6.139,-10.09 -6.626,-9.62 -6.918,-8.955C-7.21,-8.29 -7.223,-7.615 -6.959,-6.932C-6.686,-6.239 -6.216,-5.747 -5.551,-5.455ZM-3.363,-15.504C-3.363,-16.971 -2.855,-18.163 -1.839,-19.079C-0.823,-19.995 0.506,-20.453 2.146,-20.453C3.714,-20.453 4.995,-19.95 5.988,-18.942C6.982,-17.935 7.479,-16.63 7.479,-15.025C7.479,-13.321 6.818,-11.325 5.496,-9.037C4.174,-6.749 3.514,-4.785 3.514,-3.145C3.55,-2.014 4.179,-1.436 5.4,-1.408C6.048,-1.408 6.827,-1.809 7.738,-2.611L8.627,-1.627C7.469,-0.542 6.385,0 5.373,0C4.471,0 3.691,-0.276 3.035,-0.827C2.379,-1.379 2.051,-2.16 2.051,-3.172C2.051,-4.986 2.705,-6.989 4.013,-9.181C5.321,-11.373 5.975,-13.353 5.975,-15.121C5.975,-16.342 5.601,-17.329 4.854,-18.081C4.106,-18.833 3.131,-19.209 1.928,-19.209C0.77,-19.209 -0.15,-18.856 -0.834,-18.149C-1.518,-17.443 -1.859,-16.502 -1.859,-15.326C-1.859,-14.779 -1.755,-14.175 -1.545,-13.515C-1.335,-12.854 -1.117,-12.241 -0.889,-11.676C-0.551,-10.783 -0.349,-9.837 -0.28,-8.839C-0.212,-7.841 -0.351,-6.973 -0.697,-6.234C-1.162,-5.186 -1.923,-4.457 -2.98,-4.047C-4.047,-3.628 -5.1,-3.644 -6.139,-4.095C-7.178,-4.546 -7.911,-5.318 -8.34,-6.412C-8.54,-6.904 -8.641,-7.406 -8.641,-7.916C-8.641,-8.463 -8.518,-9.01 -8.271,-9.557C-7.807,-10.596 -7.041,-11.325 -5.975,-11.744C-4.771,-12.209 -3.587,-12.118 -2.42,-11.471C-2.201,-11.48 -2.304,-11.99 -2.728,-13.002C-3.151,-14.014 -3.363,-14.848 -3.363,-15.504Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-cancer-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M6.754,-8.613C6.152,-9.215 5.419,-9.516 4.553,-9.516C3.687,-9.516 2.953,-9.215 2.352,-8.613C1.75,-8.012 1.449,-7.278 1.449,-6.412C1.449,-5.546 1.75,-4.81 2.352,-4.204C2.953,-3.598 3.687,-3.295 4.553,-3.295C5.41,-3.295 6.141,-3.598 6.747,-4.204C7.353,-4.81 7.656,-5.546 7.656,-6.412C7.656,-7.278 7.355,-8.012 6.754,-8.613ZM1.941,-0.875C-0.902,-0.893 -3.154,-0.993 -4.813,-1.176C-6.471,-1.358 -7.998,-1.645 -9.393,-2.037L-9.393,-3.732C-7.087,-2.967 -4.664,-2.509 -2.126,-2.358C0.412,-2.208 1.627,-2.301 1.518,-2.639C0.324,-3.623 -0.273,-4.876 -0.273,-6.398C-0.273,-7.738 0.194,-8.88 1.128,-9.823C2.062,-10.767 3.199,-11.238 4.539,-11.238C5.897,-11.238 7.046,-10.767 7.984,-9.823C8.923,-8.88 9.393,-7.738 9.393,-6.398C9.393,-5.059 8.919,-3.919 7.971,-2.98C7.305,-2.279 6.412,-1.755 5.291,-1.408C4.17,-1.062 3.053,-0.884 1.941,-0.875ZM-4.553,-10.377C-3.696,-10.377 -2.965,-10.678 -2.358,-11.279C-1.752,-11.881 -1.449,-12.615 -1.449,-13.48C-1.449,-14.346 -1.752,-15.08 -2.358,-15.682C-2.965,-16.283 -3.696,-16.584 -4.553,-16.584C-5.41,-16.584 -6.143,-16.283 -6.754,-15.682C-7.365,-15.08 -7.67,-14.346 -7.67,-13.48C-7.67,-12.615 -7.367,-11.881 -6.761,-11.279C-6.155,-10.678 -5.419,-10.377 -4.553,-10.377ZM-1.955,-19.018C0.898,-18.999 3.154,-18.897 4.813,-18.71C6.471,-18.523 7.998,-18.234 9.393,-17.842L9.393,-16.16C7.087,-16.926 4.667,-17.384 2.133,-17.534C-0.401,-17.685 -1.618,-17.587 -1.518,-17.24C-0.324,-16.256 0.273,-15.007 0.273,-13.494C0.273,-12.145 -0.194,-10.999 -1.128,-10.056C-2.062,-9.112 -3.199,-8.641 -4.539,-8.641C-5.897,-8.641 -7.046,-9.112 -7.984,-10.056C-8.923,-10.999 -9.393,-12.145 -9.393,-13.494C-9.393,-14.825 -8.919,-15.96 -7.971,-16.898C-7.305,-17.6 -6.414,-18.127 -5.298,-18.478C-4.181,-18.828 -3.067,-19.008 -1.955,-19.018Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-gemini-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-5.305,-17.445C-6.836,-17.646 -8.376,-17.983 -9.926,-18.457L-9.926,-20.48C-6.763,-19.66 -3.45,-19.25 0.014,-19.25C3.477,-19.25 6.772,-19.66 9.898,-20.48L9.898,-18.416C8.294,-17.988 6.736,-17.664 5.223,-17.445L5.223,-3.035C6.736,-2.826 8.294,-2.507 9.898,-2.078L9.898,0C6.772,-0.829 3.477,-1.244 0.014,-1.244C-3.45,-1.244 -6.763,-0.829 -9.926,0L-9.926,-2.023C-8.376,-2.507 -6.836,-2.844 -5.305,-3.035L-5.305,-17.445ZM-3.227,-3.199C-1.103,-3.436 1.021,-3.436 3.145,-3.199L3.145,-17.295C1.021,-17.058 -1.103,-17.058 -3.227,-17.295L-3.227,-3.199Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-taurus-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-0.014,-11.758C-1.354,-11.758 -2.493,-11.286 -3.432,-10.343C-4.37,-9.399 -4.84,-8.258 -4.84,-6.918C-4.84,-5.578 -4.37,-4.439 -3.432,-3.5C-2.493,-2.561 -1.354,-2.092 -0.014,-2.092C1.326,-2.092 2.468,-2.561 3.411,-3.5C4.354,-4.439 4.826,-5.578 4.826,-6.918C4.826,-8.258 4.359,-9.399 3.425,-10.343C2.491,-11.286 1.344,-11.758 -0.014,-11.758ZM-0.014,-13.809C1.18,-13.854 2.124,-14.155 2.816,-14.711C3.6,-15.313 4.213,-16.023 4.655,-16.844C5.097,-17.664 5.685,-18.471 6.419,-19.264C7.153,-20.057 8.363,-20.453 10.049,-20.453L10.049,-18.977C8.928,-18.977 7.987,-18.266 7.226,-16.844C6.465,-15.422 5.487,-14.219 4.293,-13.234C4.102,-13.061 3.901,-12.906 3.691,-12.77C4.111,-12.496 4.516,-12.173 4.908,-11.799C6.239,-10.441 6.904,-8.805 6.904,-6.891C6.904,-4.986 6.232,-3.361 4.888,-2.017C3.543,-0.672 1.91,0 -0.014,0C-1.91,0 -3.532,-0.672 -4.881,-2.017C-6.23,-3.361 -6.904,-4.986 -6.904,-6.891C-6.904,-8.805 -6.23,-10.441 -4.881,-11.799C-4.507,-12.182 -4.102,-12.51 -3.664,-12.783C-3.883,-12.911 -4.088,-13.061 -4.279,-13.234C-5.455,-14.219 -6.433,-15.422 -7.212,-16.844C-7.991,-18.266 -8.937,-18.977 -10.049,-18.977L-10.049,-20.453C-8.363,-20.453 -7.096,-20.057 -6.248,-19.264C-5.4,-18.471 -4.813,-17.664 -4.484,-16.844C-4.156,-16.023 -3.605,-15.313 -2.83,-14.711C-2.128,-14.155 -1.189,-13.854 -0.014,-13.809Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-aries-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-0.875,0C-0.875,-5.469 -1.527,-9.965 -2.83,-13.487C-4.133,-17.01 -5.555,-18.771 -7.096,-18.771C-8.271,-18.771 -8.989,-18.031 -9.249,-16.55C-9.509,-15.069 -9.151,-13.59 -8.176,-12.113L-10.008,-12.113C-10.855,-13.316 -11.279,-14.652 -11.279,-16.119C-11.279,-17.322 -10.908,-18.35 -10.165,-19.202C-9.422,-20.054 -8.385,-20.48 -7.055,-20.48C-3.664,-20.48 -1.372,-16.958 -0.178,-9.912C-0.105,-9.465 -0.046,-9.06 0,-8.695C0.036,-9.06 0.091,-9.465 0.164,-9.912C1.367,-16.958 3.66,-20.48 7.041,-20.48C8.381,-20.48 9.42,-20.054 10.158,-19.202C10.896,-18.35 11.266,-17.322 11.266,-16.119C11.266,-14.652 10.842,-13.316 9.994,-12.113L8.162,-12.113C9.137,-13.59 9.497,-15.069 9.242,-16.55C8.987,-18.031 8.267,-18.771 7.082,-18.771C5.551,-18.771 4.133,-17.01 2.83,-13.487C1.527,-9.965 0.875,-5.469 0.875,0L-0.875,0Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-pisces-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M1.641,-9.092L-1.654,-9.051C-1.946,-5.97 -3.359,-2.967 -5.893,-0.041L-8.148,0C-5.35,-3.199 -3.828,-6.216 -3.582,-9.051L-7.629,-9.051L-7.629,-11.402L-3.582,-11.402C-3.837,-14.228 -5.364,-17.245 -8.162,-20.453L-5.893,-20.412C-3.359,-17.495 -1.946,-14.492 -1.654,-11.402L1.654,-11.402C1.937,-14.492 3.35,-17.495 5.893,-20.412L8.148,-20.453C5.35,-17.245 3.828,-14.228 3.582,-11.402L7.615,-11.402L7.602,-9.051L3.555,-9.051C3.819,-6.216 5.35,-3.199 8.148,0L5.879,-0.041C3.336,-2.967 1.923,-5.97 1.641,-9.051L1.641,-9.092Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-aquarius-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-10.145,-5.646C-7.182,-8.117 -5.177,-9.352 -4.129,-9.352C-3.719,-9.352 -3.454,-9.169 -3.336,-8.805C-2.889,-7.51 -1.878,-7.51 -0.301,-8.805C0.483,-9.452 1.13,-9.775 1.641,-9.775C2.133,-9.775 2.488,-9.452 2.707,-8.805C3.19,-7.51 4.22,-7.51 5.797,-8.805C6.189,-9.133 6.572,-9.297 6.945,-9.297C8.076,-9.297 9.137,-7.857 10.131,-4.977L8.846,-4.279C7.962,-6.868 6.736,-7.469 5.168,-6.084C4.384,-5.391 3.737,-5.045 3.227,-5.045C2.716,-5.045 2.347,-5.387 2.119,-6.07C1.636,-7.447 0.611,-7.497 -0.957,-6.221C-1.75,-5.574 -2.397,-5.25 -2.898,-5.25C-3.409,-5.25 -3.778,-5.578 -4.006,-6.234C-4.443,-7.52 -5.444,-7.515 -7.007,-6.221C-8.57,-4.926 -9.374,-4.279 -9.42,-4.279L-10.145,-5.619L-10.145,-5.646ZM-10.145,-12.086C-7.191,-14.538 -5.186,-15.764 -4.129,-15.764C-3.728,-15.764 -3.464,-15.586 -3.336,-15.23C-2.889,-13.945 -1.882,-13.945 -0.314,-15.23C0.479,-15.887 1.126,-16.215 1.627,-16.215C2.128,-16.215 2.484,-15.887 2.693,-15.23C3.186,-13.945 4.215,-13.945 5.783,-15.23C6.175,-15.549 6.558,-15.709 6.932,-15.709C8.071,-15.709 9.137,-14.273 10.131,-11.402L8.846,-10.719C7.962,-13.307 6.736,-13.904 5.168,-12.51C4.375,-11.808 3.728,-11.457 3.227,-11.457C2.716,-11.457 2.342,-11.803 2.105,-12.496C1.632,-13.872 0.606,-13.918 -0.971,-12.633C-1.755,-11.986 -2.402,-11.662 -2.912,-11.662C-3.413,-11.662 -3.778,-11.99 -4.006,-12.646C-4.443,-13.95 -5.444,-13.954 -7.007,-12.66C-8.57,-11.366 -9.374,-10.719 -9.42,-10.719L-10.145,-12.045L-10.145,-12.086Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+    <!--b sign-capricorn-->
+    <g transform="rotate({{v degree/}} 480 480) translate(480 24)">
+        <path d="M-0.916,-20.453C0.059,-20.453 0.731,-18.48 1.101,-14.533C1.47,-10.587 1.768,-8.632 1.996,-8.668C2.99,-10.682 4.375,-11.689 6.152,-11.689C7.255,-11.689 8.155,-11.257 8.853,-10.391C9.55,-9.525 9.898,-8.622 9.898,-7.684C9.898,-6.362 9.573,-5.312 8.921,-4.532C8.269,-3.753 7.296,-3.363 6.002,-3.363C4.589,-3.363 3.327,-3.969 2.215,-5.182C1.814,-3.723 1.326,-2.504 0.752,-1.524C0.178,-0.545 -0.738,-0.036 -1.996,0L-4.293,0L-4.293,-1.613L-2.188,-1.627C-1.076,-1.663 -0.041,-3.395 0.916,-6.822C0.46,-6.968 0.087,-8.839 -0.205,-12.435C-0.497,-16.03 -0.907,-17.828 -1.436,-17.828C-1.764,-17.828 -2.292,-16.725 -3.021,-14.52C-3.751,-12.314 -4.088,-10.268 -4.033,-8.381L-6.193,-8.354C-6.193,-10.66 -6.515,-12.943 -7.157,-15.203C-7.8,-17.464 -8.723,-18.621 -9.926,-18.676L-9.926,-20.002C-8.586,-20.002 -7.549,-19.496 -6.815,-18.484C-6.082,-17.473 -5.533,-15.714 -5.168,-13.207C-4.749,-15.039 -4.334,-16.356 -3.924,-17.158C-3.55,-17.988 -3.085,-18.744 -2.529,-19.428C-1.973,-20.111 -1.436,-20.453 -0.916,-20.453ZM2.994,-6.973C3.842,-5.651 4.858,-4.99 6.043,-4.99C7.51,-4.99 8.285,-5.888 8.367,-7.684C8.303,-9.115 7.547,-9.917 6.098,-10.09C4.712,-10.09 3.678,-9.051 2.994,-6.973Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+    <!--/b-->
+
+    <!--v planets--><!--/v-->
+    <!--b planet-->
+    <line class="planet" x1="480" y1="32" x2="480" y2="37" transform="rotate({{v longitude/}} 480 480)" />
+    <line class="planet" x1="480" y1="67" x2="480" y2="72" transform="rotate({{v longitude/}} 480 480)" />
+    <!--/b-->
+    <!--b planet-sun-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 59)">
+        <use href="#planet-sun-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-sun" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-earth-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 60)">
+        <use href="#planet-earth-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-earth" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-moon-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 62)">
+        <use href="#planet-moon-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-moon" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-north_node-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 62)">
+        <use href="#planet-north_node-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-north_node" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-south_node-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 62)">
+        <use href="#planet-south_node-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-south_node" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-mercury-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 58)">
+        <use href="#planet-mercury-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-mercury" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-venus-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 60)">
+        <use href="#planet-venus-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-venus" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-mars-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 60)">
+        <use href="#planet-mars-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-mars" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-jupiter-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 60)">
+        <use href="#planet-jupiter-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-jupiter" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-saturn-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 62)">
+        <use href="#planet-saturn-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-saturn" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-uranus-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 60)">
+        <use href="#planet-uranus-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-uranus" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-neptune-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 62)">
+        <use href="#planet-neptune-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-neptune" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-pluto-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 61)">
+        <use href="#planet-pluto-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-pluto" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+    <!--b planet-chiron-->
+    <g data-explore="{{v planet-explore/}}" transform="rotate({{v longitude/}} 480 480) translate(480 61)">
+        <use href="#planet-chiron-outline" style="fill:rgb(0,0,50)"/>
+        <use href="#planet-chiron" style="fill:white"/>
+        <circle class="explore-hit" r="10"/>
+    </g>
+    <!--/b-->
+
+    <!--v gate-backgrounds--><!--/v-->
+    <!--b gate-background-->
+    <path d="M 480 480 L 480 96 A 380 380 0 0 1 517.6 98 Z" class="{{v background-class/}}" opacity="0.5" stroke="none" transform="rotate({{v degree-main/}} 480 480)" />
+    <!--/b-->
+
+    <!--v person-marks--><!--/v-->
+    <!--b person-mark-design-->
+    <path d="M 483.14 120.01 A 360 360 0 0 1 496.1 120.36 L 495.87 125.35 A 355 355 0 0 0 483.1 125.01 Z" class="stripe-design" transform="rotate({{v degree-main/}} 480 480)" />
+    <!--/b-->
+    <!--b person-mark-third-->
+    <path d="M 499.23 120.51 A 360 360 0 0 1 512.16 121.44 L 511.71 126.42 A 355 355 0 0 0 498.97 125.51 Z" class="stripe-third" transform="rotate({{v degree-main/}} 480 480)" />
+    <!--/b-->
+
+    <!--v hd-segments/-->
+    <!--b hd-segment-->
+    <line class="hd-long" x1="480" y1="119" x2="480" y2="400" transform="rotate({{v degree-main/}} 480 480)" />
+    <line class="hd-short" x1="480" y1="96" x2="480" y2="119" transform="rotate({{v degree-main/}} 480 480)" />
+    <!--v iching1--><!--/v-->
+    <!--v iching2--><!--/v-->
+    <!--v iching3--><!--/v-->
+    <!--v iching4--><!--/v-->
+    <!--v iching5--><!--/v-->
+    <!--v iching6--><!--/v-->
+    <!--b iching1-off-->
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="80" transform="rotate({{v degree1/}} 480 480)" />
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="87" x2="480" y2="94" transform="rotate({{v degree1/}} 480 480)" />
+    <!--/b-->
+    <!--b iching2-off-->
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="80" transform="rotate({{v degree2/}} 480 480)" />
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="87" x2="480" y2="94" transform="rotate({{v degree2/}} 480 480)" />
+    <!--/b-->
+    <!--b iching3-off-->
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="80" transform="rotate({{v degree3/}} 480 480)" />
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="87" x2="480" y2="94" transform="rotate({{v degree3/}} 480 480)" />
+    <!--/b-->
+    <!--b iching4-off-->
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="80" transform="rotate({{v degree4/}} 480 480)" />
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="87" x2="480" y2="94" transform="rotate({{v degree4/}} 480 480)" />
+    <!--/b-->
+    <!--b iching5-off-->
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="80" transform="rotate({{v degree5/}} 480 480)" />
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="87" x2="480" y2="94" transform="rotate({{v degree5/}} 480 480)" />
+    <!--/b-->
+    <!--b iching6-off-->
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="80" transform="rotate({{v degree6/}} 480 480)" />
+    <line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="87" x2="480" y2="94" transform="rotate({{v degree6/}} 480 480)" />
+    <!--/b-->
+    <!--b iching1-on--><line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="94" transform="rotate({{v degree1/}} 480 480)" /><!--/b-->
+    <!--b iching2-on--><line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="94" transform="rotate({{v degree2/}} 480 480)" /><!--/b-->
+    <!--b iching3-on--><line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="94" transform="rotate({{v degree3/}} 480 480)" /><!--/b-->
+    <!--b iching4-on--><line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="94" transform="rotate({{v degree4/}} 480 480)" /><!--/b-->
+    <!--b iching5-on--><line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="94" transform="rotate({{v degree5/}} 480 480)" /><!--/b-->
+    <!--b iching6-on--><line class="{{v class/}} {{v gate-class-iching/}}" x1="480" y1="73" x2="480" y2="94" transform="rotate({{v degree6/}} 480 480)" /><!--/b-->
+
+    <text class="{{v gate-class-iching/}}" x="480" y="114" transform="rotate({{v degree-gate/}} 480 480)"><!--v gate-->12<!--/v--></text>
+    <!--/b-->
+
+    <circle cx="480" cy="480" r="384" stroke="black" stroke-width="1" fill="none" />
+    <circle cx="480" cy="480" r="361" stroke="black" stroke-width="1" fill="none" />
+
+    <!-- over the lines of the ring, so that a tap anywhere on a gate opens it -->
+    <!--v gate-hits/-->
+    <!--b gate-hit-->
+    <path class="explore-hit" d="M 480 72 A 408 408 0 0 1 519.99 73.96 L 514.7 127.7 A 354 354 0 0 0 480 126 Z" data-explore="{{v gate-explore/}}" transform="rotate({{v degree-main/}} 480 480)"/>
+    <!--/b-->
+
+    <!-- HD background triangle-->
+
+    <path d="M 480 130 L 205 675 A 340 340 0 0 0 755 675 Z" fill="url(#grad1)" stroke="#888888" stroke-width="1" filter="url(#f1)" />
+
+<!--i bodygraph/-->
+    
+    <g data-explore="wheel.rows">
+    <rect class="explore-hit" x="20" y="975" width="920" height="95"/>
+    <!--v planet-gates-1-2/-->
+    <!--bv planet-gates-1-2-->
+    <text x="64" y="1000" class="planet-gate" data-explore="activation.1.SUN wheel.rows"><!--v sun-gate1--><!--/v--></text>
+    <!--v sun-e1--><!--/v--><!--b sun-e1--><use href="#exalt1{{v sun-e1-now/}}" x="84" y="986"/><!--/b-->
+    <!--v sun-d1--><!--/v--><!--b sun-d1--><use href="#detr1{{v sun-d1-now/}}" x="84" y="990.5"/><!--/b-->
+    <use href="#planet-sun" x="64" y="1030" class="planet-gate" data-explore="activation.1.SUN activation.2.SUN wheel.rows"/>
+    <rect class="explore-hit" x="40" y="1008" width="48" height="34" data-explore="activation.1.SUN activation.2.SUN wheel.rows"/>
+    <text x="64" y="1060" class="planet-gate design" data-explore="activation.2.SUN wheel.rows"><!--v sun-gate2--><!--/v--></text>
+    <!--v sun-e2--><!--/v--><!--b sun-e2--><use href="#exalt2{{v sun-e2-now/}}" x="84" y="1046"/><!--/b-->
+    <!--v sun-d2--><!--/v--><!--b sun-d2--><use href="#detr2{{v sun-d2-now/}}" x="84" y="1050.5"/><!--/b-->
+
+    <text x="128" y="1000" class="planet-gate" data-explore="activation.1.EARTH wheel.rows"><!--v earth-gate1--><!--/v--></text>
+    <!--v earth-e1--><!--/v--><!--b earth-e1--><use href="#exalt1{{v earth-e1-now/}}" x="148" y="986"/><!--/b-->
+    <!--v earth-d1--><!--/v--><!--b earth-d1--><use href="#detr1{{v earth-d1-now/}}" x="148" y="990.5"/><!--/b-->
+    <use href="#planet-earth" x="128" y="1030" class="planet-gate" data-explore="activation.1.EARTH activation.2.EARTH wheel.rows"/>
+    <rect class="explore-hit" x="104" y="1008" width="48" height="34" data-explore="activation.1.EARTH activation.2.EARTH wheel.rows"/>
+    <text x="128" y="1060" class="planet-gate design" data-explore="activation.2.EARTH wheel.rows"><!--v earth-gate2--><!--/v--></text>
+    <!--v earth-e2--><!--/v--><!--b earth-e2--><use href="#exalt2{{v earth-e2-now/}}" x="148" y="1046"/><!--/b-->
+    <!--v earth-d2--><!--/v--><!--b earth-d2--><use href="#detr2{{v earth-d2-now/}}" x="148" y="1050.5"/><!--/b-->
+
+    <text x="192" y="1000" class="planet-gate" data-explore="activation.1.MOON wheel.rows"><!--v moon-gate1--><!--/v--></text>
+    <!--v moon-e1--><!--/v--><!--b moon-e1--><use href="#exalt1{{v moon-e1-now/}}" x="212" y="986"/><!--/b-->
+    <!--v moon-d1--><!--/v--><!--b moon-d1--><use href="#detr1{{v moon-d1-now/}}" x="212" y="990.5"/><!--/b-->
+    <use href="#planet-moon" x="192" y="1032" class="planet-gate" data-explore="activation.1.MOON activation.2.MOON wheel.rows"/>
+    <rect class="explore-hit" x="168" y="1010" width="48" height="34" data-explore="activation.1.MOON activation.2.MOON wheel.rows"/>
+    <text x="192" y="1060" class="planet-gate design" data-explore="activation.2.MOON wheel.rows"><!--v moon-gate2--><!--/v--></text>
+    <!--v moon-e2--><!--/v--><!--b moon-e2--><use href="#exalt2{{v moon-e2-now/}}" x="212" y="1046"/><!--/b-->
+    <!--v moon-d2--><!--/v--><!--b moon-d2--><use href="#detr2{{v moon-d2-now/}}" x="212" y="1050.5"/><!--/b-->
+
+    <text x="256" y="1000" class="planet-gate" data-explore="activation.1.NORTH_NODE wheel.rows"><!--v north_node-gate1--><!--/v--></text>
+    <!--v north_node-e1--><!--/v--><!--b north_node-e1--><use href="#exalt1{{v north_node-e1-now/}}" x="276" y="986"/><!--/b-->
+    <!--v north_node-d1--><!--/v--><!--b north_node-d1--><use href="#detr1{{v north_node-d1-now/}}" x="276" y="990.5"/><!--/b-->
+    <use href="#planet-north_node" x="256" y="1033" class="planet-gate" data-explore="activation.1.NORTH_NODE activation.2.NORTH_NODE wheel.rows"/>
+    <rect class="explore-hit" x="232" y="1011" width="48" height="34" data-explore="activation.1.NORTH_NODE activation.2.NORTH_NODE wheel.rows"/>
+    <text x="256" y="1060" class="planet-gate design" data-explore="activation.2.NORTH_NODE wheel.rows"><!--v north_node-gate2--><!--/v--></text>
+    <!--v north_node-e2--><!--/v--><!--b north_node-e2--><use href="#exalt2{{v north_node-e2-now/}}" x="276" y="1046"/><!--/b-->
+    <!--v north_node-d2--><!--/v--><!--b north_node-d2--><use href="#detr2{{v north_node-d2-now/}}" x="276" y="1050.5"/><!--/b-->
+
+    <text x="320" y="1000" class="planet-gate" data-explore="activation.1.SOUTH_NODE wheel.rows"><!--v south_node-gate1--><!--/v--></text>
+    <!--v south_node-e1--><!--/v--><!--b south_node-e1--><use href="#exalt1{{v south_node-e1-now/}}" x="340" y="986"/><!--/b-->
+    <!--v south_node-d1--><!--/v--><!--b south_node-d1--><use href="#detr1{{v south_node-d1-now/}}" x="340" y="990.5"/><!--/b-->
+    <use href="#planet-south_node" x="320" y="1033" class="planet-gate" data-explore="activation.1.SOUTH_NODE activation.2.SOUTH_NODE wheel.rows"/>
+    <rect class="explore-hit" x="296" y="1011" width="48" height="34" data-explore="activation.1.SOUTH_NODE activation.2.SOUTH_NODE wheel.rows"/>
+    <text x="320" y="1060" class="planet-gate design" data-explore="activation.2.SOUTH_NODE wheel.rows"><!--v south_node-gate2--><!--/v--></text>
+    <!--v south_node-e2--><!--/v--><!--b south_node-e2--><use href="#exalt2{{v south_node-e2-now/}}" x="340" y="1046"/><!--/b-->
+    <!--v south_node-d2--><!--/v--><!--b south_node-d2--><use href="#detr2{{v south_node-d2-now/}}" x="340" y="1050.5"/><!--/b-->
+
+    <text x="384" y="1000" class="planet-gate" data-explore="activation.1.MERCURY wheel.rows"><!--v mercury-gate1--><!--/v--></text>
+    <!--v mercury-e1--><!--/v--><!--b mercury-e1--><use href="#exalt1{{v mercury-e1-now/}}" x="404" y="986"/><!--/b-->
+    <!--v mercury-d1--><!--/v--><!--b mercury-d1--><use href="#detr1{{v mercury-d1-now/}}" x="404" y="990.5"/><!--/b-->
+    <use href="#planet-mercury" x="384" y="1030" class="planet-gate" data-explore="activation.1.MERCURY activation.2.MERCURY wheel.rows"/>
+    <rect class="explore-hit" x="360" y="1008" width="48" height="34" data-explore="activation.1.MERCURY activation.2.MERCURY wheel.rows"/>
+    <text x="384" y="1060" class="planet-gate design" data-explore="activation.2.MERCURY wheel.rows"><!--v mercury-gate2--><!--/v--></text>
+    <!--v mercury-e2--><!--/v--><!--b mercury-e2--><use href="#exalt2{{v mercury-e2-now/}}" x="404" y="1046"/><!--/b-->
+    <!--v mercury-d2--><!--/v--><!--b mercury-d2--><use href="#detr2{{v mercury-d2-now/}}" x="404" y="1050.5"/><!--/b-->
+
+    <text x="448" y="1000" class="planet-gate" data-explore="activation.1.VENUS wheel.rows"><!--v venus-gate1--><!--/v--></text>
+    <!--v venus-e1--><!--/v--><!--b venus-e1--><use href="#exalt1{{v venus-e1-now/}}" x="468" y="986"/><!--/b-->
+    <!--v venus-d1--><!--/v--><!--b venus-d1--><use href="#detr1{{v venus-d1-now/}}" x="468" y="990.5"/><!--/b-->
+    <use href="#planet-venus" x="448" y="1030" class="planet-gate" data-explore="activation.1.VENUS activation.2.VENUS wheel.rows"/>
+    <rect class="explore-hit" x="424" y="1008" width="48" height="34" data-explore="activation.1.VENUS activation.2.VENUS wheel.rows"/>
+    <text x="448" y="1060" class="planet-gate design" data-explore="activation.2.VENUS wheel.rows"><!--v venus-gate2--><!--/v--></text>
+    <!--v venus-e2--><!--/v--><!--b venus-e2--><use href="#exalt2{{v venus-e2-now/}}" x="468" y="1046"/><!--/b-->
+    <!--v venus-d2--><!--/v--><!--b venus-d2--><use href="#detr2{{v venus-d2-now/}}" x="468" y="1050.5"/><!--/b-->
+
+    <text x="512" y="1000" class="planet-gate" data-explore="activation.1.MARS wheel.rows"><!--v mars-gate1--><!--/v--></text>
+    <!--v mars-e1--><!--/v--><!--b mars-e1--><use href="#exalt1{{v mars-e1-now/}}" x="532" y="986"/><!--/b-->
+    <!--v mars-d1--><!--/v--><!--b mars-d1--><use href="#detr1{{v mars-d1-now/}}" x="532" y="990.5"/><!--/b-->
+    <use href="#planet-mars" x="512" y="1030" class="planet-gate" data-explore="activation.1.MARS activation.2.MARS wheel.rows"/>
+    <rect class="explore-hit" x="488" y="1008" width="48" height="34" data-explore="activation.1.MARS activation.2.MARS wheel.rows"/>
+    <text x="512" y="1060" class="planet-gate design" data-explore="activation.2.MARS wheel.rows"><!--v mars-gate2--><!--/v--></text>
+    <!--v mars-e2--><!--/v--><!--b mars-e2--><use href="#exalt2{{v mars-e2-now/}}" x="532" y="1046"/><!--/b-->
+    <!--v mars-d2--><!--/v--><!--b mars-d2--><use href="#detr2{{v mars-d2-now/}}" x="532" y="1050.5"/><!--/b-->
+
+    <text x="576" y="1000" class="planet-gate" data-explore="activation.1.JUPITER wheel.rows"><!--v jupiter-gate1--><!--/v--></text>
+    <!--v jupiter-e1--><!--/v--><!--b jupiter-e1--><use href="#exalt1{{v jupiter-e1-now/}}" x="596" y="986"/><!--/b-->
+    <!--v jupiter-d1--><!--/v--><!--b jupiter-d1--><use href="#detr1{{v jupiter-d1-now/}}" x="596" y="990.5"/><!--/b-->
+    <use href="#planet-jupiter" x="576" y="1032" class="planet-gate" data-explore="activation.1.JUPITER activation.2.JUPITER wheel.rows"/>
+    <rect class="explore-hit" x="552" y="1010" width="48" height="34" data-explore="activation.1.JUPITER activation.2.JUPITER wheel.rows"/>
+    <text x="576" y="1060" class="planet-gate design" data-explore="activation.2.JUPITER wheel.rows"><!--v jupiter-gate2--><!--/v--></text>
+    <!--v jupiter-e2--><!--/v--><!--b jupiter-e2--><use href="#exalt2{{v jupiter-e2-now/}}" x="596" y="1046"/><!--/b-->
+    <!--v jupiter-d2--><!--/v--><!--b jupiter-d2--><use href="#detr2{{v jupiter-d2-now/}}" x="596" y="1050.5"/><!--/b-->
+
+    <text x="640" y="1000" class="planet-gate" data-explore="activation.1.SATURN wheel.rows"><!--v saturn-gate1--><!--/v--></text>
+    <!--v saturn-e1--><!--/v--><!--b saturn-e1--><use href="#exalt1{{v saturn-e1-now/}}" x="660" y="986"/><!--/b-->
+    <!--v saturn-d1--><!--/v--><!--b saturn-d1--><use href="#detr1{{v saturn-d1-now/}}" x="660" y="990.5"/><!--/b-->
+    <use href="#planet-saturn" x="640" y="1032" class="planet-gate" data-explore="activation.1.SATURN activation.2.SATURN wheel.rows"/>
+    <rect class="explore-hit" x="616" y="1010" width="48" height="34" data-explore="activation.1.SATURN activation.2.SATURN wheel.rows"/>
+    <text x="640" y="1060" class="planet-gate design" data-explore="activation.2.SATURN wheel.rows"><!--v saturn-gate2--><!--/v--></text>
+    <!--v saturn-e2--><!--/v--><!--b saturn-e2--><use href="#exalt2{{v saturn-e2-now/}}" x="660" y="1046"/><!--/b-->
+    <!--v saturn-d2--><!--/v--><!--b saturn-d2--><use href="#detr2{{v saturn-d2-now/}}" x="660" y="1050.5"/><!--/b-->
+
+    <text x="704" y="1000" class="planet-gate" data-explore="activation.1.URANUS wheel.rows"><!--v uranus-gate1--><!--/v--></text>
+    <!--v uranus-e1--><!--/v--><!--b uranus-e1--><use href="#exalt1{{v uranus-e1-now/}}" x="724" y="986"/><!--/b-->
+    <!--v uranus-d1--><!--/v--><!--b uranus-d1--><use href="#detr1{{v uranus-d1-now/}}" x="724" y="990.5"/><!--/b-->
+    <use href="#planet-uranus" x="704" y="1030" class="planet-gate" data-explore="activation.1.URANUS activation.2.URANUS wheel.rows"/>
+    <rect class="explore-hit" x="680" y="1008" width="48" height="34" data-explore="activation.1.URANUS activation.2.URANUS wheel.rows"/>
+    <text x="704" y="1060" class="planet-gate design" data-explore="activation.2.URANUS wheel.rows"><!--v uranus-gate2--><!--/v--></text>
+    <!--v uranus-e2--><!--/v--><!--b uranus-e2--><use href="#exalt2{{v uranus-e2-now/}}" x="724" y="1046"/><!--/b-->
+    <!--v uranus-d2--><!--/v--><!--b uranus-d2--><use href="#detr2{{v uranus-d2-now/}}" x="724" y="1050.5"/><!--/b-->
+
+    <text x="768" y="1000" class="planet-gate" data-explore="activation.1.NEPTUNE wheel.rows"><!--v neptune-gate1--><!--/v--></text>
+    <!--v neptune-e1--><!--/v--><!--b neptune-e1--><use href="#exalt1{{v neptune-e1-now/}}" x="788" y="986"/><!--/b-->
+    <!--v neptune-d1--><!--/v--><!--b neptune-d1--><use href="#detr1{{v neptune-d1-now/}}" x="788" y="990.5"/><!--/b-->
+    <use href="#planet-neptune" x="768" y="1032" class="planet-gate" data-explore="activation.1.NEPTUNE activation.2.NEPTUNE wheel.rows"/>
+    <rect class="explore-hit" x="744" y="1010" width="48" height="34" data-explore="activation.1.NEPTUNE activation.2.NEPTUNE wheel.rows"/>
+    <text x="768" y="1060" class="planet-gate design" data-explore="activation.2.NEPTUNE wheel.rows"><!--v neptune-gate2--><!--/v--></text>
+    <!--v neptune-e2--><!--/v--><!--b neptune-e2--><use href="#exalt2{{v neptune-e2-now/}}" x="788" y="1046"/><!--/b-->
+    <!--v neptune-d2--><!--/v--><!--b neptune-d2--><use href="#detr2{{v neptune-d2-now/}}" x="788" y="1050.5"/><!--/b-->
+
+    <text x="832" y="1000" class="planet-gate" data-explore="activation.1.PLUTO wheel.rows"><!--v pluto-gate1--><!--/v--></text>
+    <!--v pluto-e1--><!--/v--><!--b pluto-e1--><use href="#exalt1{{v pluto-e1-now/}}" x="852" y="986"/><!--/b-->
+    <!--v pluto-d1--><!--/v--><!--b pluto-d1--><use href="#detr1{{v pluto-d1-now/}}" x="852" y="990.5"/><!--/b-->
+    <use href="#planet-pluto" x="832" y="1031" class="planet-gate" data-explore="activation.1.PLUTO activation.2.PLUTO wheel.rows"/>
+    <rect class="explore-hit" x="808" y="1009" width="48" height="34" data-explore="activation.1.PLUTO activation.2.PLUTO wheel.rows"/>
+    <text x="832" y="1060" class="planet-gate design" data-explore="activation.2.PLUTO wheel.rows"><!--v pluto-gate2--><!--/v--></text>
+    <!--v pluto-e2--><!--/v--><!--b pluto-e2--><use href="#exalt2{{v pluto-e2-now/}}" x="852" y="1046"/><!--/b-->
+    <!--v pluto-d2--><!--/v--><!--b pluto-d2--><use href="#detr2{{v pluto-d2-now/}}" x="852" y="1050.5"/><!--/b-->
+
+    <text x="896" y="1000" class="planet-gate" data-explore="activation.1.CHIRON wheel.rows"><!--v chiron-gate1--><!--/v--></text>
+    <use href="#planet-chiron" x="896" y="1030" class="planet-gate" data-explore="activation.1.CHIRON activation.2.CHIRON wheel.rows"/>
+    <rect class="explore-hit" x="872" y="1008" width="48" height="34" data-explore="activation.1.CHIRON activation.2.CHIRON wheel.rows"/>
+    <text x="896" y="1060" class="planet-gate design" data-explore="activation.2.CHIRON wheel.rows"><!--v chiron-gate2--><!--/v--></text>
+    <!--/bv-->
+    </g>
+
+    <!--v planet-gates-3-4--><!--/v-->
+    <!--b planet-gates-3-4-->
+    <g transform="translate(0 {{v gates-3-4-offset}}0{{/v}})" data-explore="wheel.rows">
+    <rect class="explore-hit" x="20" y="1055" width="920" height="120"/>
+    <text class="name-footer" x="480" y="1074"><!--v gates-3-4-label-->Birth Gates<!--/v--></text>
+
+    <text x="64" y="1104" class="planet-gate" data-explore="activation.3.SUN wheel.rows"><!--v sun-gate3--><!--/v--></text>
+    <!--v sun-e3--><!--/v--><!--b sun-e3--><use href="#exalt3{{v sun-e3-now/}}" x="84" y="1090"/><!--/b-->
+    <!--v sun-d3--><!--/v--><!--b sun-d3--><use href="#detr3{{v sun-d3-now/}}" x="84" y="1094.5"/><!--/b-->
+    <use href="#planet-sun" x="64" y="1134" class="planet-gate" data-explore="activation.3.SUN activation.4.SUN wheel.rows"/>
+    <rect class="explore-hit" x="40" y="1112" width="48" height="34" data-explore="activation.3.SUN activation.4.SUN wheel.rows"/>
+    <text x="64" y="1164" class="planet-gate design" data-explore="activation.4.SUN wheel.rows"><!--v sun-gate4--><!--/v--></text>
+    <!--v sun-e4--><!--/v--><!--b sun-e4--><use href="#exalt4{{v sun-e4-now/}}" x="84" y="1150"/><!--/b-->
+    <!--v sun-d4--><!--/v--><!--b sun-d4--><use href="#detr4{{v sun-d4-now/}}" x="84" y="1154.5"/><!--/b-->
+
+    <text x="128" y="1104" class="planet-gate" data-explore="activation.3.EARTH wheel.rows"><!--v earth-gate3--><!--/v--></text>
+    <!--v earth-e3--><!--/v--><!--b earth-e3--><use href="#exalt3{{v earth-e3-now/}}" x="148" y="1090"/><!--/b-->
+    <!--v earth-d3--><!--/v--><!--b earth-d3--><use href="#detr3{{v earth-d3-now/}}" x="148" y="1094.5"/><!--/b-->
+    <use href="#planet-earth" x="128" y="1134" class="planet-gate" data-explore="activation.3.EARTH activation.4.EARTH wheel.rows"/>
+    <rect class="explore-hit" x="104" y="1112" width="48" height="34" data-explore="activation.3.EARTH activation.4.EARTH wheel.rows"/>
+    <text x="128" y="1164" class="planet-gate design" data-explore="activation.4.EARTH wheel.rows"><!--v earth-gate4--><!--/v--></text>
+    <!--v earth-e4--><!--/v--><!--b earth-e4--><use href="#exalt4{{v earth-e4-now/}}" x="148" y="1150"/><!--/b-->
+    <!--v earth-d4--><!--/v--><!--b earth-d4--><use href="#detr4{{v earth-d4-now/}}" x="148" y="1154.5"/><!--/b-->
+
+    <text x="192" y="1104" class="planet-gate" data-explore="activation.3.MOON wheel.rows"><!--v moon-gate3--><!--/v--></text>
+    <!--v moon-e3--><!--/v--><!--b moon-e3--><use href="#exalt3{{v moon-e3-now/}}" x="212" y="1090"/><!--/b-->
+    <!--v moon-d3--><!--/v--><!--b moon-d3--><use href="#detr3{{v moon-d3-now/}}" x="212" y="1094.5"/><!--/b-->
+    <use href="#planet-moon" x="192" y="1136" class="planet-gate" data-explore="activation.3.MOON activation.4.MOON wheel.rows"/>
+    <rect class="explore-hit" x="168" y="1114" width="48" height="34" data-explore="activation.3.MOON activation.4.MOON wheel.rows"/>
+    <text x="192" y="1164" class="planet-gate design" data-explore="activation.4.MOON wheel.rows"><!--v moon-gate4--><!--/v--></text>
+    <!--v moon-e4--><!--/v--><!--b moon-e4--><use href="#exalt4{{v moon-e4-now/}}" x="212" y="1150"/><!--/b-->
+    <!--v moon-d4--><!--/v--><!--b moon-d4--><use href="#detr4{{v moon-d4-now/}}" x="212" y="1154.5"/><!--/b-->
+
+    <text x="256" y="1104" class="planet-gate" data-explore="activation.3.NORTH_NODE wheel.rows"><!--v north_node-gate3--><!--/v--></text>
+    <!--v north_node-e3--><!--/v--><!--b north_node-e3--><use href="#exalt3{{v north_node-e3-now/}}" x="276" y="1090"/><!--/b-->
+    <!--v north_node-d3--><!--/v--><!--b north_node-d3--><use href="#detr3{{v north_node-d3-now/}}" x="276" y="1094.5"/><!--/b-->
+    <use href="#planet-north_node" x="256" y="1137" class="planet-gate" data-explore="activation.3.NORTH_NODE activation.4.NORTH_NODE wheel.rows"/>
+    <rect class="explore-hit" x="232" y="1115" width="48" height="34" data-explore="activation.3.NORTH_NODE activation.4.NORTH_NODE wheel.rows"/>
+    <text x="256" y="1164" class="planet-gate design" data-explore="activation.4.NORTH_NODE wheel.rows"><!--v north_node-gate4--><!--/v--></text>
+    <!--v north_node-e4--><!--/v--><!--b north_node-e4--><use href="#exalt4{{v north_node-e4-now/}}" x="276" y="1150"/><!--/b-->
+    <!--v north_node-d4--><!--/v--><!--b north_node-d4--><use href="#detr4{{v north_node-d4-now/}}" x="276" y="1154.5"/><!--/b-->
+
+    <text x="320" y="1104" class="planet-gate" data-explore="activation.3.SOUTH_NODE wheel.rows"><!--v south_node-gate3--><!--/v--></text>
+    <!--v south_node-e3--><!--/v--><!--b south_node-e3--><use href="#exalt3{{v south_node-e3-now/}}" x="340" y="1090"/><!--/b-->
+    <!--v south_node-d3--><!--/v--><!--b south_node-d3--><use href="#detr3{{v south_node-d3-now/}}" x="340" y="1094.5"/><!--/b-->
+    <use href="#planet-south_node" x="320" y="1137" class="planet-gate" data-explore="activation.3.SOUTH_NODE activation.4.SOUTH_NODE wheel.rows"/>
+    <rect class="explore-hit" x="296" y="1115" width="48" height="34" data-explore="activation.3.SOUTH_NODE activation.4.SOUTH_NODE wheel.rows"/>
+    <text x="320" y="1164" class="planet-gate design" data-explore="activation.4.SOUTH_NODE wheel.rows"><!--v south_node-gate4--><!--/v--></text>
+    <!--v south_node-e4--><!--/v--><!--b south_node-e4--><use href="#exalt4{{v south_node-e4-now/}}" x="340" y="1150"/><!--/b-->
+    <!--v south_node-d4--><!--/v--><!--b south_node-d4--><use href="#detr4{{v south_node-d4-now/}}" x="340" y="1154.5"/><!--/b-->
+
+    <text x="384" y="1104" class="planet-gate" data-explore="activation.3.MERCURY wheel.rows"><!--v mercury-gate3--><!--/v--></text>
+    <!--v mercury-e3--><!--/v--><!--b mercury-e3--><use href="#exalt3{{v mercury-e3-now/}}" x="404" y="1090"/><!--/b-->
+    <!--v mercury-d3--><!--/v--><!--b mercury-d3--><use href="#detr3{{v mercury-d3-now/}}" x="404" y="1094.5"/><!--/b-->
+    <use href="#planet-mercury" x="384" y="1134" class="planet-gate" data-explore="activation.3.MERCURY activation.4.MERCURY wheel.rows"/>
+    <rect class="explore-hit" x="360" y="1112" width="48" height="34" data-explore="activation.3.MERCURY activation.4.MERCURY wheel.rows"/>
+    <text x="384" y="1164" class="planet-gate design" data-explore="activation.4.MERCURY wheel.rows"><!--v mercury-gate4--><!--/v--></text>
+    <!--v mercury-e4--><!--/v--><!--b mercury-e4--><use href="#exalt4{{v mercury-e4-now/}}" x="404" y="1150"/><!--/b-->
+    <!--v mercury-d4--><!--/v--><!--b mercury-d4--><use href="#detr4{{v mercury-d4-now/}}" x="404" y="1154.5"/><!--/b-->
+
+    <text x="448" y="1104" class="planet-gate" data-explore="activation.3.VENUS wheel.rows"><!--v venus-gate3--><!--/v--></text>
+    <!--v venus-e3--><!--/v--><!--b venus-e3--><use href="#exalt3{{v venus-e3-now/}}" x="468" y="1090"/><!--/b-->
+    <!--v venus-d3--><!--/v--><!--b venus-d3--><use href="#detr3{{v venus-d3-now/}}" x="468" y="1094.5"/><!--/b-->
+    <use href="#planet-venus" x="448" y="1134" class="planet-gate" data-explore="activation.3.VENUS activation.4.VENUS wheel.rows"/>
+    <rect class="explore-hit" x="424" y="1112" width="48" height="34" data-explore="activation.3.VENUS activation.4.VENUS wheel.rows"/>
+    <text x="448" y="1164" class="planet-gate design" data-explore="activation.4.VENUS wheel.rows"><!--v venus-gate4--><!--/v--></text>
+    <!--v venus-e4--><!--/v--><!--b venus-e4--><use href="#exalt4{{v venus-e4-now/}}" x="468" y="1150"/><!--/b-->
+    <!--v venus-d4--><!--/v--><!--b venus-d4--><use href="#detr4{{v venus-d4-now/}}" x="468" y="1154.5"/><!--/b-->
+
+    <text x="512" y="1104" class="planet-gate" data-explore="activation.3.MARS wheel.rows"><!--v mars-gate3--><!--/v--></text>
+    <!--v mars-e3--><!--/v--><!--b mars-e3--><use href="#exalt3{{v mars-e3-now/}}" x="532" y="1090"/><!--/b-->
+    <!--v mars-d3--><!--/v--><!--b mars-d3--><use href="#detr3{{v mars-d3-now/}}" x="532" y="1094.5"/><!--/b-->
+    <use href="#planet-mars" x="512" y="1134" class="planet-gate" data-explore="activation.3.MARS activation.4.MARS wheel.rows"/>
+    <rect class="explore-hit" x="488" y="1112" width="48" height="34" data-explore="activation.3.MARS activation.4.MARS wheel.rows"/>
+    <text x="512" y="1164" class="planet-gate design" data-explore="activation.4.MARS wheel.rows"><!--v mars-gate4--><!--/v--></text>
+    <!--v mars-e4--><!--/v--><!--b mars-e4--><use href="#exalt4{{v mars-e4-now/}}" x="532" y="1150"/><!--/b-->
+    <!--v mars-d4--><!--/v--><!--b mars-d4--><use href="#detr4{{v mars-d4-now/}}" x="532" y="1154.5"/><!--/b-->
+
+    <text x="576" y="1104" class="planet-gate" data-explore="activation.3.JUPITER wheel.rows"><!--v jupiter-gate3--><!--/v--></text>
+    <!--v jupiter-e3--><!--/v--><!--b jupiter-e3--><use href="#exalt3{{v jupiter-e3-now/}}" x="596" y="1090"/><!--/b-->
+    <!--v jupiter-d3--><!--/v--><!--b jupiter-d3--><use href="#detr3{{v jupiter-d3-now/}}" x="596" y="1094.5"/><!--/b-->
+    <use href="#planet-jupiter" x="576" y="1136" class="planet-gate" data-explore="activation.3.JUPITER activation.4.JUPITER wheel.rows"/>
+    <rect class="explore-hit" x="552" y="1114" width="48" height="34" data-explore="activation.3.JUPITER activation.4.JUPITER wheel.rows"/>
+    <text x="576" y="1164" class="planet-gate design" data-explore="activation.4.JUPITER wheel.rows"><!--v jupiter-gate4--><!--/v--></text>
+    <!--v jupiter-e4--><!--/v--><!--b jupiter-e4--><use href="#exalt4{{v jupiter-e4-now/}}" x="596" y="1150"/><!--/b-->
+    <!--v jupiter-d4--><!--/v--><!--b jupiter-d4--><use href="#detr4{{v jupiter-d4-now/}}" x="596" y="1154.5"/><!--/b-->
+
+    <text x="640" y="1104" class="planet-gate" data-explore="activation.3.SATURN wheel.rows"><!--v saturn-gate3--><!--/v--></text>
+    <!--v saturn-e3--><!--/v--><!--b saturn-e3--><use href="#exalt3{{v saturn-e3-now/}}" x="660" y="1090"/><!--/b-->
+    <!--v saturn-d3--><!--/v--><!--b saturn-d3--><use href="#detr3{{v saturn-d3-now/}}" x="660" y="1094.5"/><!--/b-->
+    <use href="#planet-saturn" x="640" y="1136" class="planet-gate" data-explore="activation.3.SATURN activation.4.SATURN wheel.rows"/>
+    <rect class="explore-hit" x="616" y="1114" width="48" height="34" data-explore="activation.3.SATURN activation.4.SATURN wheel.rows"/>
+    <text x="640" y="1164" class="planet-gate design" data-explore="activation.4.SATURN wheel.rows"><!--v saturn-gate4--><!--/v--></text>
+    <!--v saturn-e4--><!--/v--><!--b saturn-e4--><use href="#exalt4{{v saturn-e4-now/}}" x="660" y="1150"/><!--/b-->
+    <!--v saturn-d4--><!--/v--><!--b saturn-d4--><use href="#detr4{{v saturn-d4-now/}}" x="660" y="1154.5"/><!--/b-->
+
+    <text x="704" y="1104" class="planet-gate" data-explore="activation.3.URANUS wheel.rows"><!--v uranus-gate3--><!--/v--></text>
+    <!--v uranus-e3--><!--/v--><!--b uranus-e3--><use href="#exalt3{{v uranus-e3-now/}}" x="724" y="1090"/><!--/b-->
+    <!--v uranus-d3--><!--/v--><!--b uranus-d3--><use href="#detr3{{v uranus-d3-now/}}" x="724" y="1094.5"/><!--/b-->
+    <use href="#planet-uranus" x="704" y="1134" class="planet-gate" data-explore="activation.3.URANUS activation.4.URANUS wheel.rows"/>
+    <rect class="explore-hit" x="680" y="1112" width="48" height="34" data-explore="activation.3.URANUS activation.4.URANUS wheel.rows"/>
+    <text x="704" y="1164" class="planet-gate design" data-explore="activation.4.URANUS wheel.rows"><!--v uranus-gate4--><!--/v--></text>
+    <!--v uranus-e4--><!--/v--><!--b uranus-e4--><use href="#exalt4{{v uranus-e4-now/}}" x="724" y="1150"/><!--/b-->
+    <!--v uranus-d4--><!--/v--><!--b uranus-d4--><use href="#detr4{{v uranus-d4-now/}}" x="724" y="1154.5"/><!--/b-->
+
+    <text x="768" y="1104" class="planet-gate" data-explore="activation.3.NEPTUNE wheel.rows"><!--v neptune-gate3--><!--/v--></text>
+    <!--v neptune-e3--><!--/v--><!--b neptune-e3--><use href="#exalt3{{v neptune-e3-now/}}" x="788" y="1090"/><!--/b-->
+    <!--v neptune-d3--><!--/v--><!--b neptune-d3--><use href="#detr3{{v neptune-d3-now/}}" x="788" y="1094.5"/><!--/b-->
+    <use href="#planet-neptune" x="768" y="1136" class="planet-gate" data-explore="activation.3.NEPTUNE activation.4.NEPTUNE wheel.rows"/>
+    <rect class="explore-hit" x="744" y="1114" width="48" height="34" data-explore="activation.3.NEPTUNE activation.4.NEPTUNE wheel.rows"/>
+    <text x="768" y="1164" class="planet-gate design" data-explore="activation.4.NEPTUNE wheel.rows"><!--v neptune-gate4--><!--/v--></text>
+    <!--v neptune-e4--><!--/v--><!--b neptune-e4--><use href="#exalt4{{v neptune-e4-now/}}" x="788" y="1150"/><!--/b-->
+    <!--v neptune-d4--><!--/v--><!--b neptune-d4--><use href="#detr4{{v neptune-d4-now/}}" x="788" y="1154.5"/><!--/b-->
+
+    <text x="832" y="1104" class="planet-gate" data-explore="activation.3.PLUTO wheel.rows"><!--v pluto-gate3--><!--/v--></text>
+    <!--v pluto-e3--><!--/v--><!--b pluto-e3--><use href="#exalt3{{v pluto-e3-now/}}" x="852" y="1090"/><!--/b-->
+    <!--v pluto-d3--><!--/v--><!--b pluto-d3--><use href="#detr3{{v pluto-d3-now/}}" x="852" y="1094.5"/><!--/b-->
+    <use href="#planet-pluto" x="832" y="1135" class="planet-gate" data-explore="activation.3.PLUTO activation.4.PLUTO wheel.rows"/>
+    <rect class="explore-hit" x="808" y="1113" width="48" height="34" data-explore="activation.3.PLUTO activation.4.PLUTO wheel.rows"/>
+    <text x="832" y="1164" class="planet-gate design" data-explore="activation.4.PLUTO wheel.rows"><!--v pluto-gate4--><!--/v--></text>
+    <!--v pluto-e4--><!--/v--><!--b pluto-e4--><use href="#exalt4{{v pluto-e4-now/}}" x="852" y="1150"/><!--/b-->
+    <!--v pluto-d4--><!--/v--><!--b pluto-d4--><use href="#detr4{{v pluto-d4-now/}}" x="852" y="1154.5"/><!--/b-->
+
+    <text x="896" y="1104" class="planet-gate" data-explore="activation.3.CHIRON wheel.rows"><!--v chiron-gate3--><!--/v--></text>
+    <use href="#planet-chiron" x="896" y="1134" class="planet-gate" data-explore="activation.3.CHIRON activation.4.CHIRON wheel.rows"/>
+    <rect class="explore-hit" x="872" y="1112" width="48" height="34" data-explore="activation.3.CHIRON activation.4.CHIRON wheel.rows"/>
+    <text x="896" y="1164" class="planet-gate design" data-explore="activation.4.CHIRON wheel.rows"><!--v chiron-gate4--><!--/v--></text>
+    </g>
+    <!--/b-->
+
+    <!--v planet-gates-5-6--><!--/v-->
+    <!--b planet-gates-5-6-->
+    <g transform="translate(0 {{v gates-5-6-offset}}0{{/v}})" data-explore="wheel.rows">
+    <rect class="explore-hit" x="20" y="1055" width="920" height="120"/>
+    <text class="name-footer" x="480" y="1074"><!--v gates-5-6-label-->Second Gates<!--/v--></text>
+
+    <text x="64" y="1104" class="planet-gate" data-explore="activation.5.SUN wheel.rows"><!--v sun-gate5--><!--/v--></text>
+    <!--v sun-e5--><!--/v--><!--b sun-e5--><use href="#exalt5{{v sun-e5-now/}}" x="84" y="1090"/><!--/b-->
+    <!--v sun-d5--><!--/v--><!--b sun-d5--><use href="#detr5{{v sun-d5-now/}}" x="84" y="1094.5"/><!--/b-->
+    <use href="#planet-sun" x="64" y="1134" class="planet-gate" data-explore="activation.5.SUN activation.6.SUN wheel.rows"/>
+    <rect class="explore-hit" x="40" y="1112" width="48" height="34" data-explore="activation.5.SUN activation.6.SUN wheel.rows"/>
+    <text x="64" y="1164" class="planet-gate design" data-explore="activation.6.SUN wheel.rows"><!--v sun-gate6--><!--/v--></text>
+    <!--v sun-e6--><!--/v--><!--b sun-e6--><use href="#exalt6{{v sun-e6-now/}}" x="84" y="1150"/><!--/b-->
+    <!--v sun-d6--><!--/v--><!--b sun-d6--><use href="#detr6{{v sun-d6-now/}}" x="84" y="1154.5"/><!--/b-->
+
+    <text x="128" y="1104" class="planet-gate" data-explore="activation.5.EARTH wheel.rows"><!--v earth-gate5--><!--/v--></text>
+    <!--v earth-e5--><!--/v--><!--b earth-e5--><use href="#exalt5{{v earth-e5-now/}}" x="148" y="1090"/><!--/b-->
+    <!--v earth-d5--><!--/v--><!--b earth-d5--><use href="#detr5{{v earth-d5-now/}}" x="148" y="1094.5"/><!--/b-->
+    <use href="#planet-earth" x="128" y="1134" class="planet-gate" data-explore="activation.5.EARTH activation.6.EARTH wheel.rows"/>
+    <rect class="explore-hit" x="104" y="1112" width="48" height="34" data-explore="activation.5.EARTH activation.6.EARTH wheel.rows"/>
+    <text x="128" y="1164" class="planet-gate design" data-explore="activation.6.EARTH wheel.rows"><!--v earth-gate6--><!--/v--></text>
+    <!--v earth-e6--><!--/v--><!--b earth-e6--><use href="#exalt6{{v earth-e6-now/}}" x="148" y="1150"/><!--/b-->
+    <!--v earth-d6--><!--/v--><!--b earth-d6--><use href="#detr6{{v earth-d6-now/}}" x="148" y="1154.5"/><!--/b-->
+
+    <text x="192" y="1104" class="planet-gate" data-explore="activation.5.MOON wheel.rows"><!--v moon-gate5--><!--/v--></text>
+    <!--v moon-e5--><!--/v--><!--b moon-e5--><use href="#exalt5{{v moon-e5-now/}}" x="212" y="1090"/><!--/b-->
+    <!--v moon-d5--><!--/v--><!--b moon-d5--><use href="#detr5{{v moon-d5-now/}}" x="212" y="1094.5"/><!--/b-->
+    <use href="#planet-moon" x="192" y="1136" class="planet-gate" data-explore="activation.5.MOON activation.6.MOON wheel.rows"/>
+    <rect class="explore-hit" x="168" y="1114" width="48" height="34" data-explore="activation.5.MOON activation.6.MOON wheel.rows"/>
+    <text x="192" y="1164" class="planet-gate design" data-explore="activation.6.MOON wheel.rows"><!--v moon-gate6--><!--/v--></text>
+    <!--v moon-e6--><!--/v--><!--b moon-e6--><use href="#exalt6{{v moon-e6-now/}}" x="212" y="1150"/><!--/b-->
+    <!--v moon-d6--><!--/v--><!--b moon-d6--><use href="#detr6{{v moon-d6-now/}}" x="212" y="1154.5"/><!--/b-->
+
+    <text x="256" y="1104" class="planet-gate" data-explore="activation.5.NORTH_NODE wheel.rows"><!--v north_node-gate5--><!--/v--></text>
+    <!--v north_node-e5--><!--/v--><!--b north_node-e5--><use href="#exalt5{{v north_node-e5-now/}}" x="276" y="1090"/><!--/b-->
+    <!--v north_node-d5--><!--/v--><!--b north_node-d5--><use href="#detr5{{v north_node-d5-now/}}" x="276" y="1094.5"/><!--/b-->
+    <use href="#planet-north_node" x="256" y="1137" class="planet-gate" data-explore="activation.5.NORTH_NODE activation.6.NORTH_NODE wheel.rows"/>
+    <rect class="explore-hit" x="232" y="1115" width="48" height="34" data-explore="activation.5.NORTH_NODE activation.6.NORTH_NODE wheel.rows"/>
+    <text x="256" y="1164" class="planet-gate design" data-explore="activation.6.NORTH_NODE wheel.rows"><!--v north_node-gate6--><!--/v--></text>
+    <!--v north_node-e6--><!--/v--><!--b north_node-e6--><use href="#exalt6{{v north_node-e6-now/}}" x="276" y="1150"/><!--/b-->
+    <!--v north_node-d6--><!--/v--><!--b north_node-d6--><use href="#detr6{{v north_node-d6-now/}}" x="276" y="1154.5"/><!--/b-->
+
+    <text x="320" y="1104" class="planet-gate" data-explore="activation.5.SOUTH_NODE wheel.rows"><!--v south_node-gate5--><!--/v--></text>
+    <!--v south_node-e5--><!--/v--><!--b south_node-e5--><use href="#exalt5{{v south_node-e5-now/}}" x="340" y="1090"/><!--/b-->
+    <!--v south_node-d5--><!--/v--><!--b south_node-d5--><use href="#detr5{{v south_node-d5-now/}}" x="340" y="1094.5"/><!--/b-->
+    <use href="#planet-south_node" x="320" y="1137" class="planet-gate" data-explore="activation.5.SOUTH_NODE activation.6.SOUTH_NODE wheel.rows"/>
+    <rect class="explore-hit" x="296" y="1115" width="48" height="34" data-explore="activation.5.SOUTH_NODE activation.6.SOUTH_NODE wheel.rows"/>
+    <text x="320" y="1164" class="planet-gate design" data-explore="activation.6.SOUTH_NODE wheel.rows"><!--v south_node-gate6--><!--/v--></text>
+    <!--v south_node-e6--><!--/v--><!--b south_node-e6--><use href="#exalt6{{v south_node-e6-now/}}" x="340" y="1150"/><!--/b-->
+    <!--v south_node-d6--><!--/v--><!--b south_node-d6--><use href="#detr6{{v south_node-d6-now/}}" x="340" y="1154.5"/><!--/b-->
+
+    <text x="384" y="1104" class="planet-gate" data-explore="activation.5.MERCURY wheel.rows"><!--v mercury-gate5--><!--/v--></text>
+    <!--v mercury-e5--><!--/v--><!--b mercury-e5--><use href="#exalt5{{v mercury-e5-now/}}" x="404" y="1090"/><!--/b-->
+    <!--v mercury-d5--><!--/v--><!--b mercury-d5--><use href="#detr5{{v mercury-d5-now/}}" x="404" y="1094.5"/><!--/b-->
+    <use href="#planet-mercury" x="384" y="1134" class="planet-gate" data-explore="activation.5.MERCURY activation.6.MERCURY wheel.rows"/>
+    <rect class="explore-hit" x="360" y="1112" width="48" height="34" data-explore="activation.5.MERCURY activation.6.MERCURY wheel.rows"/>
+    <text x="384" y="1164" class="planet-gate design" data-explore="activation.6.MERCURY wheel.rows"><!--v mercury-gate6--><!--/v--></text>
+    <!--v mercury-e6--><!--/v--><!--b mercury-e6--><use href="#exalt6{{v mercury-e6-now/}}" x="404" y="1150"/><!--/b-->
+    <!--v mercury-d6--><!--/v--><!--b mercury-d6--><use href="#detr6{{v mercury-d6-now/}}" x="404" y="1154.5"/><!--/b-->
+
+    <text x="448" y="1104" class="planet-gate" data-explore="activation.5.VENUS wheel.rows"><!--v venus-gate5--><!--/v--></text>
+    <!--v venus-e5--><!--/v--><!--b venus-e5--><use href="#exalt5{{v venus-e5-now/}}" x="468" y="1090"/><!--/b-->
+    <!--v venus-d5--><!--/v--><!--b venus-d5--><use href="#detr5{{v venus-d5-now/}}" x="468" y="1094.5"/><!--/b-->
+    <use href="#planet-venus" x="448" y="1134" class="planet-gate" data-explore="activation.5.VENUS activation.6.VENUS wheel.rows"/>
+    <rect class="explore-hit" x="424" y="1112" width="48" height="34" data-explore="activation.5.VENUS activation.6.VENUS wheel.rows"/>
+    <text x="448" y="1164" class="planet-gate design" data-explore="activation.6.VENUS wheel.rows"><!--v venus-gate6--><!--/v--></text>
+    <!--v venus-e6--><!--/v--><!--b venus-e6--><use href="#exalt6{{v venus-e6-now/}}" x="468" y="1150"/><!--/b-->
+    <!--v venus-d6--><!--/v--><!--b venus-d6--><use href="#detr6{{v venus-d6-now/}}" x="468" y="1154.5"/><!--/b-->
+
+    <text x="512" y="1104" class="planet-gate" data-explore="activation.5.MARS wheel.rows"><!--v mars-gate5--><!--/v--></text>
+    <!--v mars-e5--><!--/v--><!--b mars-e5--><use href="#exalt5{{v mars-e5-now/}}" x="532" y="1090"/><!--/b-->
+    <!--v mars-d5--><!--/v--><!--b mars-d5--><use href="#detr5{{v mars-d5-now/}}" x="532" y="1094.5"/><!--/b-->
+    <use href="#planet-mars" x="512" y="1134" class="planet-gate" data-explore="activation.5.MARS activation.6.MARS wheel.rows"/>
+    <rect class="explore-hit" x="488" y="1112" width="48" height="34" data-explore="activation.5.MARS activation.6.MARS wheel.rows"/>
+    <text x="512" y="1164" class="planet-gate design" data-explore="activation.6.MARS wheel.rows"><!--v mars-gate6--><!--/v--></text>
+    <!--v mars-e6--><!--/v--><!--b mars-e6--><use href="#exalt6{{v mars-e6-now/}}" x="532" y="1150"/><!--/b-->
+    <!--v mars-d6--><!--/v--><!--b mars-d6--><use href="#detr6{{v mars-d6-now/}}" x="532" y="1154.5"/><!--/b-->
+
+    <text x="576" y="1104" class="planet-gate" data-explore="activation.5.JUPITER wheel.rows"><!--v jupiter-gate5--><!--/v--></text>
+    <!--v jupiter-e5--><!--/v--><!--b jupiter-e5--><use href="#exalt5{{v jupiter-e5-now/}}" x="596" y="1090"/><!--/b-->
+    <!--v jupiter-d5--><!--/v--><!--b jupiter-d5--><use href="#detr5{{v jupiter-d5-now/}}" x="596" y="1094.5"/><!--/b-->
+    <use href="#planet-jupiter" x="576" y="1136" class="planet-gate" data-explore="activation.5.JUPITER activation.6.JUPITER wheel.rows"/>
+    <rect class="explore-hit" x="552" y="1114" width="48" height="34" data-explore="activation.5.JUPITER activation.6.JUPITER wheel.rows"/>
+    <text x="576" y="1164" class="planet-gate design" data-explore="activation.6.JUPITER wheel.rows"><!--v jupiter-gate6--><!--/v--></text>
+    <!--v jupiter-e6--><!--/v--><!--b jupiter-e6--><use href="#exalt6{{v jupiter-e6-now/}}" x="596" y="1150"/><!--/b-->
+    <!--v jupiter-d6--><!--/v--><!--b jupiter-d6--><use href="#detr6{{v jupiter-d6-now/}}" x="596" y="1154.5"/><!--/b-->
+
+    <text x="640" y="1104" class="planet-gate" data-explore="activation.5.SATURN wheel.rows"><!--v saturn-gate5--><!--/v--></text>
+    <!--v saturn-e5--><!--/v--><!--b saturn-e5--><use href="#exalt5{{v saturn-e5-now/}}" x="660" y="1090"/><!--/b-->
+    <!--v saturn-d5--><!--/v--><!--b saturn-d5--><use href="#detr5{{v saturn-d5-now/}}" x="660" y="1094.5"/><!--/b-->
+    <use href="#planet-saturn" x="640" y="1136" class="planet-gate" data-explore="activation.5.SATURN activation.6.SATURN wheel.rows"/>
+    <rect class="explore-hit" x="616" y="1114" width="48" height="34" data-explore="activation.5.SATURN activation.6.SATURN wheel.rows"/>
+    <text x="640" y="1164" class="planet-gate design" data-explore="activation.6.SATURN wheel.rows"><!--v saturn-gate6--><!--/v--></text>
+    <!--v saturn-e6--><!--/v--><!--b saturn-e6--><use href="#exalt6{{v saturn-e6-now/}}" x="660" y="1150"/><!--/b-->
+    <!--v saturn-d6--><!--/v--><!--b saturn-d6--><use href="#detr6{{v saturn-d6-now/}}" x="660" y="1154.5"/><!--/b-->
+
+    <text x="704" y="1104" class="planet-gate" data-explore="activation.5.URANUS wheel.rows"><!--v uranus-gate5--><!--/v--></text>
+    <!--v uranus-e5--><!--/v--><!--b uranus-e5--><use href="#exalt5{{v uranus-e5-now/}}" x="724" y="1090"/><!--/b-->
+    <!--v uranus-d5--><!--/v--><!--b uranus-d5--><use href="#detr5{{v uranus-d5-now/}}" x="724" y="1094.5"/><!--/b-->
+    <use href="#planet-uranus" x="704" y="1134" class="planet-gate" data-explore="activation.5.URANUS activation.6.URANUS wheel.rows"/>
+    <rect class="explore-hit" x="680" y="1112" width="48" height="34" data-explore="activation.5.URANUS activation.6.URANUS wheel.rows"/>
+    <text x="704" y="1164" class="planet-gate design" data-explore="activation.6.URANUS wheel.rows"><!--v uranus-gate6--><!--/v--></text>
+    <!--v uranus-e6--><!--/v--><!--b uranus-e6--><use href="#exalt6{{v uranus-e6-now/}}" x="724" y="1150"/><!--/b-->
+    <!--v uranus-d6--><!--/v--><!--b uranus-d6--><use href="#detr6{{v uranus-d6-now/}}" x="724" y="1154.5"/><!--/b-->
+
+    <text x="768" y="1104" class="planet-gate" data-explore="activation.5.NEPTUNE wheel.rows"><!--v neptune-gate5--><!--/v--></text>
+    <!--v neptune-e5--><!--/v--><!--b neptune-e5--><use href="#exalt5{{v neptune-e5-now/}}" x="788" y="1090"/><!--/b-->
+    <!--v neptune-d5--><!--/v--><!--b neptune-d5--><use href="#detr5{{v neptune-d5-now/}}" x="788" y="1094.5"/><!--/b-->
+    <use href="#planet-neptune" x="768" y="1136" class="planet-gate" data-explore="activation.5.NEPTUNE activation.6.NEPTUNE wheel.rows"/>
+    <rect class="explore-hit" x="744" y="1114" width="48" height="34" data-explore="activation.5.NEPTUNE activation.6.NEPTUNE wheel.rows"/>
+    <text x="768" y="1164" class="planet-gate design" data-explore="activation.6.NEPTUNE wheel.rows"><!--v neptune-gate6--><!--/v--></text>
+    <!--v neptune-e6--><!--/v--><!--b neptune-e6--><use href="#exalt6{{v neptune-e6-now/}}" x="788" y="1150"/><!--/b-->
+    <!--v neptune-d6--><!--/v--><!--b neptune-d6--><use href="#detr6{{v neptune-d6-now/}}" x="788" y="1154.5"/><!--/b-->
+
+    <text x="832" y="1104" class="planet-gate" data-explore="activation.5.PLUTO wheel.rows"><!--v pluto-gate5--><!--/v--></text>
+    <!--v pluto-e5--><!--/v--><!--b pluto-e5--><use href="#exalt5{{v pluto-e5-now/}}" x="852" y="1090"/><!--/b-->
+    <!--v pluto-d5--><!--/v--><!--b pluto-d5--><use href="#detr5{{v pluto-d5-now/}}" x="852" y="1094.5"/><!--/b-->
+    <use href="#planet-pluto" x="832" y="1135" class="planet-gate" data-explore="activation.5.PLUTO activation.6.PLUTO wheel.rows"/>
+    <rect class="explore-hit" x="808" y="1113" width="48" height="34" data-explore="activation.5.PLUTO activation.6.PLUTO wheel.rows"/>
+    <text x="832" y="1164" class="planet-gate design" data-explore="activation.6.PLUTO wheel.rows"><!--v pluto-gate6--><!--/v--></text>
+    <!--v pluto-e6--><!--/v--><!--b pluto-e6--><use href="#exalt6{{v pluto-e6-now/}}" x="852" y="1150"/><!--/b-->
+    <!--v pluto-d6--><!--/v--><!--b pluto-d6--><use href="#detr6{{v pluto-d6-now/}}" x="852" y="1154.5"/><!--/b-->
+
+    <text x="896" y="1104" class="planet-gate" data-explore="activation.5.CHIRON wheel.rows"><!--v chiron-gate5--><!--/v--></text>
+    <use href="#planet-chiron" x="896" y="1134" class="planet-gate" data-explore="activation.5.CHIRON activation.6.CHIRON wheel.rows"/>
+    <rect class="explore-hit" x="872" y="1112" width="48" height="34" data-explore="activation.5.CHIRON activation.6.CHIRON wheel.rows"/>
+    <text x="896" y="1164" class="planet-gate design" data-explore="activation.6.CHIRON wheel.rows"><!--v chiron-gate6--><!--/v--></text>
+    </g>
+    <!--/b-->
+
+    <!-- Footer -->
+
+    <g class="below-wheel" transform="translate(0 {{v footer-translate}}0{{/v}})">
+        <!--v footer-lines/-->
+        <!--v analysis--><!--/v-->
+        <!--b analysis-lines-->
+        <g transform="translate(0 {{v analysis-offset/}})">
+            <line class="properties-divider" x1="80" y1="1218" x2="880" y2="1218"/>
+            <g data-explore="type"><rect class="explore-hit" x="40" y="1224" width="420" height="28"/>
+                <text class="property-name" x="230" y="1244">Type</text>
+                <text class="property-value" x="245" y="1244"><!--v analysis-type/--></text>
+            </g>
+            <g data-explore="type"><rect class="explore-hit" x="40" y="1252" width="420" height="28"/>
+                <text class="property-name" x="230" y="1272">Strategy</text>
+                <text class="property-value" x="245" y="1272"><!--v analysis-strategy/--></text>
+            </g>
+            <g data-explore="authority"><rect class="explore-hit" x="40" y="1280" width="420" height="28"/>
+                <text class="property-name" x="230" y="1300">Authority</text>
+                <text class="property-value" x="245" y="1300"><!--v analysis-authority/--></text>
+            </g>
+            <g data-explore="profile"><rect class="explore-hit" x="40" y="1308" width="420" height="28"/>
+                <text class="property-name" x="230" y="1328">Profile</text>
+                <text class="property-value" x="245" y="1328"><!--v analysis-profile-personality/-->/<tspan class="design"><!--v analysis-profile-design/--></tspan> <!--v analysis-profile-names/--></text>
+            </g>
+            <g data-explore="definition"><rect class="explore-hit" x="470" y="1224" width="450" height="28"/>
+                <text class="property-name" x="660" y="1244">Definition</text>
+                <text class="property-value" x="675" y="1244"><!--v analysis-definition/--></text>
+            </g>
+            <g data-explore="type"><rect class="explore-hit" x="470" y="1252" width="450" height="28"/>
+                <text class="property-name" x="660" y="1272">Not-Self Theme</text>
+                <text class="property-value" x="675" y="1272"><!--v analysis-not-self/--></text>
+            </g>
+            <g data-explore="type"><rect class="explore-hit" x="470" y="1280" width="450" height="28"/>
+                <text class="property-name" x="660" y="1300">Signature</text>
+                <text class="property-value" x="675" y="1300"><!--v analysis-signature/--></text>
+            </g>
+            <g data-explore="type"><rect class="explore-hit" x="470" y="1308" width="450" height="28"/>
+                <text class="property-name" x="660" y="1328">Aura</text>
+                <text class="property-value" x="675" y="1328"><!--v analysis-aura/--></text>
+            </g>
+            <g data-explore="variable.DETERMINATION"><rect class="explore-hit" x="40" y="1336" width="420" height="28"/>
+                <text class="property-name" x="230" y="1356">Determination</text>
+                <text class="property-value design" x="245" y="1356"><!--v analysis-determination/--></text>
+            </g>
+            <g data-explore="variable.ENVIRONMENT"><rect class="explore-hit" x="40" y="1364" width="420" height="28"/>
+                <text class="property-name" x="230" y="1384">Environment</text>
+                <text class="property-value design" x="245" y="1384"><!--v analysis-environment/--></text>
+            </g>
+            <g data-explore="variable.MOTIVATION"><rect class="explore-hit" x="470" y="1336" width="450" height="28"/>
+                <text class="property-name" x="660" y="1356">Motivation</text>
+                <text class="property-value" x="675" y="1356"><!--v analysis-motivation/--></text>
+            </g>
+            <g data-explore="variable.PERSPECTIVE"><rect class="explore-hit" x="470" y="1364" width="450" height="28"/>
+                <text class="property-name" x="660" y="1384">Perspective</text>
+                <text class="property-value" x="675" y="1384"><!--v analysis-perspective/--></text>
+            </g>
+            <g data-explore="cross"><rect class="explore-hit" x="40" y="1400" width="880" height="28"/>
+                <text class="property-name" x="230" y="1420">Incarnation Cross</text>
+                <text class="property-value" x="245" y="1420"><!--v analysis-cross-name/--> (<!--v analysis-cross-personality/--> | <tspan class="design"><!--v analysis-cross-design/--></tspan>)</text>
+            </g>
+            <g data-explore="channels">
+                <text class="property-name" x="230" y="1448">Channels</text>
+                <!--v analysis-channels/-->
+            </g>
+            <!--v analysis-completed--><!--/v-->
+            <!--b analysis-completed-lines-->
+            <g data-explore="transits">
+                <text class="property-name" x="230" y="{{v completed-y/}}">Completed now</text>
+                <!--v analysis-completed-rows/-->
+            </g>
+            <!--/b-->
+            <!--b analysis-channel-line--><rect class="explore-hit" x="40" y="{{v channel-line-hit-y/}}" width="880" height="28"/><text class="property-value" x="245" y="{{v channel-line-y/}}"><!--v line-items/--></text><!--/b-->
+        </g>
+        <!--/b-->
+        <!--v connection--><!--/v-->
+        <!--b connection-lines-->
+        <g transform="translate(0 {{v connection-offset/}})">
+            <line class="properties-divider" x1="80" y1="1218" x2="880" y2="1218"/>
+            <!--v connection-rows/-->
+        </g>
+        <!--/b-->
+        <a href="{{v site-url/}}" target="_top"><text class="url-footer" x="480" y="{{v site-y/}}"><!--v site-name/--></text></a>
+        <!--b footer-legend-->
+        <text class="legend-first" x="416" y="{{v legend-y/}}"><!--v legend-first/--></text>
+        <rect class="legend-{{v legend-first-side/}}" x="424" y="{{v legend-swatch-y/}}" width="16" height="10" rx="2"/>
+        <rect fill="url(#channel-{{v legend-both/}}-vert)" x="456" y="{{v legend-swatch-y/}}" width="16" height="10" rx="2"/>
+        <text class="legend-both" x="478" y="{{v legend-y/}}">Both</text>
+        <rect class="legend-{{v legend-second-side/}}" x="528" y="{{v legend-swatch-y/}}" width="16" height="10" rx="2"/>
+        <text class="legend-second" x="552" y="{{v legend-y/}}"><!--v legend-second/--></text>
+        <!--/b-->
+        <!--b footer-legend-transits-->
+        <rect class="legend-on" x="440" y="{{v legend-swatch-y/}}" width="16" height="10" rx="2"/>
+        <text class="legend-second" x="464" y="{{v legend-y/}}">Transits</text>
+        <!--/b-->
+        <!--b footer-line--><text class="{{v line-class/}}" x="{{v line-x/}}" y="{{v line-y/}}"><!--v line-text/--></text><!--/b-->
+        <!--b connection-row--><g data-explore="{{v row-part/}}"><rect class="explore-hit" x="40" y="{{v row-hit-y/}}" width="880" height="28"/><text class="property-name" x="230" y="{{v row-y/}}"><!--v row-label/--></text><text class="property-value" x="245" y="{{v row-y/}}"><!--v line-items/--></text></g><!--/b-->
+        <!--b line-item--><!--v line-item-text/--><!--v line-item-separator/--><!--/b-->
+        <!--b footer-detail--><!--v detail-lines/--><!--/b-->
+    </g>
+</svg>

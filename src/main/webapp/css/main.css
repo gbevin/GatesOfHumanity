@@ -1,0 +1,2324 @@
+:root {
+    /* colors */
+    --main-background-color: #ccccdd;
+    --main-gradient: linear-gradient(to bottom, #353550, #151533);
+    --button-background-color: #8484b4;
+    --button-text-color: white;
+    --menu-background-color: #202052;
+    --menu-text-color: white;
+    --menu-hover-color: #ffcc00;
+    --menu-icon-color: white;
+    --button-hover-color: #444499;
+    --input-text-color: black;
+    --controls-gradient: linear-gradient(to bottom, #2c2c68, #1b1b4a);
+    --controls-text-color: white;
+    --accent-color: #e3a83c;
+    --accent-hover-color: #f2be5c;
+    --accent-text-color: #151533;
+    --quiet-button-color: rgba(255, 255, 255, 0.1);
+    --quiet-button-border-color: rgba(255, 255, 255, 0.3);
+    --quiet-button-hover-color: rgba(255, 255, 255, 0.22);
+    --row-background-color: rgba(255, 255, 255, 0.08);
+    --title-bar-color: rgba(0, 0, 0, 0.25);
+    /* what the top of the title bar comes to, where the footer ends too: the color that a phone
+       shows when a page is pulled past its top or its bottom */
+    --edge-color: #21214e;
+    --explore-text-color: #202052;
+    --explore-item-color: rgba(255, 255, 255, 0.55);
+    --explore-card-color: #ececf4;
+    --explore-divider-color: rgba(32, 32, 82, 0.1);
+    --explore-open-color: rgba(255, 255, 255, 0.5);
+    --explore-guide-color: rgba(255, 255, 255, 0.25);
+    --subdued-text-color: rgba(255, 255, 255, 0.6);
+    --title-bar-border-color: rgba(255, 255, 255, 0.1);
+    --overlay-background-color: rgba(0, 0, 0, 0.7);
+
+    /* font sizes */
+    --main-font-size: 12pt;
+    --entry-font-size: 12pt;
+    --menu-font-size: 16pt;
+    --title-font-size: 13pt;
+    --site-name-font-size: 8pt;
+    --tagline-font-size: 10pt;
+
+    /* dimensions, the date with room for AM and PM in Firefox, which spaces its parts out */
+    --datetime-width: 224px;
+    --location-width: 260px;
+    --datetime-button-width: 106px;
+    --action-button-width: 82px;
+    --input-height: 30px;
+    --button-height: 40px;
+
+    /* menu */
+    --title-bar-height: 58px;
+    --menu-toggle-left: 24px;
+    --menu-icon-layer-width: 33px;
+    --menu-icon-layer-height: 4px;
+    --menu-icon-layer-bottom: 5px;
+    --menu-transform-origin: 4px 0;
+
+    /* padding and margins */
+    --input-side-padding: 15px;
+    --input-padding: 5px var(--input-side-padding);
+    --input-margin: 5px 0px;
+    --entry-gap: 10px;
+    --data-place-gap: 0px var(--entry-gap);
+    /* the first row of the entries: the date, the city and three buttons, with what's between and inside them */
+    --entry-row-width: calc(var(--datetime-width) + var(--location-width) + 3 * var(--action-button-width) + 4 * var(--entry-gap) + 4 * var(--input-side-padding));
+    --controls-side-padding: 20px;
+    --controls-bottom-padding: 14px;
+    --controls-margin: 0 0 18px;
+    --datetime-button-margin: 5px 0px;
+    --svg-padding: 0 20px;
+
+    /* filters */
+    --drop-shadow-filter: drop-shadow(0 0 1em black);
+}
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: var(--main-font-size);
+    background-image: var(--main-gradient);
+    background-color: var(--edge-color);
+    padding: 0;
+    margin: 0;
+}
+#load-entries {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: var(--overlay-background-color);
+    z-index: 10;
+}
+/* what a first visit is welcomed with, in the colors of the bars */
+#welcome {
+    box-sizing: border-box;
+    width: 480px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 28px 28px 24px;
+    border: 0;
+    border-radius: 14px;
+    background: var(--edge-color);
+    color: var(--subdued-text-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    line-height: 1.5;
+    text-align: center;
+}
+#welcome::backdrop {
+    background: var(--overlay-background-color);
+}
+#welcome img {
+    display: block;
+    margin: 0 auto;
+}
+#welcome .welcome-to {
+    margin: 18px 0 0;
+    font-size: 9pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+#welcome h2 {
+    margin: 2px 0 0;
+    color: white;
+    font-size: 22pt;
+    line-height: 1.2;
+}
+#welcome .welcome-tagline {
+    margin: 4px 0 0;
+    color: var(--accent-color);
+}
+#welcome ul {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+#welcome li {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    column-gap: 16px;
+}
+#welcome li svg {
+    grid-row: span 2;
+    color: var(--accent-color);
+}
+#welcome h3 {
+    margin: 0;
+    color: white;
+    font-size: 12pt;
+}
+#welcome li p {
+    margin: 2px 0 0;
+    font-size: 11pt;
+}
+#welcome a {
+    color: white;
+}
+#welcome button {
+    width: 100%;
+    max-width: 320px;
+    height: 46px;
+    margin: 0;
+    border-radius: 23px;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    font-weight: 700;
+    box-shadow: none;
+}
+#welcome button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+/* a low screen shows it whole too */
+@media (max-height: 700px) {
+    #welcome {
+        padding: 18px 22px;
+    }
+    #welcome img {
+        width: 64px;
+        height: 64px;
+    }
+    #welcome .welcome-to {
+        margin-top: 10px;
+    }
+    #welcome h2 {
+        font-size: 18pt;
+    }
+    #welcome ul {
+        gap: 8px;
+        margin: 12px 0;
+    }
+    #welcome li p {
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+    #welcome button {
+        height: 40px;
+    }
+}
+/* a phone on its side has the width for longer lines, and no room for the emblem */
+@media (max-height: 480px) {
+    #welcome {
+        width: 700px;
+    }
+    #welcome img {
+        display: none;
+    }
+    #welcome .welcome-to {
+        margin-top: 0;
+    }
+}
+.popup-content {
+    position: absolute;
+    box-sizing: border-box;
+    left: 50%;
+    top: 0;
+    width: 440px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 80px);
+    /* the height that's left when the toolbar of a phone's browser shows */
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translate(-50%);
+    margin: 50px auto 0 auto;
+    padding: 12px 16px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px;
+    align-items: stretch;
+    background: var(--controls-gradient);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 12px;
+    filter: var(--drop-shadow-filter);
+    font-size: var(--entry-font-size);
+    color: var(--controls-text-color);
+    z-index: 10;
+}
+.entries .entries-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+.entries .entries-title {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: var(--title-font-size);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.entries .entries-close {
+    width: auto;
+    height: auto;
+    margin: 0 -8px 0 0;
+    padding: 0 8px;
+    background: none;
+    color: var(--subdued-text-color);
+    font-size: 22pt;
+    line-height: 1;
+}
+.entries .saved-row {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--row-background-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.entries .saved-entry {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 8px 12px;
+    background: none;
+    border-radius: 0;
+    color: var(--controls-text-color);
+    font-size: var(--entry-font-size);
+    text-align: left;
+}
+.entries .saved-entry .name {
+    font-weight: 700;
+}
+.entries .saved-entry .date, .entries .saved-entry .location {
+    color: var(--subdued-text-color);
+    font-size: 85%;
+}
+.entries .delete-entry, .entries .group-entry, .entries .rename-entry {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    width: auto;
+    min-width: 48px;
+    height: auto;
+    margin: 0;
+    padding: 0 12px;
+    background: none;
+    border-radius: 0;
+    color: var(--subdued-text-color);
+    font-size: var(--entry-font-size);
+}
+.entries .group-entry, .entries .rename-entry {
+    min-width: 40px;
+    padding: 0 6px;
+}
+.entries .group-entry[aria-expanded="true"], .entries .rename-entry[aria-expanded="true"] {
+    color: var(--accent-color);
+}
+.entries .row-editor {
+    flex-basis: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 12px 10px;
+}
+.entries .row-editor input {
+    margin: 0;
+}
+/* the field of a group with its list, which takes the place that the field had by itself */
+.entries .row-editor .awesomplete {
+    flex: 1;
+    min-width: 0;
+}
+.entries > .awesomplete {
+    grid-column: 1 / -1;
+    display: block;
+}
+/* a list of groups takes its room below the field: over what follows, the row or the window would cut it off */
+.entries .row-editor .awesomplete > ul, .entries > .awesomplete > ul {
+    position: static;
+    transition: none;
+}
+.entries .row-editor .awesomplete > ul[hidden], .entries .row-editor .awesomplete > ul:empty,
+.entries > .awesomplete > ul[hidden], .entries > .awesomplete > ul:empty {
+    display: none;
+}
+.entries .row-editor .awesomplete > ul::before, .entries > .awesomplete > ul::before {
+    display: none;
+}
+.entries .row-editor button {
+    flex: none;
+    width: auto;
+    height: 36px;
+    margin: 0;
+    padding: 0 14px;
+    font-size: var(--entry-font-size);
+}
+.entries .delete-entry.armed {
+    background: #b3261e;
+    color: white;
+    font-weight: 700;
+}
+.entries button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+/* inside the row, which cuts off what's outside its rounded corners, and rounded like them */
+.entries .saved-row button:focus-visible {
+    outline-offset: -2px;
+    border-radius: 8px;
+}
+.entries .entries-notice, .entries .save-summary, .entries .save-label,
+.entries #save-name, .entries #save-group {
+    grid-column: 1 / -1;
+}
+.entries .saved-list {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 6px;
+}
+.entries .entries-group {
+    margin: 8px 0 0;
+    color: var(--subdued-text-color);
+    font-size: 85%;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.entries .entries-group:first-child {
+    margin-top: 0;
+}
+.entries .entries-filter {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.entries .entries-filter button, .entries .person-charts button {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--quiet-button-color);
+    box-shadow: inset 0 0 0 1px var(--quiet-button-border-color);
+    color: var(--controls-text-color);
+    font-size: 10pt;
+}
+.entries .entries-filter button[aria-pressed="true"] {
+    background: var(--accent-color);
+    box-shadow: none;
+    color: var(--accent-text-color);
+    font-weight: 700;
+}
+.entries .entries-notice {
+    margin: 0;
+    padding: 8px 12px;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    background: var(--row-background-color);
+}
+.entries .entries-notice[hidden] {
+    display: none;
+}
+.entries .save-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--subdued-text-color);
+    font-size: 85%;
+}
+.entries .save-label {
+    margin-top: 6px;
+    font-weight: 700;
+}
+.entries #save-name, .entries #save-group, .entries .row-editor input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    padding: 0 8px;
+    border: 0 none;
+    border-radius: 5px;
+    color: var(--input-text-color);
+    font-size: var(--entry-font-size);
+}
+.entries #save-name:focus, .entries #save-group:focus, .entries .row-editor input:focus {
+    outline: 2px solid var(--accent-color);
+}
+.entries .entries-actions button.primary {
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    font-weight: 700;
+    box-shadow: none;
+}
+.entries .entries-actions button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+.entries .entries-backup {
+    grid-column: 1 / -1;
+    margin: 4px 0 0;
+    color: var(--subdued-text-color);
+    font-size: 10pt;
+    line-height: 1.4;
+}
+.entries .no-entries {
+    grid-column: 1 / -1;
+    margin: 4px 0;
+    color: var(--subdued-text-color);
+}
+.entries .entries-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 6px;
+    padding-top: 12px;
+    border-top: 1px solid var(--title-bar-border-color);
+}
+.entries .entries-actions button {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 6px 14px;
+    background: var(--quiet-button-color);
+    box-shadow: inset 0 0 0 1px var(--quiet-button-border-color);
+    color: var(--controls-text-color);
+    font-size: 10pt;
+}
+.entries .entries-manage {
+    padding: 6px 0;
+    color: var(--controls-text-color);
+    font-size: 10pt;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+.entries .person-charts {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 12px 10px;
+}
+/* clear of the edges of the row, the outline of these keeps their own shape */
+.entries .saved-row .person-charts button:focus-visible {
+    outline-offset: 1px;
+    border-radius: 999px;
+}
+/* the saved people on their own page, in the colors of the pages of text */
+#learn.people {
+    --controls-text-color: var(--explore-text-color);
+    --subdued-text-color: rgba(32, 32, 82, 0.7);
+    --row-background-color: var(--explore-item-color);
+    --quiet-button-color: rgba(32, 32, 82, 0.07);
+    --quiet-button-border-color: rgba(32, 32, 82, 0.3);
+    --quiet-button-hover-color: rgba(32, 32, 82, 0.15);
+    --title-bar-border-color: var(--explore-divider-color);
+}
+#people, #person-form {
+    display: grid;
+    gap: 6px;
+    color: var(--controls-text-color);
+    font-size: var(--entry-font-size);
+    line-height: 1.3;
+}
+#person {
+    margin-bottom: 18px;
+}
+#person-add {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 8px 18px;
+    background: var(--accent-color);
+    box-shadow: none;
+    color: var(--accent-text-color);
+    font-size: var(--entry-font-size);
+    font-weight: 700;
+}
+#person-form {
+    margin-top: 12px;
+    padding: 8px 16px 14px;
+    border-radius: 8px;
+    background: var(--row-background-color);
+}
+#person-form[hidden] {
+    display: none;
+}
+#person-form input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid var(--quiet-button-border-color);
+    border-radius: 5px;
+    background: white;
+    color: var(--input-text-color);
+    font-size: var(--entry-font-size);
+}
+#person-form input:focus {
+    outline: 2px solid var(--accent-color);
+}
+/* the field of the city, with its list */
+#person-form .awesomplete {
+    display: block;
+}
+#person-form .person-hint {
+    margin: 0;
+    color: var(--subdued-text-color);
+    font-size: 10pt;
+}
+#person-form .entries-notice {
+    margin: 6px 0 0;
+}
+/* the list spaces its own paragraphs, which the pages of text would space as theirs */
+#people .entries-notice {
+    margin: 0;
+}
+#people .entries-backup {
+    margin: 4px 0 0;
+}
+#people .no-entries {
+    margin: 4px 0;
+}
+#people .saved-entry .name {
+    font-size: 110%;
+}
+#content {
+    position: relative;
+    background-color: var(--main-background-color);
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/* the footer stays at the bottom of short pages */
+#content:has(#site-footer) {
+    display: flex;
+}
+/* only screens with room to spare frame the column, narrower ones would show a thin strip, and
+   an app has no column: its pages are as wide as the screen */
+@media screen and (min-width: 1000px) {
+    #content, #title-bar {
+        max-width: var(--column-width);
+    }
+}
+input {
+    height: var(--input-height);
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    color: var(--input-text-color);
+}
+/* what's reached by a link or by the keyboard isn't left under the title bar */
+html {
+    scroll-padding-top: calc(var(--title-bar-height) + 12px);
+}
+/* The app marks its pages. There a page scrolls inside the window rather than with it, so that
+   pulled past its top or its bottom it gives and comes back as a screen of an app does, under
+   a title bar that stays where it is. A page that's printed is all of it. */
+@media screen {
+    html.in-app {
+        height: 100%;
+        overflow: hidden;
+    }
+    /* the window of a Mac doesn't give either, which would take the title bar along */
+    html.on-mac {
+        overscroll-behavior: none;
+    }
+    html.in-app body {
+        height: 100%;
+        overflow-y: auto;
+        scroll-padding-top: calc(var(--title-bar-height) + 12px);
+        /* what shows past the top is the color that the controls begin with, past the bottom the one that the footer ends with */
+        background: linear-gradient(to bottom, #2c2c68 50%, var(--edge-color) 50%);
+    }
+    /* The site that a browser installed has a column in a window that can be wider, with the
+       page's own ground beside it. Its bar goes on from the bar of the window above it, which
+       has its color, over all of the window's width, with what it holds where the column is. */
+    @media (min-width: 1000px) {
+        html.installed body {
+            background: var(--edge-color) var(--main-gradient);
+            /* as much room at the left as the scroll bar takes at the right, so that the column is in the middle of the window as the bar is */
+            scrollbar-gutter: stable both-edges;
+        }
+        html.installed #title-bar {
+            max-width: none;
+            padding: 0 calc((100% - var(--column-width)) / 2 + var(--menu-toggle-left));
+        }
+    }
+    /* a page that fits on the screen gives too, as a screen of an app with nothing to scroll does:
+       iOS only pulls what has something to scroll, and a point of it is enough */
+    html.in-app #content {
+        min-height: calc(100% + 1px);
+    }
+    /* the page goes on behind the bar that a phone has at the bottom of its screen, and what ends there leaves it room */
+    html.in-app #site-footer {
+        padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px));
+    }
+    html.in-app #explore-card {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+    /* nor does a held press on a link or on the bar ask what a browser would */
+    html.in-app a, html.in-app #title-bar {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+    /* The app for visionOS has the pages as tabs beside its window and the steps through time
+       below it, so a page leaves its menu and those buttons out there, and what its bar has
+       to save and share a chart with. What's left of the bar is the name of the site and of
+       the page, a card in its own color at the top of the page, which scrolls along: on the
+       glass itself they'd fade into whatever room is behind it. Its window is glass:
+       what's entered is on the glass itself, and the chart and the texts are cards on it. */
+    html.on-vision {
+        --title-bar-height: 0px;
+        --input-height: 34px;
+        --button-height: 44px;
+        --datetime-width: 236px;
+        --action-button-width: 76px;
+        --entry-gap: 12px;
+    }
+    html.on-vision #menu-toggle, html.on-vision #chart-actions, html.on-vision #change-time {
+        display: none;
+    }
+    html.on-vision #title-bar {
+        position: static;
+        height: auto;
+        max-width: none;
+        margin: 0 -4px 18px;
+        padding: 12px 22px;
+        border-bottom: 0;
+        border-radius: 24px;
+        box-shadow: none;
+    }
+    html.on-vision #controls:not(:has(form)) #title-bar {
+        margin: 8px 24px;
+    }
+    html.on-vision #site-name, html.on-vision #tagline {
+        font-size: 10pt;
+    }
+    html.on-vision #page-heading {
+        font-size: 20pt;
+    }
+    html.on-vision body, html.on-vision #content {
+        background: none;
+    }
+    html.on-vision #controls {
+        margin: 0;
+        padding: 22px 28px 20px;
+        border-bottom: 0;
+        background: none;
+        /* the fields of visionOS, light on the glass */
+        color-scheme: dark;
+    }
+    html.on-vision #controls:not(:has(form)) {
+        padding: 14px 0 0;
+    }
+    html.on-vision #controls input {
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.14);
+        color: white;
+        font-size: 13pt;
+    }
+    html.on-vision #controls input::placeholder {
+        color: rgba(255, 255, 255, 0.55);
+    }
+    html.on-vision #controls button {
+        border-radius: 22px;
+        font-size: 13pt;
+    }
+    html.on-vision #chart-hint, html.on-vision .chart-notice {
+        color: white;
+    }
+    html.on-vision #svg-container, html.on-vision #explore, html.on-vision #learn {
+        box-sizing: border-box;
+        border-radius: 32px;
+        background: var(--main-background-color);
+    }
+    html.on-vision #svg-container {
+        margin: 0 24px;
+        padding: 24px 20px;
+    }
+    html.on-vision #svg-container:has(.chart-notice), html.on-vision #svg-container:has(#svg-image:empty) {
+        background: none;
+    }
+    html.on-vision #explore {
+        width: auto;
+        max-width: none;
+        margin: 24px 24px 0;
+        padding: 28px max(32px, calc(50% - 380px)) 36px;
+    }
+    html.on-vision #explore > h2:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+    html.on-vision #learn {
+        max-width: min(860px, calc(100% - 48px));
+        margin: 10px auto 0;
+        padding: 36px 48px 40px;
+    }
+    html.on-vision #site-footer {
+        border-top: 0;
+        background: none;
+    }
+    html.on-vision #chart-hint, html.on-vision .chart-notice {
+        font-size: 13pt;
+    }
+    /* what's read is larger there, where a window is further away than a screen */
+    html.on-vision #explore, html.on-vision #learn {
+        zoom: 1.12;
+    }
+    html.on-vision #learn button, html.on-vision #explore button, html.on-vision #learn .learn-link a {
+        border-radius: 999px;
+    }
+    html.on-vision #explore .explore-items, html.on-vision #explore .explore-guide, html.on-vision #learn a.learn-topic,
+    html.on-vision #learn .saved-row, html.on-vision #learn section {
+        border-radius: 16px;
+    }
+    /* A window that a page opens over itself is a sheet of dark glass in the middle of the
+       window, with fields and buttons the size of the ones above the chart. */
+    html.on-vision #load-entries {
+        background: rgba(0, 0, 0, 0.28);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    html.on-vision #load-entries .popup-content, html.on-vision #welcome {
+        border: 0;
+        border-radius: 36px;
+        background: rgba(36, 36, 58, 0.86);
+        -webkit-backdrop-filter: blur(40px);
+        backdrop-filter: blur(40px);
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+        filter: none;
+    }
+    html.on-vision #welcome::backdrop {
+        background: rgba(0, 0, 0, 0.28);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    html.on-vision #load-entries .popup-content {
+        top: 50%;
+        width: 520px;
+        max-height: calc(100vh - 120px);
+        margin: 0;
+        padding: 24px 28px 28px;
+        gap: 10px;
+        transform: translate(-50%, -50%);
+        font-size: 13pt;
+    }
+    html.on-vision #load-entries .entries-title {
+        color: white;
+        font-size: 17pt;
+        letter-spacing: normal;
+        text-transform: none;
+    }
+    html.on-vision #load-entries .entries-close {
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        padding: 0;
+        border-radius: 22px;
+        background: var(--quiet-button-color);
+        color: white;
+    }
+    html.on-vision #load-entries .saved-row {
+        border-radius: 18px;
+    }
+    html.on-vision #load-entries .saved-entry {
+        padding: 12px 18px;
+        font-size: 13pt;
+    }
+    html.on-vision #load-entries .entries-filter button, html.on-vision #load-entries .person-charts button {
+        padding: 8px 16px;
+        font-size: 12pt;
+    }
+    html.on-vision #load-entries #save-name, html.on-vision #load-entries #save-group, html.on-vision #load-entries .row-editor input {
+        height: 44px;
+        padding: 0 16px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.14);
+        color: white;
+        font-size: 13pt;
+        color-scheme: dark;
+    }
+    html.on-vision #load-entries input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    html.on-vision #load-entries .entries-actions {
+        gap: 12px;
+        padding-top: 16px;
+    }
+    html.on-vision #load-entries .entries-actions button {
+        min-width: 96px;
+        height: 44px;
+        padding: 0 22px;
+        border-radius: 22px;
+        font-size: 13pt;
+    }
+    /* the list of what a field suggests, on that glass too */
+    html.on-vision #controls .awesomplete > ul, html.on-vision #load-entries .awesomplete > ul {
+        margin-top: 8px;
+        padding: 8px;
+        border: 0;
+        border-radius: 22px;
+        background: rgba(36, 36, 58, 0.94);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        color: white;
+        font-size: 13pt;
+    }
+    html.on-vision #controls .awesomplete > ul::before, html.on-vision #load-entries .awesomplete > ul::before {
+        display: none;
+    }
+    html.on-vision #controls .awesomplete > ul > li, html.on-vision #load-entries .awesomplete > ul > li {
+        padding: 10px 14px;
+        border-radius: 14px;
+    }
+    html.on-vision #controls .awesomplete > ul > li:hover, html.on-vision #controls .awesomplete > ul > li[aria-selected="true"],
+    html.on-vision #load-entries .awesomplete > ul > li:hover, html.on-vision #load-entries .awesomplete > ul > li[aria-selected="true"] {
+        background: rgba(255, 255, 255, 0.16);
+        color: white;
+    }
+    html.on-vision #controls .awesomplete mark, html.on-vision #load-entries .awesomplete mark {
+        background: none;
+        color: var(--accent-color);
+        font-weight: 700;
+    }
+    /* What a tapped part of a chart explains is in a panel beside the window there, a page
+       that's all card, on the glass that the app has behind it and with the app's own button
+       to close it. */
+    html.on-vision #explore-card {
+        display: none;
+    }
+    html.as-panel {
+        --explore-text-color: #fff;
+        background: none;
+    }
+    html.as-panel body {
+        background: none;
+    }
+    html.as-panel #explore-card-close {
+        display: none;
+    }
+    html.as-panel #explore-card {
+        display: block;
+        position: static;
+        transform: none;
+        max-width: none;
+        max-height: none;
+        height: 100%;
+        padding: 4px 24px 24px;
+        background: none;
+        border: 0;
+        border-radius: 0;
+        filter: none;
+        font-size: 13pt;
+        line-height: 1.55;
+    }
+    html.as-panel #explore-card .explore-card-title {
+        margin-bottom: 14px;
+        font-size: 16pt;
+        line-height: 1.3;
+    }
+    html.as-panel #explore-card button {
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12pt;
+    }
+    html.as-panel #explore-card .explore-card-related-title {
+        font-size: 12pt;
+    }
+}
+#controls {
+    background-image: var(--controls-gradient);
+    border-bottom: 3px solid var(--accent-color);
+    /* the room of the title bar, which isn't part of what scrolls */
+    padding: calc(var(--title-bar-height) + var(--controls-bottom-padding)) var(--controls-side-padding) var(--controls-bottom-padding);
+    margin: var(--controls-margin);
+}
+/* stays at the top while the page scrolls below it, over the column of the page */
+#title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--menu-toggle-left);
+    height: var(--title-bar-height);
+    margin: 0 auto;
+    padding: 0 var(--menu-toggle-left);
+    background: var(--edge-color);
+    border-bottom: 1px solid var(--title-bar-border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+#page-name {
+    margin: 0;
+}
+#site-name {
+    display: block;
+    font-weight: normal;
+    color: var(--subdued-text-color);
+    font-size: var(--site-name-font-size);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+#tagline {
+    margin-left: auto;
+    color: var(--subdued-text-color);
+    font-size: var(--tagline-font-size);
+    font-style: italic;
+    text-align: right;
+}
+#chart-actions {
+    display: flex;
+    gap: 4px;
+    margin-left: 12px;
+}
+#chart-download, #controls #chart-share {
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 6px;
+    background: none;
+    box-shadow: none;
+    color: var(--subdued-text-color);
+}
+#controls #chart-share[hidden] {
+    display: none;
+}
+#chart-share.copied::after {
+    content: "Link copied";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    font-size: 9pt;
+    white-space: nowrap;
+}
+#controls button.saved {
+    position: relative;
+}
+#controls button.saved::after {
+    content: "Saved";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    font-size: 9pt;
+    font-weight: 700;
+    white-space: nowrap;
+    z-index: 2;
+}
+#chart-download:not([href]), #chart-download[href=""] {
+    visibility: hidden;
+}
+#page-heading {
+    display: block;
+    line-height: 1.2;
+    color: var(--accent-color);
+    font-size: var(--title-font-size);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+#controls input {
+    border: 0 none;
+    border-radius: 5px;
+}
+#controls input:focus {
+    outline: 2px solid var(--accent-color);
+}
+#controls button {
+    background: var(--quiet-button-color);
+    box-shadow: inset 0 0 0 1px var(--quiet-button-border-color);
+}
+#controls button.primary {
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    font-weight: 700;
+    box-shadow: none;
+}
+#controls button[name=now] {
+    color: var(--accent-color);
+    box-shadow: inset 0 0 0 1px var(--accent-color);
+}
+button, input[type=submit] {
+    font-size: var(--main-font-size);
+    width: var(--action-button-width);
+    height: var(--button-height);
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    background: var(--button-background-color);
+    color: var(--button-text-color);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* a press that's held is for the button, a phone doesn't select its words or ask what to do with it */
+button, input[type=submit], summary {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+@media (hover: hover) {
+    .entries .entries-actions button.primary:hover {
+        background: var(--accent-hover-color);
+    }
+    .entries .entries-actions button:disabled:hover {
+        background: var(--accent-color);
+    }
+    button.saved-entry:hover,
+    .entries .person-charts button:hover,
+    .entries .entries-actions button:not(.primary):hover,
+    .entries .entries-filter button[aria-pressed="false"]:hover {
+        background: var(--quiet-button-hover-color);
+    }
+    .entries .entries-filter button[aria-pressed="true"]:hover {
+        background: var(--accent-hover-color);
+    }
+    .entries .delete-entry:hover, .entries .group-entry:hover, .entries .rename-entry:hover {
+        background: var(--quiet-button-hover-color);
+        color: var(--controls-text-color);
+    }
+    .entries .delete-entry.armed:hover {
+        background: #8c1d18;
+    }
+    .entries .entries-close:hover {
+        background: none;
+        color: var(--accent-color);
+    }
+    button:hover, input[type=submit]:hover {
+        background: var(--button-hover-color);
+    }
+    #person-add:hover, #welcome button:hover {
+        background: var(--accent-hover-color);
+    }
+    #menu-toggle a:hover {
+        color: var(--menu-hover-color);
+    }
+    #chart-zoom:hover {
+        background: rgba(32, 32, 82, 0.2);
+    }
+    #chart-viewer-controls button:hover {
+        background: var(--button-hover-color);
+    }
+    #learn a.learn-topic:hover {
+        border-left-color: var(--accent-color);
+        background: rgba(255, 255, 255, 0.75);
+    }
+    #learn .learn-pills a:hover, #learn .learn-link a:hover, #learn .learn-invite a:hover {
+        background: var(--accent-hover-color);
+    }
+    #learn .learn-pills a:hover {
+        color: var(--accent-text-color);
+    }
+    #site-footer nav a:hover {
+        color: var(--accent-color);
+    }
+    #explore-card-close:hover {
+        background: none;
+    }
+    #controls button:hover {
+        background: var(--quiet-button-hover-color);
+    }
+    #controls #menu-button:hover {
+        background: none;
+    }
+    #chart-download:hover, #controls #chart-share:hover {
+        background: none;
+        color: var(--accent-color);
+    }
+    #controls button.primary:hover {
+        background: var(--accent-hover-color);
+    }
+}
+.date-place, #change-time {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--data-place-gap);
+}
+/* The first row is the same on every page: as wide, with the date at its start and Show after
+   the city. The city takes the room that's left, which is more where Load and Save aren't in
+   this row but in the ones of the people below it. */
+.date-place {
+    flex-wrap: nowrap;
+    width: var(--entry-row-width);
+    max-width: 100%;
+    margin: 0 auto;
+}
+#location-id {
+    order: -1;
+}
+#datetime {
+    flex: none;
+    width: var(--datetime-width);
+    margin: var(--input-margin);
+    order: 0;
+}
+.date-place .awesomplete {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    order: 1;
+}
+#location {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: var(--input-margin);
+}
+/* a list of cities that scrolls rather than covering the page */
+.awesomplete > ul {
+    /* its own color, whatever the color of the text around the field is */
+    color: var(--input-text-color);
+    max-height: min(50vh, 340px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.date-place > button {
+    flex: none;
+}
+#action-show {
+    order: 2;
+}
+.date-place > #action-load {
+    order: 3;
+}
+.date-place > #action-save {
+    order: 4;
+}
+#change-time button, #change-time input {
+    width: var(--datetime-button-width);
+    padding: 0;
+    margin: var(--datetime-button-margin);
+}
+#svg-container {
+    position: relative;
+    padding: var(--svg-padding);
+}
+/* in the corner that the wheel leaves empty */
+#chart-zoom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 6px;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(32, 32, 82, 0.1);
+    box-shadow: none;
+    color: var(--explore-text-color);
+}
+#chart-zoom[hidden], #chart-viewer[hidden] {
+    display: none;
+}
+#chart-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow: hidden;
+    background: var(--main-background-color);
+}
+/* the gestures are the chart's, not the browser's */
+#chart-viewer-stage {
+    position: absolute;
+    inset: 0;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+#chart-viewer-stage svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+    transform-origin: 0 0;
+}
+#chart-viewer-controls {
+    position: absolute;
+    top: calc(10px + env(safe-area-inset-top, 0px));
+    right: calc(10px + env(safe-area-inset-right, 0px));
+    display: flex;
+    gap: 8px;
+}
+#chart-viewer-controls button {
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--menu-background-color);
+    color: var(--menu-text-color);
+    font-size: 18pt;
+    line-height: 1;
+}
+#chart-viewer-controls button:focus-visible, #chart-zoom:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+/* what a chart still needs, or why it couldn't be drawn */
+#chart-hint, .chart-notice {
+    margin: 0;
+    padding: 0 var(--controls-side-padding) 14px;
+    color: var(--explore-text-color);
+    font-size: 11pt;
+    line-height: 1.5;
+    text-align: center;
+    text-wrap: balance;
+}
+.chart-notice {
+    padding-top: 40px;
+}
+#svg-image svg {
+    display: block;
+    width: 100%;
+    /* where the page is wider than the column, the wheel still fits below the title bar */
+    max-width: max(900px, calc(100vh - var(--title-bar-height)));
+    height: auto;
+    margin: 0 auto;
+}
+#svg-image [data-explore] {
+    cursor: pointer;
+}
+#explore-card {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 640px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 16px 20px 20px;
+    background: var(--explore-card-color);
+    color: var(--explore-text-color);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 12px 12px 0 0;
+    filter: var(--drop-shadow-filter);
+    line-height: 1.5;
+    z-index: 5;
+}
+/* it only takes the focus to pass it on to its buttons */
+#explore-card:focus {
+    outline: none;
+}
+#explore-card[hidden] {
+    display: none;
+}
+#explore-card-close {
+    float: right;
+    width: auto;
+    height: auto;
+    margin: -6px -8px 0 8px;
+    padding: 0 8px;
+    background: none;
+    color: var(--explore-text-color);
+    font-size: 22pt;
+    line-height: 1;
+}
+#explore-card .explore-card-title {
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+#explore-card .explore-card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 12px;
+}
+.explore-show button, #explore-card .explore-card-chip, #explore-card .explore-card-link, #explore-card .explore-card-back {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 4px 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 14px;
+    background: none;
+    color: var(--explore-text-color);
+    font-size: 10pt;
+    cursor: pointer;
+}
+#explore-card .explore-card-link {
+    border-style: dashed;
+}
+#explore-card .explore-card-back {
+    margin: 0 0 12px;
+}
+#explore-card .explore-card-related {
+    margin-top: 14px;
+}
+#explore-card .explore-card-related-title {
+    margin: 0 0 6px;
+    font-size: 10pt;
+    font-weight: 700;
+}
+#explore-card .explore-card-related .explore-card-chips {
+    margin: 0;
+}
+#explore-card .explore-card-chip[aria-pressed="true"] {
+    background: var(--accent-color);
+    font-weight: 700;
+}
+#explore-card .explore-card-title .explore-value {
+    font-weight: normal;
+}
+#explore-card p {
+    margin: 0 0 10px;
+}
+/* the pages without a chart have only the title bar in their header */
+#controls:not(:has(form)) {
+    padding-top: var(--title-bar-height);
+    padding-bottom: 0;
+}
+#controls:not(:has(form)) #title-bar {
+    border-bottom: 0 none;
+}
+#learn {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px var(--controls-side-padding) 36px;
+    color: var(--explore-text-color);
+    font-size: 12pt;
+    line-height: 1.6;
+}
+#learn p {
+    margin: 0 0 12px;
+}
+#learn p:last-child {
+    margin-bottom: 0;
+}
+#learn a {
+    color: var(--explore-text-color);
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+#learn .learn-breadcrumbs {
+    margin: -8px 0 18px;
+    font-size: 10.5pt;
+}
+#learn .learn-breadcrumbs a {
+    font-weight: 700;
+}
+#learn .learn-breadcrumbs span[aria-hidden] {
+    margin: 0 4px;
+    opacity: 0.6;
+}
+#learn .learn-pills a.learn-all {
+    background: var(--controls-text-color);
+    font-weight: 700;
+}
+#menu li.current a {
+    color: var(--menu-hover-color);
+}
+#learn .learn-intro {
+    margin: 4px 0 28px;
+}
+#learn .learn-title {
+    margin: 0 0 12px;
+    font-size: 21pt;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+#learn .learn-lead {
+    font-size: 14pt;
+    line-height: 1.55;
+}
+#learn .learn-topics:empty {
+    display: none;
+}
+#learn .learn-card {
+    margin: 0 0 14px;
+    padding: 18px 22px;
+    border-radius: 10px;
+    background: var(--explore-item-color);
+    scroll-margin-top: 16px;
+}
+#learn .learn-card h2 {
+    margin: 0 0 8px;
+    font-size: 15pt;
+    line-height: 1.3;
+}
+#learn .learn-label, #explore .explore-paragraph-label, #explore-card .explore-paragraph-label {
+    margin-right: 4px;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+#learn .learn-link {
+    margin-top: 14px;
+}
+#learn .learn-invite {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 22px 0 0;
+}
+#learn .learn-link a, #learn .learn-invite a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: var(--accent-color);
+    color: var(--accent-text-color);
+    font-size: 11pt;
+    font-weight: 700;
+    text-decoration: none;
+}
+#learn .embed {
+    margin: 16px 0 0;
+}
+#learn .embed img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+#learn .embed pre {
+    margin: 8px 0 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(32, 32, 82, 0.2);
+    font-size: 9.5pt;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    user-select: all;
+}
+#learn .learn-sources {
+    margin: 32px 0 0;
+    padding: 18px 22px;
+    border-radius: 10px;
+    border: 1px solid rgba(32, 32, 82, 0.2);
+    font-size: 11pt;
+}
+#learn .learn-sources h2 {
+    margin: 0 0 8px;
+    font-size: 13pt;
+}
+#learn .learn-sources ul {
+    margin: 0;
+    padding-left: 20px;
+}
+#learn .learn-sources li {
+    margin: 0 0 6px;
+}
+#learn .learn-version {
+    margin: 18px 0 0;
+    text-align: center;
+    font-size: 10pt;
+    opacity: 0.7;
+}
+#explore .explore-more a, #explore-card .explore-more a {
+    color: var(--explore-text-color);
+    font-size: 10pt;
+    font-weight: 700;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+#learn .learn-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 14px;
+}
+#learn a.learn-topic {
+    display: block;
+    padding: 18px 22px;
+    border-radius: 10px;
+    border-left: 4px solid transparent;
+    background: var(--explore-item-color);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+#learn a.learn-topic h2 {
+    margin: 0 0 6px;
+    font-size: 13pt;
+    line-height: 1.3;
+}
+#learn a.learn-topic p {
+    margin: 0;
+    font-size: 11pt;
+    opacity: 0.85;
+}
+#learn .learn-more {
+    margin-top: 32px;
+}
+#learn .learn-more h2 {
+    margin: 0 0 10px;
+    font-size: 10pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+#learn .learn-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+#learn .learn-pills a {
+    padding: 6px 14px;
+    border-radius: 18px;
+    background: var(--explore-item-color);
+    font-size: 10.5pt;
+    text-decoration: none;
+}
+#site-footer {
+    margin-top: auto;
+    padding: 22px var(--controls-side-padding) 26px;
+    border-top: 3px solid var(--accent-color);
+    background-image: linear-gradient(to bottom, #2c2c68, var(--edge-color));
+    color: var(--subdued-text-color);
+    font-size: 10pt;
+    text-align: center;
+}
+#site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 28px;
+    margin-bottom: 10px;
+}
+#site-footer nav a {
+    color: var(--controls-text-color);
+    font-size: 11pt;
+    text-decoration: none;
+}
+#site-footer p {
+    margin: 0;
+}
+#site-footer a {
+    color: var(--subdued-text-color);
+}
+#menu li.menu-divided {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+#explore {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--controls-side-padding) 40px;
+    color: var(--explore-text-color);
+    font-size: 11pt;
+    line-height: 1.5;
+}
+#explore:empty {
+    display: none;
+}
+/* what the drawing says below the wheel, which phones show as text instead */
+#chart-summary {
+    display: none;
+}
+/* the table of a month or a day, where the charts have their drawing */
+#range-table {
+    max-width: 860px;
+    margin: 0 auto;
+    color: var(--explore-text-color);
+    text-align: center;
+}
+#range-table .range-symbols {
+    position: absolute;
+}
+#range-table p {
+    margin: 0;
+    line-height: 1.5;
+}
+#range-table [data-explore] {
+    cursor: pointer;
+}
+/* wider than a phone, where it scrolls sideways */
+#range-table .range-scroll {
+    margin-bottom: 14px;
+    overflow-x: auto;
+}
+#range-table table {
+    width: 100%;
+    border-spacing: 0;
+    white-space: nowrap;
+}
+#range-table th, #range-table td {
+    min-width: 2.4em;
+    padding: 5px 6px;
+    font-weight: 400;
+}
+#range-table tbody th, #range-table tbody td {
+    border-top: 1px dashed rgba(32, 32, 82, 0.25);
+}
+/* the moments stay in sight while the planets scroll */
+#range-table th[scope="row"], #range-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--main-background-color);
+    text-align: left;
+}
+#range-table th svg {
+    display: block;
+    width: 24px;
+    height: 22px;
+    margin: 0 auto;
+    fill: currentColor;
+}
+#range-table .range-title {
+    font-size: 13pt;
+    font-weight: 700;
+}
+#explore h2 {
+    margin: 24px 0 4px;
+    padding-top: 20px;
+    border-top: 3px solid var(--accent-color);
+    font-size: 15pt;
+}
+#explore .explore-guide-text {
+    margin: 0 0 10px;
+}
+#explore .explore-guide-text a {
+    color: var(--explore-text-color);
+    white-space: nowrap;
+}
+#explore h3.explore-guide-title {
+    margin: 16px 0 6px;
+}
+#explore h3.explore-guide-title:first-of-type {
+    margin-top: 4px;
+}
+#explore .explore-intro {
+    margin: 0 0 8px;
+    opacity: 0.75;
+}
+#explore .explore-section-intro {
+    margin: 0 0 10px;
+}
+#explore .explore-guide {
+    margin: 8px 0 0;
+    padding: 0 14px;
+    border: 1px solid var(--explore-item-color);
+    border-radius: 6px;
+}
+#explore .explore-guide[open] {
+    padding-bottom: 14px;
+    background: var(--explore-guide-color);
+}
+#explore .explore-guide[open] > summary {
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--explore-divider-color);
+}
+#explore .explore-guide > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 9px 0;
+    list-style: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+#explore .explore-guide > summary::after {
+    content: "?";
+}
+#explore .explore-guide > summary::after, #explore .explore-about-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--explore-item-color);
+    font-size: 9pt;
+    font-weight: 700;
+    line-height: 1;
+}
+#explore .explore-guide[open] > summary::after {
+    background: var(--accent-color);
+}
+#explore .explore-guide > summary::-webkit-details-marker {
+    display: none;
+}
+#explore .explore-about > summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 8px;
+    list-style: none;
+    cursor: pointer;
+}
+#explore .explore-about > summary::-webkit-details-marker {
+    display: none;
+}
+#explore .explore-about > summary h3 {
+    margin: 0;
+}
+#explore .explore-about[open] .explore-about-icon {
+    background: var(--accent-color);
+}
+#explore h3 {
+    margin: 20px 0 8px;
+    font-size: 10pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+#explore .explore-items {
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--explore-item-color);
+}
+#explore details[data-part] + details[data-part] {
+    border-top: 1px solid var(--explore-divider-color);
+}
+#explore details[data-part][open] {
+    background: var(--explore-open-color);
+}
+#explore .explore-label-row {
+    display: none;
+}
+#explore details[data-part] > summary {
+    padding: 10px 14px;
+    cursor: pointer;
+}
+/* inside the list, which cuts off what's outside its rounded corners, and rounded like them */
+#explore details[data-part] > summary:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
+    border-radius: 6px;
+}
+#explore details[data-part] > summary::marker {
+    color: var(--accent-color);
+}
+#explore .explore-label {
+    font-weight: 700;
+}
+#explore .explore-value {
+    margin-left: 6px;
+}
+.explore-timeline {
+    display: block;
+    position: relative;
+    height: 6px;
+    margin-top: 7px;
+    border-radius: 3px;
+    background: var(--explore-divider-color);
+}
+.explore-timeline-range {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    min-width: 2px;
+    border-radius: 3px;
+    background: var(--accent-color);
+}
+.explore-timeline::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background: var(--explore-text-color);
+}
+#explore .explore-timeline-axis {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 14px 6px;
+    border-bottom: 1px solid var(--explore-divider-color);
+    font-size: 9pt;
+    opacity: 0.75;
+}
+.hexagram-paragraph {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.hexagram {
+    flex: none;
+    fill: currentColor;
+}
+#explore details[data-part] p {
+    margin: 0;
+    padding: 0 14px 12px 32px;
+}
+#menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#menu-toggle a {
+    text-decoration: none;
+    color: var(--menu-text-color);
+    transition: color 0.3s ease;
+}
+/* the padding around the hamburger takes the taps too, without moving it */
+#controls #menu-button {
+    display: block;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: -8px -6px;
+    padding: 8px 6px;
+    background: none;
+    box-shadow: none;
+    z-index: 1;
+}
+#menu-button:focus-visible {
+    outline: 2px solid var(--accent-color);
+}
+#menu-button span {
+    display: block;
+    width: var(--menu-icon-layer-width);
+    height: var(--menu-icon-layer-height);
+    margin-bottom: var(--menu-icon-layer-bottom);
+    position: relative;
+    background: var(--menu-icon-color);
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: var(--menu-transform-origin);
+    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.45s ease;
+}
+#menu-button span:last-child {
+    margin-bottom: 0;
+    transform-origin: 0 100%;
+}
+#menu-button[aria-expanded="true"] span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: var(--menu-text-color);
+}
+#menu-button[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menu-button[aria-expanded="true"] span:last-child {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+#menu {
+    position: absolute;
+    box-sizing: border-box;
+    width: max-content;
+    min-width: 200px;
+    /* it stays in place with the title bar, so it scrolls by itself on a screen that's lower than it */
+    max-height: calc(100vh + 100px - var(--title-bar-height));
+    max-height: calc(100dvh + 100px - var(--title-bar-height));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: -100px 0 0 calc(-1 * var(--menu-toggle-left));
+    padding: 125px 30px 15px;
+    background: var(--menu-background-color);
+    border-bottom: 3px solid var(--accent-color);
+    filter: var(--drop-shadow-filter);
+    list-style-type: none;
+    /* stops the text from flickering in Safari */
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0 0;
+    transform: translate(0, -100%);
+    /* hidden once it has slid away, so that its links can't get the focus */
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0), visibility 0s 0.4s;
+}
+#menu li {
+    font-size: var(--menu-font-size);
+    white-space: nowrap;
+}
+/* a link is its whole row, from one edge of the menu to the other, so that a tap next to its text opens it too */
+#menu a {
+    display: block;
+    margin: 0 -30px;
+    padding: 10px 30px;
+}
+#menu-button[aria-expanded="true"] ~ ul {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+@media screen and (max-width: 900px) {
+    :root {
+        /* font sizes */
+        --main-font-size: 10pt;
+        --menu-font-size: 14pt;
+
+        /* dimensions */
+        --datetime-width: 192px;
+        --location-width: 212px;
+        --datetime-button-width: 82px;
+        --action-button-width: 64px;
+        /* a field is as high as the button beside it */
+        --input-height: 28px;
+        --button-height: 34px;
+
+        /* menu */
+        --title-bar-height: 50px;
+
+        /* padding and margins */
+        --input-side-padding: 5px;
+        --input-padding: 3px var(--input-side-padding);
+        --input-margin: 3px 0px;
+        --datetime-button-margin: 3px 0px;
+        --entry-gap: 8px;
+    }
+}
+@media screen and (max-width: 720px) {
+    #tagline {
+        display: none;
+    }
+    #chart-actions {
+        margin-left: auto;
+    }
+    :root {
+        /* font sizes */
+        --main-font-size: 9pt;
+        --menu-font-size: 12pt;
+
+        /* dimensions, with which the first row still fits on one line */
+        --datetime-width: 176px;
+        --datetime-button-width: 65px;
+        --action-button-width: 50px;
+    }
+}
+@media screen and (max-width: 600px) {
+    /* the wheel alone at the full width, and below it as text what's too small to read in the drawing */
+    @supports selector(:has(*)) {
+        #svg-container:has(~ #explore #chart-summary) #svg-image {
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+        /* not read aloud either, the summary says it. Hidden rather than not displayed, which Chrome
+           still reads the text of a drawing with. */
+        #svg-container:has(~ #explore #chart-summary) #svg-image :is(g[data-explore="wheel.rows"], .below-wheel) {
+            visibility: hidden;
+        }
+        #chart-summary {
+            display: block;
+            text-align: center;
+        }
+    }
+    #chart-summary p {
+        margin: 0;
+    }
+    #chart-summary [data-explore] {
+        cursor: pointer;
+    }
+    #chart-summary .design {
+        color: #b02020;
+    }
+    #chart-summary .name-footer {
+        font-weight: 700;
+    }
+    #chart-summary .summary-chart {
+        margin-bottom: 14px;
+    }
+    #chart-summary .summary-planets {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        row-gap: 10px;
+        margin-top: 4px;
+    }
+    #chart-summary .summary-planet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.25;
+        white-space: nowrap;
+    }
+    #chart-summary .summary-planet > svg {
+        width: 24px;
+        height: 22px;
+        fill: currentColor;
+    }
+    /* the triangles of the drawing, one over the other for a line that has both */
+    #chart-summary .summary-mark {
+        width: 0.65em;
+        height: 0.87em;
+        margin-left: 1px;
+        vertical-align: -0.1em;
+    }
+    #chart-summary .summary-mark + .summary-mark {
+        margin-left: -0.65em;
+    }
+    #chart-summary .title-footer {
+        margin-top: 4px;
+        font-size: 13pt;
+        font-weight: 700;
+    }
+    #chart-summary .summary-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 14px;
+        font-size: 10pt;
+    }
+    #chart-summary .summary-legend i {
+        display: inline-block;
+        width: 16px;
+        height: 10px;
+        border-radius: 2px;
+    }
+    /* the colors of the charts, which the summary gets from the same values as the drawing */
+    #chart-summary .legend-on {
+        background: var(--chart-on);
+    }
+    #chart-summary .legend-design {
+        background: var(--chart-design);
+    }
+    #chart-summary .legend-third {
+        background: var(--chart-third);
+    }
+    #chart-summary .legend-both {
+        background: linear-gradient(var(--chart-on) 33%, var(--chart-design) 33% 67%, var(--chart-on) 67%);
+    }
+    #chart-summary .legend-design-third {
+        background: linear-gradient(var(--chart-design) 33%, var(--chart-third) 33% 67%, var(--chart-design) 67%);
+    }
+    #chart-summary .summary-detail {
+        margin-top: 10px;
+    }
+    #chart-summary .summary-properties {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 3px 10px;
+        margin: 14px 0 0;
+        padding-top: 12px;
+        border-top: 1px solid var(--explore-divider-color);
+        text-align: left;
+    }
+    #chart-summary .summary-properties > div {
+        display: contents;
+    }
+    #chart-summary dt {
+        font-weight: 700;
+        text-align: right;
+    }
+    #chart-summary dd {
+        margin: 0;
+    }
+    /* a line of the drawing, whose items stay whole when it's too long for the screen */
+    #chart-summary .summary-line {
+        display: block;
+    }
+    #chart-summary .summary-item {
+        display: inline-block;
+    }
+    /* the reading pages keep a wider margin than the charts, which use all the width they can */
+    #learn {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    #learn .learn-title {
+        font-size: 18pt;
+    }
+    #learn .learn-lead {
+        font-size: 13pt;
+    }
+    :root {
+        /* colors */
+        --main-gradient: none;
+
+        /* font sizes */
+        --main-font-size: 10pt;
+
+        /* dimensions, with a button that leaves a date with a label before it its room */
+        --action-button-width: 56px;
+        --button-height: 32px;
+
+        /* menu */
+        --title-bar-height: 44px;
+        --menu-toggle-left: 14px;
+        --menu-icon-layer-width: 24px;
+        --menu-icon-layer-bottom: 3px;
+        --menu-transform-origin: 0 0;
+
+        /* padding and margins */
+        --controls-side-padding: 8px;
+        --controls-bottom-padding: 10px;
+        --controls-margin: 0 0 10px;
+        --title-font-size: 11pt;
+        --input-side-padding: 6px;
+        --input-padding: 3px var(--input-side-padding);
+        --input-margin: 3px 0px;
+        --datetime-button-margin: 0px;
+        --svg-padding: 0 5px;
+        --entry-gap: 4px;
+    }
+    /* the longest chart name fits next to the share and download buttons */
+    #page-heading {
+        font-size: min(var(--title-font-size), 3.6vw);
+        letter-spacing: 0.04em;
+    }
+    /* the fields take the width that the buttons leave, in text that Safari on iOS doesn't zoom into */
+    #controls input {
+        box-sizing: border-box;
+        height: var(--button-height);
+        font-size: 16px;
+    }
+    .date-place, #change-time {
+        justify-content: flex-start;
+    }
+    /* the first row takes the width of the screen and more than one line */
+    .date-place {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    #datetime {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+    /* the date with Load and Save, then the city with Show */
+    .date-place > #action-load {
+        order: 1;
+    }
+    .date-place > #action-save {
+        order: 2;
+    }
+    .date-place::after {
+        content: "";
+        flex-basis: 100%;
+        order: 3;
+    }
+    .date-place .awesomplete {
+        order: 4;
+    }
+    #action-show {
+        order: 5;
+    }
+    #change-time {
+        flex-wrap: nowrap;
+        margin-top: 2px;
+    }
+    #change-time button {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+    }
+    #day-min span {
+        display: none;
+    }
+    #day-min:after {
+        content: "- D";
+    }
+    #day-plus span {
+        display: none;
+    }
+    #day-plus:after {
+        content: "+ D";
+    }
+    #hour-min span {
+        display: none;
+    }
+    #hour-min:after {
+        content: "- H";
+    }
+    #hour-plus span {
+        display: none;
+    }
+    #hour-plus:after {
+        content: "+ H";
+    }
+    #minute-min span {
+        display: none;
+    }
+    #minute-min:after {
+        content: "- M";
+    }
+    #minute-plus span {
+        display: none;
+    }
+    #minute-plus:after {
+        content: "+ M";
+    }
+}
+/* the date on a row of its own, then the city with Show, then Load and Save */
+@media screen and (max-width: 427px) {
+    #datetime {
+        flex-basis: 100%;
+        order: 0;
+    }
+    .date-place .awesomplete {
+        order: 1;
+    }
+    #action-show {
+        order: 2;
+    }
+    .date-place > #action-load {
+        order: 4;
+    }
+    .date-place > #action-save {
+        order: 5;
+    }
+    .date-place > #action-load, .date-place > #action-save {
+        flex: 1 1 0;
+    }
+}
+/* the longest chart name fits the narrowest phones too, and a date with AM or PM next to Load */
+@media screen and (max-width: 340px) {
+    :root {
+        --action-button-width: 46px;
+    }
+    #page-heading {
+        letter-spacing: 0;
+    }
+    /* a gate and line with two marks still fits beside its neighbours */
+    #chart-summary .summary-planet {
+        font-size: 9.5pt;
+    }
+}
+/* the chart on its own, as large as fits on one page */
+@media print {
+    @page {
+        margin: 1cm;
+    }
+    body, #content {
+        background: white;
+    }
+    #controls, #chart-hint, #explore, #explore-card, #load-entries, #site-footer, #chart-zoom, #chart-viewer, #welcome {
+        display: none !important;
+    }
+    #svg-container {
+        padding: 0;
+    }
+    #svg-image svg {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: calc(100vh - 2cm);
+        margin: 0 auto;
+    }
+    #range-table .range-scroll {
+        overflow: visible;
+    }
+}

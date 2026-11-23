@@ -1,0 +1,21 @@
+<form class="connection" method="post" onsubmit="showDate(getFieldDate(), '{{v image-url/}}/'); return false;">
+    <div class="date-place">
+        <input id="datetime" aria-label="Date and time" name="datetime" type="datetime-local" min="1800-01-01T00:00" max="2199-12-31T23:59" value="{{v datetime/}}" onchange="dateTimeChosen(this)"/>
+        <input id="location" aria-label="City" name="location" autocomplete="off" spellcheck="false" onClick="this.select();"/>
+        <input id="location-id" type="hidden" name="location-id"/>
+        <button id="action-show" class="primary" onclick="showDate(getFieldDate(), '{{v image-url/}}/'); return false;">Show</button>
+        <button type="button" id="action-load" onclick="displaySavedEntries('{{v image-url/}}/', 'first', this); return false;">Load</button>
+        <button type="button" id="action-save" onclick="saveDateLocation('first', this); return false;">Save</button>
+    </div>
+
+<!--i change_time/-->
+
+    <div class="second-date-place">
+        <span class="date-place-label">With</span>
+        <input id="second-datetime" aria-label="Birth date and time of the other person" name="secondDatetime" type="datetime-local" min="1800-01-01T00:00" max="2199-12-31T23:59" onchange="dateTimeChosen(this)"/>
+        <input id="second-location" aria-label="Birth city of the other person" name="secondLocation" autocomplete="off" spellcheck="false" onClick="this.select();"/>
+        <input type="hidden" id="second-location-id" name="second-location-id"/>
+        <button type="button" id="action-load-second" onclick="displaySavedEntries('{{v image-url/}}/', 'second', this); return false;">Load</button>
+        <button type="button" id="action-save-second" onclick="saveDateLocation('second', this); return false;">Save</button>
+    </div>
+</form>

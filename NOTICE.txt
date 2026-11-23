@@ -1,0 +1,63 @@
+Gates of Humanity
+Copyright 2022-2026 Geert Bevin
+
+This product is licensed under the Apache License, Version 2.0, see LICENSE.txt.
+
+It includes data and software from the following third parties:
+
+* RIFE2 (https://rife2.com), licensed under the Apache License, Version 2.0,
+  with the ASM bytecode library (https://asm.ow2.io, Copyright (c) 2000-2011
+  INRIA, France Telecom) and the ANTLR 4 runtime (https://www.antlr.org,
+  Copyright (c) 2012-2017 The ANTLR Project) repackaged inside it, both
+  licensed under the BSD 3-Clause License.
+
+* In the standalone jar and the native executable, Eclipse Jetty
+  (https://jetty.org), licensed under the Eclipse Public License 2.0 or the
+  Apache License, Version 2.0, the Jakarta Servlet API
+  (https://jakarta.ee/specifications/servlet/), licensed under the Eclipse
+  Public License 2.0 or the GNU General Public License, version 2 with the
+  Classpath Exception, and SLF4J (https://www.slf4j.org), licensed under the
+  MIT License.
+
+* In the native executable and the iOS app, the runtime of the GraalVM
+  (https://www.graalvm.org) that built it, Oracle GraalVM under the GraalVM
+  Free Terms and Conditions or GraalVM Community Edition under the GNU General
+  Public License, version 2 with the Classpath Exception, and the class
+  library of OpenJDK (https://openjdk.org), licensed under the GNU General
+  Public License, version 2 with the Classpath Exception. For iOS that library
+  is built with the iOS port of OpenJDK's Mobile project, under the same
+  license.
+
+* In the iOS app, SwiftDraw (https://github.com/swhitty/SwiftDraw) by Simon
+  Whitty, licensed under the zlib License, which draws the widgets.
+
+* In the Android app, AndroidSVG (https://bigbadaboom.github.io/androidsvg/)
+  by Paul LeBeau, licensed under the Apache License, version 2.0, which draws
+  the widgets.
+
+* Planetary positions fitted to ephemerides from the JPL Horizons system of
+  the Jet Propulsion Laboratory, California Institute of Technology
+  (https://ssd.jpl.nasa.gov/horizons/).
+
+* City names, coordinates and time zones from GeoNames
+  (https://www.geonames.org), licensed under the Creative Commons
+  Attribution 4.0 License (https://creativecommons.org/licenses/by/4.0/).
+  The data was reduced to the fields the location search needs.
+
+* Awesomplete by Lea Verou (https://projects.verou.me/awesomplete/),
+  licensed under the MIT License.
+
+* normalize.css by Nicolas Gallagher and Jonathan Neal
+  (https://github.com/necolas/normalize.css), licensed under the MIT License.
+
+* The names of the Incarnation Crosses, the channels, the gates and their
+  hexagrams, as given in The Definitive Book of Human Design by Ra Uru Hu and
+  Lynda Bunnell.
+
+The test reference positions in src/test/resources/oracle were computed with
+the Swiss Ephemeris (https://www.astro.com/swisseph/). The Swiss Ephemeris is
+not part of this product and is not needed to build or run it.
+
+The exaltations and detriments of the lines in src/test/resources/dignities.tsv
+are as given in The Complete Rave I'Ching by Ra Uru Hu. The tests only use them
+to check the ones in the code.

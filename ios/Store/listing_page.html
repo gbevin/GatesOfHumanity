@@ -1,0 +1,342 @@
+<title>Gates of Humanity Listing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* One column of fields under a bar like the app's own title bar. Each field is a card with its
+   value, a Copy button and a mark for what's already entered. */
+:root {
+    --ground: #d6d6e4;
+    --card: #f0f0f7;
+    --value: #ffffff;
+    --ink: #202052;
+    --quiet: #5c5c85;
+    --line: rgba(32, 32, 82, 0.16);
+    --bar: #21214e;
+    --bar-ink: #ffffff;
+    --bar-quiet: rgba(255, 255, 255, 0.62);
+    --accent: #e3a83c;
+    --accent-strong: #c98a14;
+    --accent-ink: #151533;
+    --done: #2f7d5b;
+    --text: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #151533;
+        --card: #21214e;
+        --value: #171739;
+        --ink: #e9e9f5;
+        --quiet: #a5a4c4;
+        --line: rgba(255, 255, 255, 0.16);
+        --bar: #0f0f28;
+        --accent-strong: #f2be5c;
+        --done: #6fd0a3;
+        color-scheme: dark;
+    }
+}
+:root[data-theme="dark"] {
+    --ground: #151533;
+    --card: #21214e;
+    --value: #171739;
+    --ink: #e9e9f5;
+    --quiet: #a5a4c4;
+    --line: rgba(255, 255, 255, 0.16);
+    --bar: #0f0f28;
+    --accent-strong: #f2be5c;
+    --done: #6fd0a3;
+    color-scheme: dark;
+}
+body {
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.5 var(--text);
+}
+.bar {
+    background: var(--bar);
+    color: var(--bar-ink);
+    border-bottom: 3px solid var(--accent);
+}
+.bar-inner, main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.bar-inner {
+    padding-block: 18px 16px;
+    display: grid;
+    gap: 10px;
+}
+.app {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bar-quiet);
+}
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-wrap: balance;
+}
+.bar p {
+    margin: 0;
+    max-width: 38rem;
+    color: var(--bar-quiet);
+    font-size: 0.92rem;
+}
+.progress {
+    font-variant-numeric: tabular-nums;
+    color: var(--bar-ink);
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+nav a {
+    padding: 3px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    color: var(--bar-ink);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+nav a:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+main {
+    padding-block: 8px 48px;
+    display: grid;
+    gap: 8px;
+}
+section {
+    display: grid;
+    gap: 12px;
+    padding-top: 22px;
+    min-width: 0;
+}
+h2 {
+    margin: 0;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--quiet);
+}
+section > p, section > ul, section > ol {
+    margin: 0;
+    max-width: 40rem;
+}
+section > ul, section > ol {
+    padding-left: 1.3rem;
+    display: grid;
+    gap: 4px;
+}
+code {
+    font: 0.88em var(--mono);
+}
+.field {
+    display: grid;
+    gap: 10px;
+    padding: 14px;
+    background: var(--card);
+    border-radius: 10px;
+    min-width: 0;
+}
+.field header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+h3 {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    font-size: 1.02rem;
+}
+.count {
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--quiet);
+    white-space: nowrap;
+}
+.count.full {
+    color: var(--accent-strong);
+    font-weight: 700;
+}
+.copy {
+    flex: none;
+    min-width: 5.2rem;
+    padding: 7px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font: 700 0.9rem var(--text);
+    cursor: pointer;
+}
+.copy:hover {
+    filter: brightness(1.08);
+}
+.copy.copied {
+    background: var(--done);
+    color: #ffffff;
+}
+.value {
+    margin: 0;
+    padding: 10px 12px;
+    background: var(--value);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font: 0.95rem/1.5 var(--text);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    user-select: all;
+    -webkit-user-select: all;
+}
+.value.long {
+    max-height: 19rem;
+    overflow-y: auto;
+}
+.note {
+    color: var(--quiet);
+    font-size: 0.88rem;
+}
+.note p {
+    margin: 0;
+    max-width: 40rem;
+}
+.entered {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    font-size: 0.88rem;
+    color: var(--quiet);
+    cursor: pointer;
+}
+.entered input {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin: 0;
+    accent-color: var(--done);
+}
+.field.is-entered h3::after {
+    content: " \2713";
+    color: var(--done);
+}
+.field.is-entered .value {
+    opacity: 0.6;
+}
+.reset {
+    width: fit-content;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--bar-quiet);
+    font: 0.8rem var(--text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+:focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: 2px;
+}
+</style>
+
+<div class="bar">
+    <div class="bar-inner">
+        <p class="app">Gates of Humanity</p>
+        <h1><!--title--></h1>
+        <p>Every value has a button that copies it whole. Paste it into its field in App Store Connect, then mark it as entered. The marks stay in this browser.</p>
+        <p class="progress" id="progress" role="status"><span id="entered-count">0</span> of <!--fields--> entered</p>
+        <button type="button" class="reset" id="reset" hidden>Clear the marks</button>
+        <nav aria-label="Sections"><!--nav--></nav>
+    </div>
+</div>
+<main>
+<!--sections-->
+</main>
+
+<script>
+(() => {
+    const KEY = 'entered';
+    // what was entered, by field, with the length of the value it was marked for, so that a
+    // value that changed since is to be entered again
+    const read = () => {
+        try {
+            return JSON.parse(localStorage.getItem(KEY)) || {};
+        } catch (e) {
+            return {};
+        }
+    };
+    const write = marks => {
+        try {
+            localStorage.setItem(KEY, JSON.stringify(marks));
+        } catch (e) {
+            // the marks then last as long as the page is open
+        }
+    };
+    let marks = read();
+    const fields = [...document.querySelectorAll('.field')];
+    const sign = field => field.querySelector('.value').textContent.length;
+    const show = () => {
+        let count = 0;
+        for (const field of fields) {
+            const entered = marks[field.dataset.key] === sign(field);
+            field.classList.toggle('is-entered', entered);
+            field.querySelector('.entered input').checked = entered;
+            count += entered ? 1 : 0;
+        }
+        document.getElementById('entered-count').textContent = count;
+        document.getElementById('reset').hidden = count === 0;
+    };
+    for (const field of fields) {
+        const value = field.querySelector('.value');
+        const button = field.querySelector('.copy');
+        button.addEventListener('click', () => {
+            const said = text => {
+                button.textContent = text;
+                button.classList.toggle('copied', text === 'Copied');
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 1800);
+            };
+            const select = () => {
+                // where copying isn't allowed, the value is selected, ready to be copied by hand
+                const range = document.createRange();
+                range.selectNodeContents(value);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                said('Selected');
+            };
+            try {
+                navigator.clipboard.writeText(value.textContent).then(() => said('Copied'), select);
+            } catch (e) {
+                select();
+            }
+        });
+        field.querySelector('.entered input').addEventListener('change', event => {
+            if (event.target.checked) {
+                marks[field.dataset.key] = sign(field);
+            } else {
+                delete marks[field.dataset.key];
+            }
+            write(marks);
+            show();
+        });
+    }
+    document.getElementById('reset').addEventListener('click', () => {
+        marks = {};
+        write(marks);
+        show();
+    });
+    show();
+})();
+</script>

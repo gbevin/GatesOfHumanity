@@ -1,0 +1,35 @@
+<div id="title-bar">
+    <nav id="menu-toggle" aria-label="Pages">
+        <button type="button" id="menu-button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="menu">
+            <!--v menu-items/--><!--b menu-item--><li class="{{v menu-class/}}"><a href="{{v menu-url/}}"><!--v menu-label/--></a></li>
+            <!--/b-->
+        </ul>
+    </nav>
+    <!--v page-name/-->
+    <!--b page-name-heading-->
+    <h1 id="page-name">
+        <span id="site-name">Gates of Humanity</span>
+        <span id="page-heading"><!--v page-heading-->Transit Chart<!--/v--></span>
+    </h1>
+    <!--/b-->
+    <!--b page-name-plain-->
+    <p id="page-name">
+        <span id="site-name">Gates of Humanity</span>
+        <span id="page-heading"><!--v page-heading/--></span>
+    </p>
+    <!--/b-->
+    <div id="tagline">Wheel of the 64&nbsp;Gates, I&nbsp;Ching and Astrology</div>
+    <div id="chart-actions">
+        <button type="button" id="chart-share" hidden aria-label="Share the chart" title="Share the chart">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 15V4m-4 4 4-4 4 4M6 11H5v9h14v-9h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a id="chart-download" download aria-label="Save the chart" title="Save the chart" onclick="return saveChart(this);">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+</div>

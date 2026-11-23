@@ -1,0 +1,32 @@
+<svg version="1.1" width="338" height="158" viewBox="0 0 338 158" xmlns="http://www.w3.org/2000/svg"
+     data-name-letters="{{v name_letters}}11{{/v}}" data-name-size="{{v name_size}}12{{/v}}" data-name-smallest="{{v name_smallest}}9{{/v}}" data-name-lines="{{v name_lines}}1{{/v}}">
+    <title><!--v title-->The Body Graph Now<!--/v--></title>
+    <style>
+<!--i widget_style/-->
+<!--i widget_bodygraph_style/-->
+        .small-on, .small-off { display: none; }
+    </style>
+<!--i widget_sky/-->
+    <rect id="background" width="338" height="158" rx="14" fill="url(#sky)"/>
+    <a href="{{v url/}}">
+        <g class="{{v graph}}{{/v}}" transform="translate(-27 -15) scale(0.199)">
+<!--i widget_bodygraph_cone/-->
+<!--i bodygraph/-->
+        </g>
+        <text class="label quiet" x="138" y="27"><!--v heading-->CHANNELS NOW<!--/v--></text>
+        <text class="label quiet" x="322" y="27" text-anchor="end">UNTIL</text>
+        <text class="quiet" x="138" y="144" font-size="11"><!--v centers/--> <!--v centers_are-->defined<!--/v--></text>
+        <!--v channels--><!--/v-->
+    </a>
+</svg>
+<!--b channel_1--><g transform="translate(0, 54)"><!--v row/--></g><!--/b-->
+<!--b channel_2--><g transform="translate(0, 77)"><!--v row/--></g><!--/b-->
+<!--b channel_3--><g transform="translate(0, 100)"><!--v row/--></g><!--/b-->
+<!--b channel_4--><g transform="translate(0, 123)"><!--v row/--></g><!--/b-->
+<!--b row-->
+            <text class="figure gold" x="138" y="0" font-size="15"><!--v channel/--></text>
+            <text class="name" x="186" y="0" font-size="{{v size/}}"><!--v name/--></text>
+            <text class="quiet" x="322" y="0" font-size="12" text-anchor="end" data-time="{{v until/}}" data-text="{{v until_as/}}"><!--v until_written/--></text>
+<!--/b-->
+<!--b more--><text class="quiet" x="322" y="144" font-size="11" text-anchor="end">and <!--v count/--> more</text><!--/b-->
+<!--b no_channels--><text class="quiet" x="138" y="54" font-size="13"><!--v none-->No channel is defined now<!--/v--></text><!--/b-->

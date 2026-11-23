@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- a widget is a picture of what the site draws, or a line that says why there's none, over the color that it has until it's drawn -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget" android:layout_width="match_parent" android:layout_height="match_parent"
+             android:background="@drawable/widget_behind">
+    <ImageView android:id="@+id/drawn" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:importantForAccessibility="no"/>
+    <TextView android:id="@+id/said" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:padding="12dp"
+              android:textColor="#ffffff" android:textSize="13sp" android:visibility="gone"/>
+</FrameLayout>

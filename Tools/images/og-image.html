@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        padding: 0 64px 0 48px;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-family: Helvetica, sans-serif;
+        background: linear-gradient(to bottom, #2c2c68, #151533);
+        border-bottom: 10px solid #e3a83c;
+    }
+    .wheel {
+        flex: none;
+        width: 560px;
+        height: 560px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    /* outside the wheel, whose own overflow would clip it */
+    .glow {
+        flex: none;
+        border-radius: 50%;
+        box-shadow: 0 0 0 5px rgba(227, 168, 60, 0.5), 0 0 80px 8px rgba(227, 168, 60, 0.35);
+    }
+    .wheel img {
+        display: block;
+        width: 560px;
+    }
+    h1 {
+        margin: 0;
+        color: #e3a83c;
+        font-size: 76px;
+        line-height: 1.05;
+    }
+    .subtitle {
+        margin: 8px 0 28px;
+        color: white;
+        font-size: 34px;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    p {
+        margin: 0;
+        color: white;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    p.tagline {
+        margin-top: 24px;
+        color: rgba(255, 255, 255, 0.6);
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+<div class="glow"><div class="wheel"><img src="WHEEL_URL" alt=""></div></div>
+<div>
+    <h1>Gates of Humanity</h1>
+    <div class="subtitle">Free Human Design charts and transits</div>
+    <p>Birth, transit and connection charts with Type, Authority, Profile, Variables and Incarnation Cross</p>
+    <p class="tagline">Wheel of the 64&nbsp;Gates,<br>I&nbsp;Ching and Astrology</p>
+</div>
+</body>
+</html>

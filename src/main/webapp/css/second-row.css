@@ -1,0 +1,115 @@
+:root {
+    /* dimensions */
+    --date-place-label-width: 30px;
+
+    /* padding and margins */
+    --date-place-label-padding: 13px;
+    --second-date-place-right: 15px;
+}
+/* The rows of the people below the first row, whose fields and buttons have the sizes of the
+   first row's: the date is as wide, and nothing here changes the first row itself. */
+.date-place-label {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin: 0 0 0 5px;
+    /* beside the fields only: it's never what makes its row higher than the first one */
+    padding: 0 var(--date-place-label-padding);
+    width: var(--date-place-label-width);
+}
+.second-date-place {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--data-place-gap);
+    margin-top: 12px;
+    padding-right: var(--second-date-place-right);
+    background: var(--row-background-color);
+    border-radius: 5px;
+}
+#second-datetime, #third-datetime {
+    width: var(--datetime-width);
+    margin: var(--input-margin);
+    order: 1;
+}
+/* the city takes the width that's left */
+.second-date-place .awesomplete {
+    display: flex;
+    order: 2;
+    flex: 1 1 0;
+    min-width: 0;
+}
+#second-location, #third-location {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: var(--input-margin);
+}
+/* the buttons of a row, which on the page of a birth with its transits have the names of the first row's */
+.second-date-place > #action-load, #action-load-second, #action-load-third {
+    order: 3;
+}
+.second-date-place > #action-save, #action-save-second, #action-save-third {
+    order: 4;
+}
+#cycles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+#cycles button {
+    width: auto;
+    margin: 0;
+    padding: 0 12px;
+}
+@media screen and (max-width: 600px) {
+    :root {
+        /* dimensions */
+        --date-place-label-width: 26px;
+
+        /* padding and margins */
+        --date-place-label-padding: 8px;
+        --second-date-place-right: 6px;
+    }
+    /* the date with Load, then the city below it with Save */
+    #second-datetime, #third-datetime {
+        flex: 1 1 0;
+        min-width: 0;
+        order: 1;
+    }
+    .second-date-place > #action-load, #action-load-second, #action-load-third {
+        order: 2;
+    }
+    .second-date-place::after {
+        content: "";
+        flex-basis: 100%;
+        order: 3;
+    }
+    .second-date-place > .awesomplete {
+        order: 4;
+        margin-left: 51px;
+    }
+    .second-date-place > #action-save, #action-save-second, #action-save-third {
+        order: 5;
+    }
+}
+@media screen and (max-width: 427px) {
+    :root {
+        /* dimensions */
+        --date-place-label-width: 24px;
+
+        /* padding and margins */
+        --date-place-label-padding: 6px;
+    }
+    .second-date-place > .awesomplete {
+        margin-left: 45px;
+    }
+}
+/* the narrowest phones still fit a date with AM or PM next to Load */
+@media screen and (max-width: 340px) {
+    #controls .second-date-place input {
+        font-size: 14px;
+    }
+}

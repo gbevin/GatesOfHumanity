@@ -1,0 +1,26 @@
+name: Feel
+options:
+  bundleIdPrefix: com.uwyn.gatesofhumanity
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  Feel:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Feel.swift
+      - path: HomeScreen.swift
+      - path: Keys.swift
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
+        CODE_SIGNING_ALLOWED: NO
+schemes:
+  Feel:
+    build:
+      targets:
+        Feel: [test]
+    test:
+      targets:
+        - Feel

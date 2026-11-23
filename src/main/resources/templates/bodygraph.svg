@@ -1,0 +1,259 @@
+    <!-- HD connection lines -->
+    
+    <path d="M 460 215 L 460 250 L 468 250 L 468 215 Z" class="hd-channel-vert {{v hd-channel-64/}}" data-explore="channel.47-64 channels" />
+    <path d="M 476 215 L 476 250 L 484 250 L 484 215 Z" class="hd-channel-vert {{v hd-channel-61/}}" data-explore="channel.24-61 channels" />
+    <path d="M 492 215 L 492 250 L 500 250 L 500 215 Z" class="hd-channel-vert {{v hd-channel-63/}}" data-explore="channel.4-63 channels" />
+    <rect x="460" y="232.5" width="8" height="17.5" class="hd-channel-vert {{v hd-channel-47/}}" data-explore="channel.47-64 channels" />
+    <rect x="476" y="232.5" width="8" height="17.5" class="hd-channel-vert {{v hd-channel-24/}}" data-explore="channel.24-61 channels" />
+    <rect x="492" y="232.5" width="8" height="17.5" class="hd-channel-vert {{v hd-channel-4/}}" data-explore="channel.4-63 channels" />
+    <path d="M 460 215 L 460 250 L 468 250 L 468 215 Z" class="hd-channel-contour" />
+    <path d="M 476 215 L 476 250 L 484 250 L 484 215 Z" class="hd-channel-contour" />
+    <path d="M 492 215 L 492 250 L 500 250 L 500 215 Z" class="hd-channel-contour" />
+
+    <path d="M 460 290 L 460 365 L 468 365 L 468 290 Z" class="hd-channel-vert {{v hd-channel-17/}}" data-explore="channel.17-62 channels" />
+    <path d="M 476 290 L 476 365 L 484 365 L 484 290 Z" class="hd-channel-vert {{v hd-channel-43/}}" data-explore="channel.23-43 channels" />
+    <path d="M 492 290 L 492 365 L 500 365 L 500 290 Z" class="hd-channel-vert {{v hd-channel-11/}}" data-explore="channel.11-56 channels" />
+    <rect x="460" y="347.5" width="8" height="17.5" class="hd-channel-vert {{v hd-channel-62/}}" data-explore="channel.17-62 channels" />
+    <rect x="476" y="347.5" width="8" height="17.5" class="hd-channel-vert {{v hd-channel-23/}}" data-explore="channel.23-43 channels" />
+    <rect x="492" y="347.5" width="8" height="17.5" class="hd-channel-vert {{v hd-channel-56/}}" data-explore="channel.11-56 channels" />
+    <path d="M 460 290 L 460 365 L 468 365 L 468 290 Z" class="hd-channel-contour" />
+    <path d="M 476 290 L 476 365 L 484 365 L 484 290 Z" class="hd-channel-contour" />
+    <path d="M 492 290 L 492 365 L 500 365 L 500 290 Z" class="hd-channel-contour" />
+
+    <path d="M 460 430 L 460 480 L 468 480 L 468 430 Z" class="hd-channel-vert {{v hd-channel-31/}}" data-explore="channel.7-31 channels" />
+    <path d="M 476 430 L 476 480 L 484 480 L 484 430 Z" class="hd-channel-vert {{v hd-channel-8/}}" data-explore="channel.1-8 channels" />
+    <path d="M 492 430 L 492 480 L 500 480 L 500 430 Z" class="hd-channel-vert {{v hd-channel-33/}}" data-explore="channel.13-33 channels" />
+    <rect x="460" y="445" width="8" height="35" class="hd-channel-vert {{v hd-channel-7/}}" data-explore="channel.7-31 channels" />
+    <rect x="476" y="445" width="8" height="35" class="hd-channel-vert {{v hd-channel-1/}}" data-explore="channel.1-8 channels" />
+    <rect x="492" y="445" width="8" height="35" class="hd-channel-vert {{v hd-channel-13/}}" data-explore="channel.13-33 channels" />
+    <path d="M 460 430 L 460 480 L 468 480 L 468 430 Z" class="hd-channel-contour" />
+    <path d="M 476 430 L 476 480 L 484 480 L 484 430 Z" class="hd-channel-contour" />
+    <path d="M 492 430 L 492 480 L 500 480 L 500 430 Z" class="hd-channel-contour" />
+
+    <path d="M 446 382 L 446 369 L 288 614 L 288 628 Z" class="hd-channel-16-48 {{v hd-channel-16/}}" data-explore="channel.16-48 channels" />
+    <path d="M372.002,497.212L288,628L288,614L365.86,493.267L372.002,497.212Z" class="hd-channel-16-48 {{v hd-channel-48/}}" data-explore="channel.16-48 channels" />
+    <path d="M 446 382 L 446 369 L 288 614 L 288 628 Z" class="hd-channel-contour" />
+
+    <path d="M379.162,502L440,502L440,510L374.43,510L379.162,502Z" class="hd-channel-10 {{v hd-channel-10/}}" data-explore="channel.10-20 channel.10-34 channel.10-57 channels" />
+    <path d="M334.414,577.653L448,645L448,654L330.473,584.316L334.414,577.653Z" class="hd-channel-34 {{v hd-channel-34/}}" data-explore="channel.10-34 channel.20-34 channel.34-57 channels" />
+    <path d="M340.545,581.288L307,638L307,624L334.414,577.653L340.545,581.288Z" class="hd-channel-20-57 {{v hd-channel-57/}}" data-explore="channel.10-57 channel.20-57 channel.34-57 channels" />
+    <path d="M374.43,510L446,389L446,403L382.711,510L374.43,510Z" class="hd-channel-20-57 {{v hd-channel-20/}}" data-explore="channel.10-20 channel.20-34 channel.20-57 channels" />
+    <path d="M330.473,584.316L374.43,510L382.711,510L336.604,587.951L330.473,584.316Z" class="hd-channel-20-57 {{v hd-channel-20-57/}}" data-explore="channel.10-34 channel.10-57 channel.20-34 channel.20-57 channels" />
+    <path d="M336.604,587.951L307,638L307,624L446,389L446,403L387.443,502L440,502L440,510L382.711,510L340.545,581.288L448,645L448,654L336.604,587.951Z" class="hd-channel-contour" />
+
+    <path d="M 514 382 L 514 369 L 672 614 L 672 628 Z" class="hd-channel-35-36 {{v hd-channel-35/}}" data-explore="channel.35-36 channels" />
+    <path d="M 514 403 L 514 389 L 653 624 L 653 638 Z" class="hd-channel-12-22 {{v hd-channel-12/}}" data-explore="channel.12-22 channels" />
+    <path d="M 508 414 L 515.5 414 L 570.5 548 L 563 548 Z" class="hd-channel-45-21 {{v hd-channel-45/}}" data-explore="channel.21-45 channels" />
+    <path d="M 509 515 L 518 515 L 558 570 L 549 570 Z" class="hd-channel-25-51 {{v hd-channel-25/}}" data-explore="channel.25-51 channels" />
+    <path d="M 330 640 L 330 632 L 535 588 L 535 596 Z" class="hd-channel-26-44 {{v hd-channel-26/}}" data-explore="channel.26-44 channels" />
+    <path d="M 571.5 585 L 581 585 L 637.5 635 L 628 635 Z" class="hd-channel-40-37 {{v hd-channel-40/}}" data-explore="channel.37-40 channels" />
+    <path d="M598.308,499.731L672,614L672,628L592.041,503.507L598.308,499.731Z" class="hd-channel-35-36 {{v hd-channel-36/}}" data-explore="channel.35-36 channels" />
+    <path d="M584.438,508.086L653,624L653,638L578.333,511.764L584.438,508.086Z" class="hd-channel-12-22 {{v hd-channel-22/}}" data-explore="channel.12-22 channels" />
+    <path d="M542.521,479.833L570.5,548L563,548L536.103,482.468L542.521,479.833Z" class="hd-channel-45-21 {{v hd-channel-21/}}" data-explore="channel.21-45 channels" />
+    <path d="M536.528,540.476L558,570L549,570L530.642,544.757L536.528,540.476Z" class="hd-channel-25-51 {{v hd-channel-51/}}" data-explore="channel.25-51 channels" />
+    <path d="M433.231,617.843L330,640L330,632L431.589,610.195L433.231,617.843Z" class="hd-channel-26-44 {{v hd-channel-44/}}" data-explore="channel.26-44 channels" />
+    <path d="M608.944,609.729L637.5,635L628,635L604.771,614.444L608.944,609.729Z" class="hd-channel-40-37 {{v hd-channel-37/}}" data-explore="channel.37-40 channels" />
+    <path d="M 514 382 L 514 369 L 672 614 L 672 628 Z" class="hd-channel-contour" />
+    <path d="M 514 403 L 514 389 L 653 624 L 653 638 Z" class="hd-channel-contour" />
+    <path d="M 508 414 L 515.5 414 L 570.5 548 L 563 548 Z" class="hd-channel-contour" />
+    <path d="M 509 515 L 518 515 L 558 570 L 549 570 Z" class="hd-channel-contour" />
+    <path d="M 330 640 L 330 632 L 535 588 L 535 596 Z" class="hd-channel-contour" />
+    <path d="M 571.5 585 L 581 585 L 637.5 635 L 628 635 Z" class="hd-channel-contour" />
+
+    <path d="M 460 510 L 460 635 L 468 635 L 468 515 Z" class="hd-channel-vert {{v hd-channel-15/}}" data-explore="channel.5-15 channels" />
+    <path d="M 476 510 L 476 635 L 484 635 L 484 510 Z" class="hd-channel-vert {{v hd-channel-2/}}" data-explore="channel.2-14 channels" />
+    <path d="M 492 510 L 492 635 L 500 635 L 500 510 Z" class="hd-channel-vert {{v hd-channel-46/}}" data-explore="channel.29-46 channels" />
+    <rect x="460" y="592" width="8" height="39" class="hd-channel-vert {{v hd-channel-5/}}" data-explore="channel.5-15 channels" />
+    <rect x="476" y="592" width="8" height="39" class="hd-channel-vert {{v hd-channel-14/}}" data-explore="channel.2-14 channels" />
+    <rect x="492" y="592" width="8" height="39" class="hd-channel-vert {{v hd-channel-29/}}" data-explore="channel.29-46 channels" />
+    <path d="M 460 510 L 460 635 L 468 635 L 468 515 Z" class="hd-channel-contour" />
+    <path d="M 460 510 L 460 635 L 468 635 L 468 515 Z" class="hd-channel-contour" />
+    <path d="M 476 510 L 476 635 L 484 635 L 484 510 Z" class="hd-channel-contour" />
+    <path d="M 492 510 L 492 635 L 500 635 L 500 510 Z" class="hd-channel-contour" />
+
+    <path d="M 460 690 L 460 730 L 468 730 L 468 690 Z" class="hd-channel-vert {{v hd-channel-42/}}" data-explore="channel.42-53 channels" />
+    <path d="M 476 690 L 476 730 L 484 730 L 484 690 Z" class="hd-channel-vert {{v hd-channel-3/}}" data-explore="channel.3-60 channels" />
+    <path d="M 492 690 L 492 730 L 500 730 L 500 690 Z" class="hd-channel-vert {{v hd-channel-9/}}" data-explore="channel.9-52 channels" />
+    <rect x="460" y="711" width="8" height="19" class="hd-channel-vert {{v hd-channel-53/}}" data-explore="channel.42-53 channels" />
+    <rect x="476" y="711" width="8" height="19" class="hd-channel-vert {{v hd-channel-60/}}" data-explore="channel.3-60 channels" />
+    <rect x="492" y="711" width="8" height="19" class="hd-channel-vert {{v hd-channel-52/}}" data-explore="channel.9-52 channels" />
+    <path d="M 460 690 L 460 730 L 468 730 L 468 690 Z" class="hd-channel-contour" />
+    <path d="M 476 690 L 476 730 L 484 730 L 484 690 Z" class="hd-channel-contour" />
+    <path d="M 492 690 L 492 730 L 500 730 L 500 690 Z" class="hd-channel-contour" />
+
+    <path d="M 351 654 L 351 646 L 448 674 L 448 682 Z" class="hd-channel-50-27 {{v hd-channel-50/}}" data-explore="channel.27-50 channels" />
+    <path d="M 317 668 L 317 658 L 448 750 L 448 760 Z" class="hd-channel-bottom-left {{v hd-channel-32/}}" data-explore="channel.32-54 channels" />
+    <path d="M 303 675 L 303 665 L 448 768 L 448 778 Z" class="hd-channel-bottom-left {{v hd-channel-28/}}" data-explore="channel.28-38 channels" />
+    <path d="M 289 682 L 289 672 L 448 786 L 448 796 Z" class="hd-channel-bottom-left {{v hd-channel-18/}}" data-explore="channel.18-58 channels" />
+    <path d="M400.696,660.345L448,674L448,682L398.564,667.73L400.696,660.345Z" class="hd-channel-50-27 {{v hd-channel-27/}}" data-explore="channel.27-50 channels" />
+    <path d="M388.092,707.927L448,750L448,760L383.323,714.578L388.092,707.927Z" class="hd-channel-bottom-left {{v hd-channel-54/}}" data-explore="channel.32-54 channels" />
+    <path d="M379.771,719.534L448,768L448,778L375.02,726.159L379.771,719.534Z" class="hd-channel-bottom-left {{v hd-channel-38/}}" data-explore="channel.28-38 channels" />
+    <path d="M371.461,731.123L448,786L448,796L366.726,737.728L371.461,731.123Z" class="hd-channel-bottom-left {{v hd-channel-58/}}" data-explore="channel.18-58 channels" />
+    <path d="M 351 654 L 351 646 L 448 674 L 448 682 Z" class="hd-channel-contour" />
+    <path d="M 317 668 L 317 658 L 448 750 L 448 760 Z" class="hd-channel-contour" />
+    <path d="M 303 675 L 303 665 L 448 768 L 448 778 Z" class="hd-channel-contour" />
+    <path d="M 289 682 L 289 672 L 448 786 L 448 796 Z" class="hd-channel-contour" />
+
+    <path d="M 609 654 L 609 646 L 512 674 L 512 682 Z" class="hd-channel-6-59 {{v hd-channel-6/}}" data-explore="channel.6-59 channels" />
+    <path d="M 643 668 L 643 658 L 512 750 L 512 760 Z" class="hd-channel-bottom-right {{v hd-channel-49/}}" data-explore="channel.19-49 channels" />
+    <path d="M 657 675 L 657 665 L 512 768 L 512 778 Z" class="hd-channel-bottom-right {{v hd-channel-55/}}" data-explore="channel.39-55 channels" />
+    <path d="M 671 682 L 671 672 L 512 786 L 512 796 Z" class="hd-channel-bottom-right {{v hd-channel-30/}}" data-explore="channel.30-41 channels" />
+    <path d="M561.625,667.675L512,682L512,674L559.493,660.291L561.625,667.675Z" class="hd-channel-6-59 {{v hd-channel-59/}}" data-explore="channel.6-59 channels" />
+    <path d="M577.415,714.06L512,760L512,750L572.646,707.409L577.415,714.06Z" class="hd-channel-bottom-right {{v hd-channel-19/}}" data-explore="channel.19-49 channels" />
+    <path d="M585.715,725.637L512,778L512,768L580.965,719.011L585.715,725.637Z" class="hd-channel-bottom-right {{v hd-channel-39/}}" data-explore="channel.39-55 channels" />
+    <path d="M594.007,737.202L512,796L512,786L589.272,730.597L594.007,737.202Z" class="hd-channel-bottom-right {{v hd-channel-41/}}" data-explore="channel.30-41 channels" />
+    <path d="M 609 654 L 609 646 L 512 674 L 512 682 Z" class="hd-channel-contour" />
+    <path d="M 643 668 L 643 658 L 512 750 L 512 760 Z" class="hd-channel-contour" />
+    <path d="M 657 675 L 657 665 L 512 768 L 512 778 Z" class="hd-channel-contour" />
+    <path d="M 671 682 L 671 672 L 512 786 L 512 796 Z" class="hd-channel-contour" />
+
+    <!-- HD energy centers -->
+
+    <path d="M 480 130 L 434 220 L 526 220 Z" class="{{v hd-center-head/}} hd-center" data-explore="center.HEAD centers" />
+    <path d="M 480 335 L 434 245 L 526 245 Z" class="{{v hd-center-ajna/}} hd-center" data-explore="center.AJNA centers" />
+    <path d="M 443 360 L 517 360 L 517 434 L 443 434 Z" class="{{v hd-center-throat/}} hd-center" data-explore="center.THROAT centers" />
+    <path d="M 443 469 L 517 469 L 517 544 L 443 544 Z" class="{{v hd-center-g/}} hd-center" data-explore="center.G centers" transform="rotate(45 480 506.5)" />
+    <path d="M 567 540 L 522 596 L 612 596 Z"  class="{{v hd-center-heart/}} hd-center" data-explore="center.HEART centers" />
+    <path d="M 275 604 L 275 696 L 365 650 Z" class="{{v hd-center-spleen/}} hd-center" data-explore="center.SPLEEN centers" />
+    <path d="M 443 627 L 517 627 L 517 701 L 443 701 Z" class="{{v hd-center-sacral/}} hd-center" data-explore="center.SACRAL centers" />
+    <path d="M 685 604 L 685 696 L 595 650 Z" class="{{v hd-center-solar/}} hd-center" data-explore="center.SOLAR centers" />
+    <path d="M 443 726 L 517 726 L 517 800 L 443 800 Z" class="{{v hd-center-root/}} hd-center" data-explore="center.ROOT centers" />
+
+    <!-- HD gates -->
+
+    <rect class="{{v gate-class-64/}}" x="450" y="204" width="20" height="14" rx="4"/>
+    <text class="{{v gate-class-64/}}" x="460" y="216">64</text>
+    <rect class="{{v gate-class-61/}}" x="470" y="204" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-61/}}" x="480" y="216">61</text>
+    <rect class="{{v gate-class-63/}}" x="490" y="204" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-63/}}" x="500" y="216">63</text>
+
+    <rect class="{{v gate-class-47/}}" x="450" y="246" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-47/}}" x="460" y="258">47</text>
+    <rect class="{{v gate-class-24/}}" x="470" y="246" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-24/}}" x="480" y="258">24</text>
+    <rect class="{{v gate-class-4/}}" x="490" y="246" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-4/}}" x="500" y="258">4</text>
+    <rect class="{{v gate-class-17/}}" x="460" y="282" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-17/}}" x="470" y="294">17</text>
+    <rect class="{{v gate-class-11/}}" x="480" y="282" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-11/}}" x="490" y="294">11</text>
+    <rect class="{{v gate-class-43/}}" x="470" y="302" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-43/}}" x="480" y="314">43</text>
+
+    <rect class="{{v gate-class-62/}}" x="450" y="361" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-62/}}" x="460" y="373">62</text>
+    <rect class="{{v gate-class-23/}}" x="470" y="361" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-23/}}" x="480" y="373">23</text>
+    <rect class="{{v gate-class-56/}}" x="490" y="361" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-56/}}" x="500" y="373">56</text>
+    <rect class="{{v gate-class-16/}}" x="444" y="376" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-16/}}" x="454" y="388">16</text>
+    <rect class="{{v gate-class-20/}}" x="444" y="390" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-20/}}" x="454" y="402">20</text>
+    <rect class="{{v gate-class-35/}}" x="496" y="376" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-35/}}" x="506" y="388">35</text>
+    <rect class="{{v gate-class-12/}}" x="496" y="390" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-12/}}" x="506" y="402">12</text>
+    <rect class="{{v gate-class-45/}}" x="496" y="404" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-45/}}" x="506" y="416">45</text>
+    <rect class="{{v gate-class-31/}}" x="450" y="419" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-31/}}" x="460" y="431">31</text>
+    <rect class="{{v gate-class-8/}}" x="470" y="419" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-8/}}" x="480" y="431">8</text>
+    <rect class="{{v gate-class-33/}}" x="490" y="419" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-33/}}" x="500" y="431">33</text>
+
+    <rect class="{{v gate-class-1/}}" x="470" y="464" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-1/}}" x="480" y="476">1</text>
+    <rect class="{{v gate-class-7/}}" x="456" y="478" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-7/}}" x="466" y="490">7</text>
+    <rect class="{{v gate-class-13/}}" x="485" y="478" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-13/}}" x="495" y="490">13</text>
+    <rect class="{{v gate-class-10/}}" x="434" y="500" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-10/}}" x="444" y="512">10</text>
+    <rect class="{{v gate-class-25/}}" x="499" y="507" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-25/}}" x="509" y="519">25</text>
+    <rect class="{{v gate-class-15/}}" x="456" y="521" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-15/}}" x="466" y="533">15</text>
+    <rect class="{{v gate-class-46/}}" x="485" y="521" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-46/}}" x="495" y="533">46</text>
+    <rect class="{{v gate-class-2/}}" x="470" y="535" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-2/}}" x="480" y="547">2</text>
+
+    <rect class="{{v gate-class-21/}}" x="557" y="551" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-21/}}" x="567" y="562">21</text>
+    <rect class="{{v gate-class-51/}}" x="546" y="566" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-51/}}" x="556" y="578">51</text>
+    <rect class="{{v gate-class-26/}}" x="533" y="581" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-26/}}" x="543" y="593">26</text>
+    <rect class="{{v gate-class-40/}}" x="568" y="581" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-40/}}" x="578" y="593">40</text>
+
+    <rect class="{{v gate-class-48/}}" x="276" y="614" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-48/}}" x="286" y="626">48</text>
+    <rect class="{{v gate-class-57/}}" x="295" y="624" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-57/}}" x="305" y="636">57</text>
+    <rect class="{{v gate-class-44/}}" x="314" y="634" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-44/}}" x="324" y="646">44</text>
+    <rect class="{{v gate-class-50/}}" x="333" y="643" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-50/}}" x="343" y="655">50</text>
+    <rect class="{{v gate-class-32/}}" x="314" y="652" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-32/}}" x="324" y="664">32</text>
+    <rect class="{{v gate-class-28/}}" x="295" y="662" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-28/}}" x="305" y="674">28</text>
+    <rect class="{{v gate-class-18/}}" x="276" y="672" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-18/}}" x="286" y="684">18</text>
+
+    <rect class="{{v gate-class-5/}}" x="450" y="628" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-5/}}" x="460" y="640">5</text>
+    <rect class="{{v gate-class-14/}}" x="470" y="628" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-14/}}" x="480" y="640">14</text>
+    <rect class="{{v gate-class-29/}}" x="490" y="628" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-29/}}" x="500" y="640">29</text>
+    <rect class="{{v gate-class-34/}}" x="444" y="643" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-34/}}" x="454" y="655">34</text>
+    <rect class="{{v gate-class-27/}}" x="444" y="671" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-27/}}" x="454" y="683">27</text>
+    <rect class="{{v gate-class-59/}}" x="496" y="671" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-59/}}" x="506" y="683">59</text>
+    <rect class="{{v gate-class-42/}}" x="450" y="686" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-42/}}" x="460" y="698">42</text>
+    <rect class="{{v gate-class-3/}}" x="470" y="686" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-3/}}" x="480" y="698">3</text>
+    <rect class="{{v gate-class-9/}}" x="490" y="686" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-9/}}" x="500" y="698">9</text>
+
+    <rect class="{{v gate-class-36/}}" x="664" y="614" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-36/}}" x="674" y="626">36</text>
+    <rect class="{{v gate-class-22/}}" x="645" y="624" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-22/}}" x="655" y="636">22</text>
+    <rect class="{{v gate-class-37/}}" x="626" y="634" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-37/}}" x="636" y="646">37</text>
+    <rect class="{{v gate-class-6/}}" x="607"  y="643" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-6/}}" x="617"  y="655">6</text>
+    <rect class="{{v gate-class-49/}}" x="626" y="652" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-49/}}" x="636" y="664">49</text>
+    <rect class="{{v gate-class-55/}}" x="645" y="662" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-55/}}" x="655" y="674">55</text>
+    <rect class="{{v gate-class-30/}}" x="664" y="672" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-30/}}" x="674" y="684">30</text>
+
+    <rect class="{{v gate-class-53/}}" x="450" y="727" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-53/}}" x="460" y="739">53</text>
+    <rect class="{{v gate-class-60/}}" x="470" y="727" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-60/}}" x="480" y="739">60</text>
+    <rect class="{{v gate-class-52/}}" x="490" y="727" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-52/}}" x="500" y="739">52</text>
+    <rect class="{{v gate-class-54/}}" x="444" y="746" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-54/}}" x="454" y="758">54</text>
+    <rect class="{{v gate-class-38/}}" x="444" y="763" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-38/}}" x="454" y="775">38</text>
+    <rect class="{{v gate-class-58/}}" x="444" y="780" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-58/}}" x="454" y="792">58</text>
+    <rect class="{{v gate-class-19/}}" x="496" y="746" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-19/}}" x="506" y="758">19</text>
+    <rect class="{{v gate-class-39/}}" x="496" y="763" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-39/}}" x="506" y="775">39</text>
+    <rect class="{{v gate-class-41/}}" x="496" y="780" width="20" height="14" rx="4" />
+    <text class="{{v gate-class-41/}}" x="506" y="792">41</text>

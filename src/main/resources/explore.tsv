@@ -1,0 +1,325 @@
+# key	description, written for this site as an introduction to each part of a chart, not as a reading
+intro	Human Design describes how a person is built to make decisions and to use their energy. It brings together astrology, the I Ching, the chakras and the Kabbalah. The chakras became its nine centers, and the channels between them recall the paths of the Tree of Life from the Kabbalah. These descriptions introduce each part of a chart, they don't replace a reading.
+explore.tap.chart	Tapping or clicking a part of the chart, or an item below, opens its description.
+explore.tap.table	Tapping or clicking a part of the table opens its description.
+intro.chart	The chart starts from astrology. The outer rings of the wheel, called the Rave Mandala, show the signs of the zodiac, with the Sun, the Moon and the planets where they are at the moment of the chart. Inside them, the 64 gates of the I Ching divide the same circle, each gate is a hexagram with six lines, and so every planet falls in a gate and in a line.
+intro.bodygraph	Those gates light up the body graph in the middle. A birth chart has two sets of them. The black ones are the Personality, where the planets were at the moment of birth, the side a person is aware of. The red ones are the Design, where they were about three months earlier, when the Sun was 88 degrees before its place at birth, the side that works without them noticing. When both gates at the ends of a channel are lit, the channel connects two centers and both of them become defined.
+wheel.zodiac	The outer ring shows the twelve signs of the zodiac as astrology uses them, each covering 30 degrees of the circle that the Sun, the Moon and the planets move along.
+wheel.planets	The dark ring shows where the Sun, the Moon and the planets were at the moment of the chart, together with the Earth and the Nodes of the Moon. To keep the wheel readable it only holds the planets of the first row below it, the Personality of a birth chart or the planets of the moment in a transit, and the other rows are on the body graph. The Earth is always opposite the Sun and the South Node is always opposite the North Node. Chiron is shown too, but it doesn't activate gates.
+wheel.gates	The next ring divides the same circle into the 64 gates of the I Ching, each with its number and its hexagram of six solid or broken lines. Every gate covers 5.625 degrees and is divided into six lines, one for each line of its hexagram counted from the bottom, so each planet falls in one gate and one line. The gates that the planets on the wheel activate are tinted in the color of the center each gate belongs to.
+wheel.bodygraph	The body graph in the middle has nine centers and the 36 channels between them, and each end of a channel is a gate. The half of a channel at an activated gate is black when the Personality activates it, red when the Design does and striped when both do, and the number of every activated gate is filled in. When both ends of a channel are activated, the channel and its two centers are defined and shown in color.
+wheel.rows	The rows below the wheel list the gate and line of every planet, in black for the Personality at the moment of birth and in red for the Design about three months earlier. Each is written as the gate, a dot and the line, so 55.6 is line 6 of gate 55. A small triangle pointing up marks a line that's exalted, and one pointing down marks a line in detriment, to show which side of the line's theme comes forward.
+wheel.bodygraph.transit	The body graph in the middle shows the gates that the planets activate at this moment, in black. When both ends of a channel are activated, the channel and its two centers are defined for everyone while the transit lasts.
+wheel.rows.transit	The row below the wheel lists the gate and line of every planet at this moment. Each is written as the gate, a dot and the line, so 55.6 is line 6 of gate 55. A small triangle pointing up marks a line that's exalted, and one pointing down marks a line in detriment.
+wheel.bodygraph.birth_transit	The body graph in the middle shows the birth chart in lavender, with the planets of this moment in black on top of it, and a gate that both activate is striped. When a planet of this moment activates the gate at the other end of a channel from a birth gate, it completes that channel for as long as it stays there.
+wheel.rows.birth_transit	The first row below the wheel lists the gates and lines of the planets at this moment, and the rows under it list those of the birth chart, in black for the Personality and in red for the Design. Each is written as the gate, a dot and the line, so 55.6 is line 6 of gate 55. A small triangle pointing up marks a line that's exalted and one pointing down a line in detriment, and an outlined triangle marks one that only holds for now, because it comes from another chart.
+wheel.bodygraph.connection	The body graph in the middle shows the gates of the first person in blue and those of the second person in green, and a gate that both have is striped. When the two people together activate both ends of a channel, that channel is defined between them.
+wheel.rows.connection	The rows below the wheel list the gates and lines of the planets of the first person, and under them those of the second person, each in black for the Personality and in red for the Design. Each is written as the gate, a dot and the line, so 55.6 is line 6 of gate 55. A small triangle pointing up marks a line that's exalted and one pointing down a line in detriment, and an outlined triangle marks one that only holds for now, because it comes from another chart.
+wheel.bodygraph.connection_transit	The body graph in the middle shows the gates of the first person in blue, those of the second person in green and those of the planets of this moment in black, and a gate that more than one of them activates is striped in their colors. The ring of gates around it only holds the planets of this moment, with a small blue or green mark just inside each gate that one of the two people activates.
+wheel.rows.connection_transit	The first row below the wheel lists the gates and lines of the planets at this moment, and the rows under it list those of the first person and then those of the second person, each in black for the Personality and in red for the Design. Each is written as the gate, a dot and the line, so 55.6 is line 6 of gate 55. A small triangle pointing up marks a line that's exalted and one pointing down a line in detriment, and an outlined triangle marks one that only holds for now, because it comes from another chart.
+about.transits	Transits are the positions of the planets at a given moment. They activate the same gates for everyone at the same time, which colors the general mood of that moment.
+about.transits.centers	The centers that the planets define by themselves at a moment are defined for everyone while the transits last, so everyone feels their energy in a consistent way, and the people whose own center is open there feel it the most.
+about.transits.birth	The channels that the planets of a moment complete together with a birth chart, or define on their own, bring their theme for as long as the transit lasts. The Moon moves on within hours, while the slow planets can stay for months or years.
+about.transits.center	A center that's open in the birth chart can be defined for now, when the planets of a moment complete a channel with the gates of the birth chart. Its energy is then felt in a consistent way, but only while the transit lasts.
+about.upcoming	For each planet, this is the next time it moves into a gate that completes a channel with the birth chart, counted from the moment shown and up to a year ahead. The Moon gets there within days, while the slow planets often don't within a year. The button of each one sets the chart to that moment.
+about.birthtime	This shows how much earlier or later the birth could have been with each part of the chart staying the same. Birth times are often rounded or given from memory, and the Moon moves into another line about every two hours, so when a birth time is uncertain, the parts that stay the same for a long time before and after are the ones to rely on.
+about.transits.connection	The planets of a moment can complete a channel together with the gates of two people, or define one on their own. It's a channel that neither person has and that the two don't form together, and they share its theme for as long as the transit lasts.
+about.cycles	Saturn, Uranus and Chiron mark a few turning points in everyone's life, each at the moment one of them first gets back to where it was at birth, or to the opposite side of the wheel. Since a planet seems to move back and forth for a while every year, it can pass the same point up to three times, and the cycle is the first of them.
+about.cycles.buttons	The Saturn Return, Uranus Opposition and Chiron Return buttons below the birth date set the transits to these moments, to show which gates and channels the planets bring then.
+cycle.SATURN_RETURN	Saturn takes about 29 years to go around the wheel, so it gets back to where it was at birth around the age of 29. Within Human Design, this Saturn return closes the first stage of life, the years of growing up, and it's a time when people often look back at how they've lived so far.
+cycle.URANUS_OPPOSITION	Uranus takes about 84 years to go around the wheel, so it reaches the side opposite to where it was at birth around the age of 40. Within Human Design, this Uranus opposition is the middle of life, the turn to its second half, and it's the time that's often called a midlife crisis.
+cycle.CHIRON_RETURN	Chiron takes about 50 years to go around the wheel, so it gets back to where it was at birth around the age of 50. Within Human Design, this Chiron return opens the last stage of life, when what people have learned from their own life can be of use to others.
+about.connection	A connection chart puts two charts on top of each other and shows how the gates and channels of the two people meet.
+about.connection.centers	The defined centers of a connection chart are the ones that either person defines or that the two define together, which shows how much of the body graph the connection fills.
+about.person	This is the Type, Authority and Profile of each person in a few words, from their own birth chart. The Birth Chart shows each of them in full.
+about.transits.connection.centers	With the transits, the defined centers are the ones that the two people and the planets of the moment define together, as the body graph shows them. They last as long as the transits do, and the Connection Chart shows the centers of the two people on their own.
+connection.electromagnetic	Each person has one of the two gates of the channel, so together they complete it, which brings both attraction and friction between them.
+connection.companionship	Both people have the whole channel, so they share the same theme and easily understand each other there.
+connection.dominance	One person has the whole channel and the other has neither of its gates, so the one who has it brings that theme into the connection, and the other can only accept it and experience it through them.
+connection.compromise	One person has the whole channel and the other has only one of its gates, so that single gate is always overruled by the other person's whole channel.
+about.overview	The Overview sums up a chart in five properties. The Type and the Authority come from the defined centers, the Profile from the lines of the two Suns, the Definition from how the defined centers connect, and the Incarnation Cross from the gates of the Suns and the Earths.
+about.type	The Type comes from which centers are defined, the ones shown in color, and how they connect, and it describes how a person's energy works with other people. The four motor centers, the Sacral, the Heart, the Solar Plexus and the Root, are the ones that bring energy. Each Type has a Strategy, a simple way of making decisions that suits how that Type is built. Each Type also has a Signature, the feeling that shows it's lived well, a Not-Self Theme, the feeling that shows it isn't, and an Aura, the way its energy meets other people.
+type.MANIFESTOR	Manifestors have a motor center connected to the Throat and an open Sacral, so they can turn an idea into action on their own, without waiting for anything to come to them. Their actions have a strong impact on the people around them, so their Strategy is to inform, and telling those people what they're going to do before they do it makes things go more smoothly. Their Aura is closed and repelling, which keeps others at a distance and leaves them free to act. Living this way brings peace, and anger is the sign of meeting resistance.
+type.GENERATOR	Generators have a defined Sacral, a steady source of energy for work and for life that renews itself when it's used for what really fits. Their Strategy is to respond, which means letting life bring things to them and listening to the gut's reaction, often a sound or a pull toward or away, before committing. Their Aura is open and enveloping, it draws people and things in, so there's something to respond to. Satisfaction shows that the energy is well used, and frustration shows that it's going into something that didn't come from a response.
+type.MANIFESTING_GENERATOR	Manifesting Generators are Generators with a motor connected to the Throat, so a response can turn into action quickly. Their Strategy is to respond like other Generators, and letting the people involved know before acting helps too. They see which steps can be skipped, which makes them efficient. Moving too fast can mean missing a step and going back for it, and slowing down enough to follow each response avoids that frustration. Their Aura is open and enveloping, like that of other Generators. Satisfaction shows they're on track, and frustration shows they're not.
+type.PROJECTOR	Projectors have an open Sacral and no motor connected to the Throat, so they're not built for long stretches of hard work. Their strength is in seeing other people and how things work, and in guiding them. Their Strategy is to wait to be recognized and invited for the big things in life, like work, relationships and where to live, so that their guidance is welcome. Their Aura is focused and absorbing, it takes in one person at a time and sees them deeply. Success shows they're recognized, and bitterness shows they're not.
+type.REFLECTOR	Reflectors have no defined centers at all, so they take in and reflect the people and places around them, and where they spend their time matters a lot. For big decisions, their Strategy is to wait about 28 days, a full cycle of the Moon, and to talk things over while the Moon passes through every gate. Their Aura is resistant and sampling, it tries out what's around without holding on to it. Surprise shows they're in the right place, and disappointment shows they're not.
+about.authority	The Authority is the part of a person that can be trusted to make decisions. It depends on the defined centers, and it's never the mind, which is good at thinking things over but not at deciding.
+authority.EMOTIONAL	The Solar Plexus is defined, so feelings move in a wave of highs and lows, and a decision becomes clear only after some time. Waiting and sleeping on it, sometimes for a few days, brings a calm clarity that isn't there in the moment.
+authority.SACRAL	Decisions come from the gut's immediate response, often a sound like uh-huh for yes or uh-uh for no. It's a reaction in the moment, not a thought, and it works best for questions that can be answered with yes or no.
+authority.SPLENIC	Decisions come from the Spleen, a quiet and instant knowing of what's healthy and safe. It speaks once, in the moment, and doesn't repeat itself, so thinking about it for too long loses it, and trusting that first impression is what matters.
+authority.EGO_MANIFESTED	The Heart is defined and connects to the Throat, so decisions come from what the person truly wants. It shows in what's said without thinking, like I want or I will, and the question to ask is whether the heart is really in it.
+authority.EGO_PROJECTED	The Heart is defined and connects to the G Center, so decisions come from what the person truly wants for themselves, and the question to ask is what's in it for them. This Authority only comes with the Projector Type, so waiting for the right invitation is what lets that will be used well.
+authority.SELF_PROJECTED	The G Center connects to the Throat, so clarity comes from talking out loud and hearing what comes out. Talking a decision through with trusted people helps, not to get their advice, but to hear what the person's own voice says about identity and direction.
+authority.ENVIRONMENT	None of the centers below the Throat are defined, so there's no authority in the body to rely on. Clarity comes from being in the right place and from talking things through with others, using them as a sounding board while listening to what comes out rather than to their advice.
+authority.LUNAR	For a Reflector, clarity comes from waiting about 28 days, a full cycle of the Moon, and talking things over in that time, so that the same question is seen from every side as the Moon passes through every gate.
+about.profile	The Profile combines two lines, the line of the Personality Sun, which a person is aware of, and the line of the Design Sun, which works without them noticing. Together they describe the role a person plays as they meet the world.
+line.1	Line 1, the Investigator, needs a solid base, so it looks into things thoroughly and feels secure once it understands them.
+line.2	Line 2, the Hermit, has natural talents that other people notice and call out, asking for them to be shared, and it needs time alone to simply be.
+line.3	Line 3, the Martyr, learns by trial and error, finding out what doesn't work and so discovering what does.
+line.4	Line 4, the Opportunist, lives through the people it knows, opportunities come through friends and acquaintances, and a stable base matters.
+line.5	Line 5, the Heretic, draws other people's hopes and is often expected to come up with practical solutions when they're needed, so reputation matters.
+line.6	Line 6, the Role Model, goes through three phases in life, trial and error until about 30, then stepping back to watch until about 50, and then living as an example of what was learned.
+about.definition	The Definition shows how the defined centers connect to each other, as one whole or as separate areas, and so how a person processes things and how other people can bridge the gaps between them.
+definition.NONE	None of the centers are defined, so the whole body graph is open and takes in the world around it.
+definition.SINGLE	All the defined centers connect as one whole, so things get processed without needing anyone to bridge a gap.
+definition.SIMPLE_SPLIT	The defined centers form two separate areas that a single gate would connect. People who have that gate can bring a feeling of being complete, and taking time before deciding lets the two areas come together.
+definition.WIDE_SPLIT	The defined centers form two separate areas that need a whole channel, or more than one gate, to connect them. It's easy to blame other people for what feels missing, and spending time with different people helps bring the two areas together.
+definition.TRIPLE_SPLIT	The defined centers form three separate areas. Being among many people, in public places, lets different people bridge different parts, and processing things often takes time.
+definition.QUADRUPLE_SPLIT	The defined centers form four separate areas, which is rare. Processing things takes time, and a steady pace without hurry suits it.
+about.cross	The Incarnation Cross comes from the gates of the Sun and the Earth in the Personality and the Design, which carry most of the weight in a chart. It describes the main theme of a life. The four numbers beside its name on the chart are these gates, the Personality Sun and Earth, then the Design Sun and Earth.
+angle.RIGHT	A Right Angle Cross goes with the seven Profiles 1/3, 1/4, 2/4, 2/5, 3/5, 3/6 and 4/6. Its theme is personal and unfolds through a person's own process, and while the people met along the way can bring new experiences, they don't change its course.
+angle.JUXTAPOSITION	A Juxtaposition Cross goes only with the 4/1 Profile. Its theme is fixed, a steady path between a person's own process and what happens with other people.
+angle.LEFT	A Left Angle Cross goes with the four Profiles 5/1, 5/2, 6/2 and 6/3. Its theme plays out with other people, through relationships and the people met along the way.
+about.centers	The body graph has nine centers, and four of them are motors that bring energy, the Sacral, the Heart, the Solar Plexus and the Root. A center is defined when one of its channels is defined, it's then shown in color and works in a consistent way. An open center is white, it takes in and amplifies the energy of the people around it, and that's where a person is most influenced and where they can learn the most.
+center.HEAD.defined	The Head is defined, so inspiration and mental pressure come from within in a consistent way, with questions of its own to think about.
+center.HEAD.open	The Head is open, so it takes in and amplifies the questions and ideas around it. Not every question needs attention, and the wisdom is in knowing which ones are worth thinking about.
+center.AJNA.defined	The Ajna is defined, so there's a consistent way of thinking and of making sense of things.
+center.AJNA.open	The Ajna is open, so it can think in many ways and see many points of view, without needing to pretend to be certain.
+center.THROAT.defined	The Throat is defined, so expressing and acting happen in a consistent way, with a voice that people recognize.
+center.THROAT.open	The Throat is open, so the way of speaking and acting changes with the people around. There's no need to talk to be noticed, and speaking works best when the moment invites it.
+center.G.defined	The G Center is defined, so there's a consistent sense of identity, of love and of direction in life.
+center.G.open	The G Center is open, so a sense of identity and direction comes from the people and places around, and being in the right place matters, because it brings the right people.
+center.HEART.defined	The Heart, also called the Ego, is defined, so there's consistent willpower and the ability to make and keep promises, as long as rest follows the effort.
+center.HEART.open	The Heart is open, so willpower comes and goes, and there can be a push to prove worth or to promise more than can be kept. There's nothing to prove, and noticing that push is where the wisdom starts.
+center.SPLEEN.defined	The Spleen is defined, so there's a steady sense of well-being, an intuition that speaks in the moment and a strong immune system.
+center.SPLEEN.open	The Spleen is open, so it's sensitive to health and well-being and can feel how others feel in their bodies. It can hold on to what isn't good for it because letting go feels unsafe, and noticing that helps.
+center.SACRAL.defined	The Sacral is defined, so there's a renewable source of energy for life and work, for the things that get a true response.
+center.SACRAL.open	The Sacral is open, so it takes in and amplifies the energy of the people around it, and it's hard to know when enough is enough. Resting before exhaustion helps.
+center.SOLAR.defined	The Solar Plexus is defined, so feelings move in a wave, and things become clear once that wave settles.
+center.SOLAR.open	The Solar Plexus is open, so it takes in and amplifies the feelings of the people around it. It can avoid hard truths to keep the peace, and in time it can come to understand emotions deeply.
+center.ROOT.defined	The Root is defined, so pressure is handled at a consistent pace, with a steady drive to get things moving.
+center.ROOT.open	The Root is open, so it amplifies the pressure around it, and it can rush to get things done just to be free of it.
+about.variables	The Variables describe finer details of how the body and the mind work best. They come from steps smaller than the gate and the line, since each line divides again into six colors, and each color into six tones. The colors and tones of the Sun and the Nodes give four Variables, each with an arrow that points left for the first three tones and right for the last three, where left is strategic, focused and active, and right is receptive, open and passive. Many charts draw these arrows beside the Head, and here they're listed below the chart. The arrows of the Sun can change within the hour, which is why they need an accurate birth time.
+variable.DETERMINATION	Determination, also called Digestion, comes from the Design Sun and describes the way of eating that best supports the brain, how and in what conditions food is taken in. There are six ways, Appetite, Taste, Thirst, Touch, Sound and Light, each with a version for each direction of the arrow.
+variable.ENVIRONMENT	Environment comes from the Design Nodes and describes the kind of place where the body does best. There are six, Caves, Markets, Kitchens, Mountains, Valleys and Shores, each with a version for each direction of the arrow.
+variable.MOTIVATION	Motivation comes from the Personality Sun and describes the motivation underneath the mind, what really drives it. There are six, Fear, Hope, Desire, Need, Guilt and Innocence.
+variable.PERSPECTIVE	Perspective, also called View, comes from the Personality Nodes and describes how the mind naturally sees the world. There are six, Survival, Possibility, Power, Wanting, Probability and Personal.
+variable.DETERMINATION.left	This arrow points left, so the brain is active, strategic and focused.
+variable.DETERMINATION.right	This arrow points right, so the brain is passive and receptive, taking things in without filters.
+variable.DETERMINATION.color.1	Appetite is about the order in which food is eaten.
+variable.DETERMINATION.color.2	Taste is about letting taste choose the food.
+variable.DETERMINATION.color.3	Thirst is about the temperature of food and drink.
+variable.DETERMINATION.color.4	Touch is about how calm or lively it is around a meal.
+variable.DETERMINATION.color.5	Sound is about how much sound there is around a meal.
+variable.DETERMINATION.color.6	Light is about the light around a meal.
+variable.DETERMINATION.color.1.left	On the left this is Consecutive Appetite, eating one thing at a time and finishing it before the next.
+variable.DETERMINATION.color.1.right	On the right this is Alternating Appetite, going back and forth between small amounts of different things.
+variable.DETERMINATION.color.2.left	On the left this is Open Taste, open to trying most tastes once.
+variable.DETERMINATION.color.2.right	On the right this is Closed Taste, keeping to the few tastes that are truly right.
+variable.DETERMINATION.color.3.left	On the left this is Hot Thirst, food and drink above the temperature of the body.
+variable.DETERMINATION.color.3.right	On the right this is Cold Thirst, food and drink below the temperature of the body.
+variable.DETERMINATION.color.4.left	On the left this is Calm Touch, eating in calm and settled surroundings.
+variable.DETERMINATION.color.4.right	On the right this is Nervous Touch, eating with some stimulation around, such as talk, reading or movement.
+variable.DETERMINATION.color.5.left	On the left this is High Sound, eating with plenty of sound around, such as talk or music.
+variable.DETERMINATION.color.5.right	On the right this is Low Sound, eating in quiet surroundings.
+variable.DETERMINATION.color.6.left	On the left this is Direct Light, eating while the sun is up, with light on the body.
+variable.DETERMINATION.color.6.right	On the right this is Indirect Light, eating after dark or out of direct light.
+variable.ENVIRONMENT.left	This arrow points left, so the environment is a place to be seen in and to take an active part in.
+variable.ENVIRONMENT.right	This arrow points right, so the environment is a place to watch from, taking in what's going on around without needing to take part in it.
+variable.ENVIRONMENT.color.1	Caves are enclosed, secure places with controlled entry, where safety comes from choosing who comes and goes.
+variable.ENVIRONMENT.color.2	Markets are busy places of exchange, where people come and go and things change hands.
+variable.ENVIRONMENT.color.3	Kitchens are places where things are made, transformed and shared, full of activity and purpose.
+variable.ENVIRONMENT.color.4	Mountains are high places with a wide view, set apart from what happens below.
+variable.ENVIRONMENT.color.5	Valleys are places of flow and connection, the old pathways where people, goods and news pass through.
+variable.ENVIRONMENT.color.6	Shores are edges where two worlds meet, such as land and water, city and suburb, or the natural and the made.
+variable.ENVIRONMENT.color.1.left	On the left these are Selective Caves, private places with a single way in, open only to a chosen few.
+variable.ENVIRONMENT.color.1.right	On the right these are Blending Caves, enclosed places that can welcome more people in.
+variable.ENVIRONMENT.color.2.left	On the left these are Internal Markets, where the exchange is brought into a person's own space.
+variable.ENVIRONMENT.color.2.right	On the right these are External Markets, out in the busy flow of the market.
+variable.ENVIRONMENT.color.3.left	On the left these are Wet Kitchens, humid places and climates.
+variable.ENVIRONMENT.color.3.right	On the right these are Dry Kitchens, dry places and climates.
+variable.ENVIRONMENT.color.4.left	On the left these are Active Mountains, high places with activity going on.
+variable.ENVIRONMENT.color.4.right	On the right these are Passive Mountains, high places of quiet and solitude.
+variable.ENVIRONMENT.color.5.left	On the left these are Narrow Valleys, close and contained spaces.
+variable.ENVIRONMENT.color.5.right	On the right these are Wide Valleys, wide and open expanses.
+variable.ENVIRONMENT.color.6.left	On the left these are Natural Shores, natural edges such as where land meets water.
+variable.ENVIRONMENT.color.6.right	On the right these are Artificial Shores, made edges such as the border of a park or a neighborhood.
+variable.PERSPECTIVE.left	This arrow points left, so the view is focused, it picks out specific things and sees them in detail.
+variable.PERSPECTIVE.right	This arrow points right, so the view is peripheral, it takes in everything at once without a fixed point of focus.
+variable.PERSPECTIVE.color.1	Survival sees the world in terms of what supports life and what threatens it.
+variable.PERSPECTIVE.color.2	Possibility sees the world in terms of what could happen and the options it opens.
+variable.PERSPECTIVE.color.3	Power sees the world in terms of who's in charge, who's winning and who's losing.
+variable.PERSPECTIVE.color.4	Wanting sees the world in terms of what's missing, the needs and gaps that are still to be filled.
+variable.PERSPECTIVE.color.5	Probability sees the world in terms of patterns and likelihood, what's most likely to happen.
+variable.PERSPECTIVE.color.6	Personal sees the world through its own experience, how things touch its own life and each individual connection.
+variable.MOTIVATION.left	This arrow points left, so the mind is strategic, it follows a particular angle of what motivates it and leaves out what doesn't relate to it.
+variable.MOTIVATION.right	This arrow points right, so the mind is receptive, it takes in everything at once without needing to focus on a particular angle.
+variable.MOTIVATION.color.1	Fear drives the mind to make sense of what's uncertain and to find safety in understanding it.
+variable.MOTIVATION.color.2	Hope drives the mind toward what could be, the expectation that things can get better.
+variable.MOTIVATION.color.3	Desire drives the mind toward what it wants to have and to experience.
+variable.MOTIVATION.color.4	Need drives the mind toward what's truly needed, its own needs or those of others.
+variable.MOTIVATION.color.5	Guilt drives the mind to set things right, with a strong sense of what should be done.
+variable.MOTIVATION.color.6	Innocence drives the mind without an agenda, open and curious about what life brings.
+about.channels	A channel joins two centers through the gates at its two ends. When both gates are activated, the channel is defined and gives a consistent theme, a way of working that's always there.
+about.channels.transit	A channel joins two centers through the gates at its two ends. When both gates are activated, the channel is defined and brings its theme for as long as the planets stay in those gates.
+about.circuits	The 36 channels are grouped into circuits, families of channels that work in a similar way, and the circuits form three groups. The Individual circuits are about empowerment, being authentic and creative, and bringing something new into the world. The Tribal circuits are about support, providing for and protecting one another. The Collective circuits are about sharing, offering what's been learned for the benefit of everyone. The Integration Channel is four of the channels between the gates 10, 20, 34 and 57 (10-20, 10-57, 20-34 and 34-57), and it goes with the Individual circuits without being one of them.
+circuit.KNOWING	The Knowing circuit is the larger of the two Individual circuits, whose theme is empowerment. Its knowing comes in the moment, as inspiration that's heard rather than seen, which Human Design calls acoustic. Its moods move between passion and melancholy and feed its creativity, and it brings mutation, change that comes from within and can't be explained in advance.
+circuit.CENTERING	The Centering circuit is the smaller of the two Individual circuits, whose theme is empowerment. It's rooted in deep individuality and concerned with self-love and behavior, and it has an impact on others through example.
+circuit.INTEGRATION	The Integration Channel joins the gates 10, 20, 34 and 57 through four channels, and it goes with the Individual circuits, whose theme is empowerment. It's about self-empowerment and survival, knowing intuitively how to behave and act in the now.
+circuit.EGO	The Ego circuit is the larger of the two Tribal circuits, whose theme is support. It manages the material world through willpower, bargains and support, so that the tribe has what it needs.
+circuit.DEFENSE	The Defense circuit is the smaller of the two Tribal circuits, whose theme is support. It's focused on survival through reproduction and nurturing.
+circuit.LOGIC	The Logic circuit, also called Understanding, is one of the two Collective circuits, whose theme is sharing. It tests and validates patterns through repetition and experiment, looking for logical solutions that make sense for the future.
+circuit.ABSTRACT	The Abstract circuit, also called Sensing, is one of the two Collective circuits, whose theme is sharing. It reflects on the past and is driven to make sense of experiences, so that what they taught can be shared.
+about.planets	Each planet brings its own theme to the gate it's in, and the line within the gate colors how that theme is lived.
+about.planets.personality	The Personality planets are where the Sun, the Moon and the planets were at the moment of birth, and describe the side of a person that they're aware of.
+about.planets.design	The Design planets are where the Sun, the Moon and the planets were about three months before birth, when the Sun was 88 degrees before its place at birth, and describe the side of a person that works without them noticing.
+transit.planet	In a transit, each planet brings the theme of its gate to everyone for as long as it stays there.
+about.gates	Each of the 64 gates is a hexagram of the I Ching, the ancient Chinese Book of Changes, and Human Design gives each one a name of its own next to the hexagram's. A planet in a gate activates it, and each gate sits in one of the nine centers, at one end of one or more channels that join that center to others.
+gate.line.1	Line 1 is the foundation of the gate, where its theme needs a solid base and is looked into thoroughly.
+gate.line.2	Line 2 holds the theme as a natural talent, one that others see and call out before it sees it itself.
+gate.line.3	Line 3 lives the theme through trial and error, finding out what works by finding out what doesn't.
+gate.line.4	Line 4 shares the theme through the people it knows, its friends and its network.
+gate.line.5	Line 5 is where others project their expectations onto the theme, and look to it for practical solutions.
+gate.line.6	Line 6 sees the theme from a distance, first living it through experience and later showing it as an example.
+about.fixing	In Human Design nearly every line of a gate has a planet that exalts it and a planet that puts it in detriment. When one of them is in the line, a triangle marks it, pointing up when the line is exalted and pointing down when it's in detriment, to show which of the two sides of the line's theme comes forward. Both triangles show when both apply. This is called fixing the line, and the same planet anywhere in the same gate, or in the gate at the other end of a channel, fixes it too.
+fixing.exalted	The triangle pointing up shows that this line is exalted.
+fixing.detriment	The triangle pointing down shows that this line is in detriment.
+fixing.other	An outlined triangle marks a line that's only fixed for now, by a planet of another chart drawn with this one, in the same gate or in the gate at the other end of the channel. A filled triangle marks a line that its own chart fixes.
+gate.1	Its theme is the drive to express what's truly individual and creative, without needing to be the best at it. While absorbed in its own creative process, it draws the attention of others without trying to.
+gate.2	Its theme is an inner sense of direction that can't be changed by the mind or the will. It knows which way to go, and when others aren't headed the same way, paths part.
+gate.3	Its theme is the challenge of bringing order to something new, out of the confusion at its start. It takes patience, since change arrives in bursts and in its own time.
+gate.4	Its theme is the mental pressure to formulate answers to doubts about the future. Each answer is only a possibility until it's tested against the facts.
+gate.5	Its theme is an energy that keeps to fixed rhythms and routines, where waiting is an active state rather than a pause. Being forced out of those rhythms is unsettling.
+gate.6	Its theme is the emotional friction that comes up when people meet, which decides whether there's an opening for intimacy. Growth and fertility need that friction.
+gate.7	Its theme is an eye for the direction that society should take toward the future, and for the leadership that can guide it there. Its influence works through others, often from behind the one who leads.
+gate.8	Its theme is the urge to contribute something new and individual, by showing it publicly or by promoting what others create. It can lead by example, but whether others follow is up to them.
+gate.9	Its theme is the power to focus energy on details, one thing at a time. It directs the pressure to concentrate onto what's worth the effort.
+gate.10	Its theme is the love of the self, expressed as behavior that stays true to its own nature whatever others expect. It's the most complex of the gates of its center.
+gate.11	Its theme is a mind full of ideas that come and go, gathered from what has been experienced and seen. The ideas aren't plans to act on, but something to share and to stimulate others with.
+gate.12	Its theme is a caution that keeps quiet until the mood is right to speak. When it does, the tone of the voice says more than the words, and it can move people.
+gate.13	Its theme is a gift for listening, so that people share their stories and secrets. It holds on to what it hears, as a memory of the past that can guide the future.
+gate.14	Its theme is the power to put resources to work, deciding where energy, time and money go. It's the energy for the kind of work that gives a direction the means to go forward.
+gate.15	Its theme is a love of humanity that accepts the whole range of human behavior, its own extremes included. It doesn't keep a fixed rhythm, and that variety has a place in the flow of life.
+gate.16	Its theme is enthusiasm for a skill, refined through practice and repetition until it becomes an art. It needs to identify with what it does.
+gate.17	Its theme is a mind that organizes the future into opinions and concepts. An opinion needs to be asked for, and to hold up to testing, before it's shared.
+gate.18	Its theme is a critical eye for what has lost its vitality and needs correcting. Behind the dissatisfaction is a concern for what keeps people and society healthy.
+gate.19	Its theme is a sensitivity to needs, both basic ones like food and shelter and the need for closeness and spirit, and to whether everyone's needs are met.
+gate.20	Its theme is an awareness that lives entirely in the present moment, and speaks of what's happening now. It gives voice to intuition and conviction as they arise.
+gate.21	Its theme is the need to be in control of its own domain, such as resources, work or a living space. It does best when it's left in charge of that domain, and when it doesn't try to control others.
+gate.22	Its theme is a social grace and openness to listening, when the mood is right. When the mood changes, so does the openness.
+gate.23	Its theme is the ability to put individual insight into words that others can understand. What it knows can sound strange at first, and timing decides whether it's heard.
+gate.24	Its theme is a mind that returns to the same thought again and again, until an inspiration becomes something it can understand and explain. It can't be rushed.
+gate.25	Its theme is a love of life that doesn't discriminate, and an innocence that accepts what comes. It can be tested by the challenges that life brings.
+gate.26	Its theme is a talent for persuasion, presenting things in their best light and selling ideas, products or itself. Memory is used selectively in the service of getting the message across.
+gate.27	Its theme is the power to care for and nourish others, especially the young, the sick and the weak. To keep caring, it has to take care of itself first.
+gate.28	Its theme is the search for what makes life worth living, and the willingness to take risks to find a purpose. Struggle that leads to meaning is welcome.
+gate.29	Its theme is the energy to say yes and commit fully to an experience, persevering through it. What it commits to needs to be the right thing, since it sees things through.
+gate.30	Its theme is a hunger for feelings and new experiences, driven by desire. What an experience turns out to be can't be controlled, only the clarity with which it's entered.
+gate.31	Its theme is leadership that comes from being chosen by others. Its voice offers a direction for the future and shows the way rather than doing the work.
+gate.32	Its theme is an instinct for what can last and what can be transformed, with an underlying fear of failure. It recognizes the talents that are worth keeping.
+gate.33	Its theme is the need to withdraw and reflect at the end of an experience. From that retreat comes the memory that turns experience into lessons for others.
+gate.34	Its theme is a great and independent power, the energy to be busy and to act on its own convictions. It's most at ease when it isn't used for someone else's purposes.
+gate.35	Its theme is a restless hunger for change and new experiences, for the sake of the experience itself. What's gained from them becomes wisdom when it's shared.
+gate.36	Its theme is the emotional drive to go through new experiences and the crises they can bring. With time, inexperience turns into the ability to handle them.
+gate.37	Its theme is a warmth and friendliness that holds families and communities together. It rests on bargains, where warmth and support are given when what comes back is fair and clearly agreed.
+gate.38	Its theme is the energy to struggle and fight for what gives life meaning. Not every fight is worth having, and the right ones give life a purpose.
+gate.39	Its theme is the pressure to provoke, to bring out the spirit and emotions in others. Provocation reveals who shares the same spirit.
+gate.40	Its theme is a need to be alone, to rest after working on behalf of others. It gives its support, and then needs time to itself before it can give again.
+gate.41	Its theme is the pressure of desire for new experiences, often first felt as fantasy. It's the start of the emotional cycles of experience.
+gate.42	Its theme is the energy to stay with a cycle until it's complete, so that its potential can grow. It brings things to their natural conclusion.
+gate.43	Its theme is inner knowing that comes as sudden insight, a breakthrough to a new way of seeing. Explaining it to others takes the right timing.
+gate.44	Its theme is an instinctive memory of patterns from the past, alert to who has the right talents for the work at hand. It recognizes potential in people.
+gate.45	Its theme is the natural authority that gathers people and resources, and speaks for the group. Its role is to guide and to provide, not to do the work.
+gate.46	Its theme is a love of the body and of being in it, and a determination that leads to being in the right place at the right time. Success comes through commitment to the experience.
+gate.47	Its theme is a mind that works to make sense of the past, sorting through what has happened until a realization comes. The pressure eases once it does.
+gate.48	Its theme is a depth of knowledge and a talent for solutions, with a fear of not knowing enough. It deepens with experience and practice.
+gate.49	Its theme is a sensitivity to principles, accepting or rejecting relationships according to them. When principles are no longer honored, it can lead to revolution.
+gate.50	Its theme is a sense of responsibility for the values that keep a group healthy, its rules and the care of its young. It watches over them.
+gate.51	Its theme is the energy to shock and to be shocked, initiating by competing and by going first. Shocks wake people up from being too comfortable.
+gate.52	Its theme is the ability to keep still and concentrate, holding energy until it's directed at something worthwhile. Without focus, the stillness can turn into restlessness.
+gate.53	Its theme is the pressure to start something new, beginning a cycle of development. Once started, things need time to mature.
+gate.54	Its theme is ambition and the drive to rise, both in the material world and in spirit. It wants to be recognized and taken along by those who can help.
+gate.55	Its theme is emotional abundance, moods that swing between feeling empty and feeling full. Its spirit depends on how the moment feels.
+gate.56	Its theme is telling stories, of ideas and beliefs drawn from experience, that stimulate others. The stories don't have to be exact, since their purpose is to get others thinking.
+gate.57	Its theme is an intuition that speaks in the moment, a clarity about what's safe and what isn't. It's subtle, heard once, and it doesn't repeat itself.
+gate.58	Its theme is a joy for life and the vitality to make things better. It challenges what's weak or unhealthy, out of a wish to help.
+gate.59	Its theme is the energy to break down barriers to intimacy and to bond, whether to make new life or a creative partnership with others.
+gate.60	Its theme is the acceptance of limitation as the ground from which something new can grow. Its pressure comes in pulses, and mutation can't be forced.
+gate.61	Its theme is the pressure to know the unknowable, to solve the mystery of existence. Moments of inner truth can inspire others.
+gate.62	Its theme is a mind that names things and organizes the details that support a concept. It thinks through what can be said and backed by facts.
+gate.63	Its theme is doubt that questions patterns in order to be sure of the future. It drives logic, the pressure to find out whether something holds up.
+gate.64	Its theme is the confusion of a mind sorting through images and memories of the past. Making sense of them takes time, and not knowing yet is part of the process.
+planet.SUN	The Sun carries the largest part of a chart.
+planet.SUN.more	That's about 70 percent in Human Design, and its gate is the core theme of how a person expresses themselves and lives.
+planet.EARTH	The Earth is always opposite the Sun and gives the Sun's theme its ground.
+planet.EARTH.more	It's where balance and stability come from.
+planet.MOON	The Moon is the driving force.
+planet.MOON.more	It's what moves a person along and pushes them to act.
+planet.NORTH_NODE	The North Node is about where life is heading.
+planet.NORTH_NODE.more	It describes the environment and the direction of the second half of life, from about the age of 40.
+planet.SOUTH_NODE	The South Node is about where life comes from.
+planet.SOUTH_NODE.more	It describes the environment of the first half of life, up to about the age of 40, and it's always opposite the North Node.
+planet.MERCURY	Mercury is about communication.
+planet.MERCURY.more	It's what a person needs to say and to think through.
+planet.VENUS	Venus is about values.
+planet.VENUS.more	It's what a person finds right or wrong, and their sense of what's good in relationships.
+planet.MARS	Mars is about immaturity and growth.
+planet.MARS.more	It's the energy that's raw at first and matures with experience over time.
+planet.JUPITER	Jupiter is about law and the rewards of following it.
+planet.JUPITER.more	It stands for the principles that bring protection and good fortune when they're lived.
+planet.SATURN	Saturn is about discipline and restraint.
+planet.SATURN.more	It's what holds a person back, and the consequences of not living by their own rules.
+planet.URANUS	Uranus is about what's unusual and unexpected.
+planet.URANUS.more	It's the way a person stands out and what's different about them.
+planet.NEPTUNE	Neptune is about illusion and what's hidden.
+planet.NEPTUNE.more	It hides the theme of its gate and can also be a source of inspiration.
+planet.PLUTO	Pluto is about truth and transformation.
+planet.PLUTO.more	It stands for the deepest changes, which come from within over a long time.
+planet.CHIRON	Chiron isn't one of the planets of a Human Design chart, so these charts show it on the wheel and in the rows, but it never activates gates, channels or centers.
+planet.CHIRON.more	It's linked with wounding and healing, and its return, around the age of 50, marks the start of the last stage of life. Its gate and line describe where it is, not something that it activates.
+channel.1-8	The theme of Inspiration is a creative way of being that stands apart, and that inspires others by example rather than by persuading them.
+channel.2-14	The theme of the Beat is being the keeper of keys, the one who holds the energy and resources that power a new direction for people and projects. The direction comes and goes, and the resources are there to empower others more than to be kept.
+channel.3-60	The theme of Mutation is change that comes in pulses, with long quiet times and sudden bursts, which brings something new into the world.
+channel.4-63	The theme of Logic is doubt that looks for answers, testing ideas against patterns to understand what can be expected in the future.
+channel.5-15	The theme of Rhythm is living in a steady flow, with fixed habits and routines, while accepting the many different rhythms of other people.
+channel.6-59	The theme of Mating is intimacy, the energy to break through barriers and to bond with others, and to create, in every sense.
+channel.7-31	The theme of the Alpha is leadership that people choose, showing the way forward once others recognize the direction.
+channel.9-52	The theme of Concentration is the focus and determination to stay with something and to work through its details.
+channel.10-20	The theme of Awakening is living by higher principles in the moment, and expressing them as they are lived.
+channel.10-34	The theme of Exploration is the energy to follow personal convictions and to stay true to them, whatever others think.
+channel.10-57	The theme of Perfected Form is behaving in ways that keep a person alive and well, guided by intuition and by enough love of self to stay true to it. It leaves the surroundings more beautiful by example, not by intention.
+channel.11-56	The theme of Curiosity is searching for ideas and experiences, and turning them into stories that stimulate others.
+channel.12-22	The theme of Openness is social grace and expression that depends on mood, at its best when the timing and the feeling are right.
+channel.13-33	The theme of the Prodigal is listening, collecting experiences and keeping them, so that they can be shared later as lessons.
+channel.16-48	The theme of the Wavelength is talent built through depth and repetition, until a skill can be expressed with ease.
+channel.17-62	The theme of Acceptance is organizing opinions with facts and details, so that they can be explained and understood.
+channel.18-58	The theme of Judgment is the drive to correct and improve, and the joy of perfecting patterns so that they serve people better.
+channel.19-49	The theme of Synthesis is sensitivity to needs, and bonding with others through principles and the sharing of resources.
+channel.20-34	The theme of Charisma is energy that turns straight into action, always busy and doing things as they come up.
+channel.20-57	The theme of the Brainwave is an intuitive awareness that sees through things clearly, and speaks in the moment.
+channel.21-45	The theme of Money is managing material resources, being in control of them and providing for the people who depend on them.
+channel.23-43	The theme of Structuring is individual insight, ideas that come all at once and need the right timing to be explained.
+channel.24-61	The theme of Awareness is thinking about the mysteries of life, going over them again and again until they make sense.
+channel.25-51	The theme of Initiation is the courage to be first and to take risks, with a competitive spirit that can shock others awake.
+channel.26-44	The theme of Surrender is the gift of selling and convincing, built on a memory of what worked before.
+channel.27-50	The theme of Preservation is caring for others, with a strong sense of values and responsibility for the people around.
+channel.28-38	The theme of Struggle is a stubborn search for purpose, finding meaning in what's worth fighting for.
+channel.29-46	The theme of Discovery is committing fully to an experience, and so succeeding where others give up.
+channel.30-41	The theme of Recognition is a desire for new experiences, with feelings and fantasies that build up before they're lived.
+channel.32-54	The theme of Transformation is the ambition to rise in the world, driven to achieve material success and recognition.
+channel.34-57	The theme of Power is energy guided by intuition, acting powerfully in the moment to stay safe and alive.
+channel.35-36	The theme of Transitoriness is the hunger for new experiences and change, and the wisdom that comes from having lived through them.
+channel.37-40	The theme of Community is the bargain that holds families and groups together, giving support in return for being supported.
+channel.39-55	The theme of Emoting is moodiness and spirit, feelings that go up and down and that can provoke emotions in others.
+channel.42-53	The theme of Maturation is growing through cycles, starting things and seeing them through to their end.
+channel.47-64	The theme of Abstraction is a mind that makes sense of past experiences, sorting through images and memories until they become clear.
+about.range	The table follows the planets over a month or a day, and shows when each of them moves into a new gate or a new line.
+range.dates	Each row is one moment, a day apart in the month view and an hour apart in the day view, at the time and the place chosen above.
+range.planets	Each column is a planet, the Sun, the Earth, the Moon, the North and South Nodes, Mercury to Pluto and then Chiron, in the same order as below the wheel of a chart.
+range.cells	A cell shows the gate and line of a planet, written as the gate number, a dot and the line number. It's only shown when it has changed since the row above, so an empty cell means the planet is still in the same line, and the last row shows them all again.
+about.guide	There are five kinds of charts and two tables here. They all start from the positions of the Sun, the Moon and the planets, and each one answers a different question.
+guide.birth	The Birth Chart shows how a person is built, calculated from the date, the time and the place of birth.
+guide.birth.use	It's the chart to start with, and it shows the Type, Authority, Profile, Definition, Incarnation Cross, centers, channels and Variables. The time of birth matters, since even a few minutes can move a planet into another line, and the Variables need it accurate to a few minutes.
+guide.transit	The Transit Chart shows where the planets are at any moment, now unless another moment is chosen, and the gates, channels and centers that they activate for everyone.
+guide.transit.use	It's useful to see the general mood of a day, or to look at a moment in the past or in the future.
+guide.birth_transit	The Birth Transit Chart puts the planets of a moment on top of a birth chart, and shows the channels that the transits complete with it and the open centers they define for a while.
+guide.birth_transit.use	It's useful to see how a day, a week or a longer period touches a particular person.
+guide.connection	The Connection Chart puts two birth charts together and shows how they meet, with the channels the two people complete between them, the ones they share and the ones that only one of them brings.
+guide.connection.use	It's useful to look at a relationship, a friendship or people working together.
+guide.connection_transit	The Connection Transit Chart puts the planets of a moment on top of the connection chart of two people, and shows the channels that the transits complete for them together.
+guide.connection_transit.use	It's useful to see how a day, a week or a longer period touches a relationship.
+guide.range_month	Transits by Month is a table of the gate and line of every planet over a month, with a row for each day, where the gate and line of a planet are only written when they change.
+guide.range_month.use	It's useful to see ahead when a planet moves into a new gate or line, especially the slower planets that stay in one for a long time.
+guide.range_day	Transits by Day is a table of the gate and line of every planet over a single day, with a row for each hour.
+guide.range_day.use	It mostly follows the Moon, which moves into a new line every couple of hours and into a new gate about every ten hours.

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--i head/-->
+    <link rel="stylesheet" href="{{v webapp:rootUrl/}}css/second-row.css?{{v context:paramRandom/}}">
+    <script>
+        window.onload = function () {
+            prepareCitiesForElements('#location-id', '#location', 'birth');
+            prepareCitiesForElements('#second-location-id', '#second-location', 'partner');
+            prepareBirthDateForElement('datetime', 'birth');
+            prepareBirthDateForElement('second-datetime', 'partner');
+            prepareSharing();
+            showFirstChart('{{v image-url/}}/', '{{v now-location}}{{/v}}');
+        };
+    </script>
+</head>
+<body>
+<div id="load-entries">
+    <div class="popup-content entries">
+    </div>
+</div>
+<!--i welcome/-->
+<div id="content">
+    <header id="controls">
+        <!--i menu/-->
+        <!--i date_navigation_connection/-->
+    </header>
+<!--i chart_area/-->
+    <!--i footer/-->
+</div>
+</body>
+</html>

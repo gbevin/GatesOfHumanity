@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--i head/-->
+    <meta name="robots" content="noindex">
+    <script>
+        people_charts = [{{v person-charts}}{{/v}}];
+        {{b person-chart}}{label: '{{v chart-label/}}', url: '{{v chart-url/}}'}, {{/b}}
+        window.onload = function () {
+            preparePersonForm();
+            showPeople();
+        };
+    </script>
+</head>
+<body>
+<div id="content">
+    <header id="controls">
+        <!--i menu/-->
+    </header>
+    <article id="learn" class="people">
+        <header class="learn-intro">
+        <h1 class="learn-title"><!--v intro-title/--></h1>
+        <p class="learn-lead">The people you save are listed here, from the page of a chart or with their details below. They stay in <!--v property:gatesofhumanity.keptIn-->this browser<!--/v-->, they're never stored anywhere else.</p>
+        </header>
+        <div id="person" class="entries">
+            <button type="button" id="person-add" class="primary" aria-expanded="false" aria-controls="person-form">Add a person</button>
+            <form id="person-form" method="post" hidden>
+                <label class="save-label" for="person-name">Name</label>
+                <input id="person-name" type="text" autocomplete="off" enterkeyhint="next"/>
+                <label class="save-label" for="person-datetime">Birth date and time</label>
+                <input id="person-datetime" type="datetime-local" min="1800-01-01T00:00" max="2199-12-31T23:59"/>
+                <label class="save-label" for="person-location">Birth city</label>
+                <input id="person-location" type="text" autocomplete="off" spellcheck="false" aria-describedby="person-location-hint"/>
+                <input id="person-location-id" type="hidden"/>
+                <p id="person-location-hint" class="person-hint">Type its first letters, then choose the city from the list.</p>
+                <label class="save-label" for="person-group">Group</label>
+                <input id="person-group" type="text" autocomplete="off" placeholder="Optional, such as Family or Friends"/>
+                <p id="person-notice" class="entries-notice" role="status" hidden></p>
+                <div class="entries-actions">
+                    <button type="button" id="person-cancel">Cancel</button>
+                    <button type="submit" id="person-submit" class="primary" disabled>Add</button>
+                </div>
+            </form>
+        </div>
+        <div id="people" class="entries"></div>
+    </article>
+    <!--i footer/-->
+</div>
+</body>
+</html>

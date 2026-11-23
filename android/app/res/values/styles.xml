@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- the color at the top of the title bar of the pages, which goes on behind the status bar and before the first page is there -->
+    <color name="edge">#21214e</color>
+    <style name="App" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/edge</item>
+        <item name="android:statusBarColor">@color/edge</item>
+        <item name="android:navigationBarColor">@color/edge</item>
+        <!-- up to the top of the screen where a camera sits in it: left out, that part is black -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>

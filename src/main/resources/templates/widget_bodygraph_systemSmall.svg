@@ -1,0 +1,26 @@
+<svg version="1.1" width="158" height="158" viewBox="0 0 158 158" xmlns="http://www.w3.org/2000/svg"
+     data-owner-letters="{{v owner_letters}}16{{/v}}" data-owner-size="{{v owner_size}}9{{/v}}" data-owner-smallest="{{v owner_smallest}}7{{/v}}">
+    <title><!--v title-->The Body Graph Now<!--/v--></title>
+    <style>
+<!--i widget_style/-->
+<!--i widget_bodygraph_style/-->
+        .small-on, .small-off { display: none; }
+    </style>
+<!--i widget_sky/-->
+    <rect id="background" width="158" height="158" rx="14" fill="url(#sky)"/>
+    <a href="{{v url/}}">
+        <g class="{{v graph}}{{/v}}" transform="{{v placed}}translate(-17.2 -15.6) scale(0.2004){{/v}}">
+<!--i widget_bodygraph_cone/-->
+<!--i bodygraph/-->
+        </g>
+        <!--v owner--><!--/v-->
+        <!--v channels--><!--/v-->
+    </a>
+</svg>
+<!--b channel_1--><text class="figure gold" x="12" y="24" font-size="12"><!--v channel/--></text><!--/b-->
+<!--b channel_2--><text class="figure gold" x="146" y="24" font-size="12" text-anchor="end"><!--v channel/--></text><!--/b-->
+<!--b channel_3--><text class="figure gold" x="12" y="40" font-size="12"><!--v channel/--></text><!--/b-->
+<!--b channel_4--><text class="figure gold" x="146" y="40" font-size="12" text-anchor="end"><!--v channel/--></text><!--/b-->
+<!--b placed_owner-->translate(-9 -13.6) scale(0.1834)<!--/b-->
+<!--b owner--><text class="figure quiet" x="12" y="149" font-size="{{v owner_fitted/}}"><!--v owner_name/--></text><!--/b-->
+<!--b more--><text class="quiet" x="146" y="148" font-size="10" text-anchor="end">+<!--v count/--></text><!--/b-->

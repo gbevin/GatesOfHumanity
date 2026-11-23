@@ -1,0 +1,3 @@
+User-agent: *
+<!v disallowed/><!b disallow>Disallow: <!v path/>/
+<!/b>Sitemap: <!v route:sitemap/>

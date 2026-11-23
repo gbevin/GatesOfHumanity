@@ -1,0 +1,14 @@
+<svg version="1.1" width="160" height="72" viewBox="0 0 160 72" xmlns="http://www.w3.org/2000/svg"
+     data-name-letters="{{v name_letters}}14{{/v}}" data-name-size="{{v name_size}}13{{/v}}" data-name-smallest="{{v name_smallest}}10{{/v}}" data-name-lines="{{v name_lines}}1{{/v}}">
+    <title>Transits Now</title>
+    <style>
+<!--i widget_style/-->
+        text { font-weight: 700; }
+    </style>
+    <a href="{{v url/}}">
+        <g transform="translate(0, 17)"><!--v sun/--></g>
+        <g transform="translate(0, 40)"><!--v earth/--></g>
+        <g transform="translate(0, 63)"><!--v moon/--></g>
+    </a>
+</svg>
+<!--b row--><text x="0" y="0" font-size="{{v size/}}"><!--v planet/--> <!--v place/--> <!--v name_1/--></text><!--/b-->

@@ -1,0 +1,134 @@
+{
+    "app_id": "6834835560",
+    "listing": "AppStoreListing.md",
+    "systems": {
+        "IOS": "iOS",
+        "MAC_OS": "Mac",
+        "VISION_OS": "visionOS"
+    },
+    "ship": {
+        "root": "../..",
+        "out": "ios/build",
+        "name": "Gates of Humanity",
+        "bundle": "com.uwyn.gatesofhumanity",
+        "team": "AGZT8GVS7G",
+        "icon": "ios/app/Assets.xcassets/AppIcon.appiconset/icon1024.png",
+        "numbers": {
+            "file": "ios/project.yml",
+            "build": "CURRENT_PROJECT_VERSION: (\\d+)",
+            "version": "MARKETING_VERSION: \"([\\d.]+)\""
+        },
+        "project": "ios/GatesOfHumanity.xcodeproj",
+        "generate": {
+            "run": [
+                "xcodegen",
+                "generate"
+            ],
+            "in": "ios"
+        },
+        "privacy": [
+            "./bld",
+            "app-check-privacy"
+        ],
+        "deploy": {
+            "address": "https://uwyn.com/deploy/hd",
+            "note": "Open this page on the device itself. The builds for iPhone, iPad and Apple Vision Pro only install on registered devices, and the one for iPhone has the app for Apple Watch in it. On Android, the browser asks whether it may install apps the first time."
+        },
+        "systems": [
+            {
+                "key": "ios",
+                "label": "Install on iPhone or iPad",
+                "prepare": [
+                    [
+                        "./bld",
+                        "app-library",
+                        "ios"
+                    ]
+                ],
+                "xcode": {
+                    "scheme": "GatesOfHumanity",
+                    "destination": "iOS",
+                    "product": "GatesOfHumanity"
+                },
+                "air": {
+                    "file": "GatesOfHumanity.ipa",
+                    "manifest": "hd.xml"
+                },
+                "store": true
+            },
+            {
+                "key": "vision",
+                "label": "Install on Apple Vision Pro",
+                "prepare": [
+                    [
+                        "./bld",
+                        "app-library",
+                        "vision"
+                    ]
+                ],
+                "xcode": {
+                    "scheme": "Vision",
+                    "destination": "visionOS",
+                    "product": "Gates"
+                },
+                "air": {
+                    "file": "GatesOfHumanityVision.ipa",
+                    "manifest": "vision.xml"
+                },
+                "store": true
+            },
+            {
+                "key": "mac",
+                "label": "Download for Mac",
+                "direct": {
+                    "run": [
+                        [
+                            "mac/build.sh"
+                        ]
+                    ],
+                    "env": {
+                        "GATES_RELEASED": "1"
+                    },
+                    "app": "mac/build/Gates.app",
+                    "notarize": true,
+                    "file": "GatesOfHumanity-mac.zip"
+                },
+                "store": {
+                    "scheme": "Mac",
+                    "destination": "macOS",
+                    "product": "Gates",
+                    "checks": [
+                        [
+                            "mac/check-icloud.sh"
+                        ]
+                    ]
+                },
+                "prepare_store": [
+                    [
+                        "./bld",
+                        "app-library",
+                        "mac"
+                    ]
+                ]
+            },
+            {
+                "key": "android",
+                "label": "Download for Android",
+                "direct": {
+                    "run": [
+                        [
+                            "android/build.sh"
+                        ]
+                    ],
+                    "artifact": "android/build/Gates.apk",
+                    "file": "GatesOfHumanity.apk"
+                }
+            }
+        ],
+        "install": {
+            "devices": [
+                "iPhone 17"
+            ]
+        }
+    }
+}

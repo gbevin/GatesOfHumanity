@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--i head/-->
+</head>
+<body>
+<div id="content">
+    <header id="controls">
+        <!--i menu/-->
+    </header>
+    <article id="learn" class="about">
+        <header class="learn-intro">
+        <h1 class="learn-title"><!--v intro-title/--></h1>
+        <p class="learn-lead">Hi, I'm Geert Bevin, and at <a href="https://uwyn.com">Uwyn</a> I make electronic musical instruments, MIDI tools, gesture controllers and 3D-printed designs, as well as <a href="https://rife2.com">RIFE2</a> and <a href="https://rife2.com/bld">bld</a>, the framework and build tool that these charts are made with.</p>
+        </header>
+        <div class="learn-card">
+        <p>Someone introduced me to Human Design, and what caught my attention was the calculation behind it. Every chart depends on the exact positions of the Sun, the Moon and the planets at two moments, and I wondered what it would take to calculate them properly, without relying on anyone else's software. These charts are the result of that curiosity. It was also a good reason to put RIFE2, my own web framework, through its paces, and in particular its template engine, which draws every chart here as SVG. That's a use of a template engine I haven't seen much before, and the charts are shown as they are, without any image library or JavaScript framework.</p>
+        <p>Everything is calculated from scratch in pure Java. The positions come from tables fitted to the JPL ephemerides, and they're checked against two thousand reference charts made with the Swiss Ephemeris. The people you save stay in <!--v property:gatesofhumanity.keptIn-->this browser<!--/v-->, they're never stored anywhere else.</p>
+        <p>I'm not a Human Design practitioner, and there are no readings or advice here. The descriptions below the charts and in the <a href="{{v learn-url/}}">Learn</a> pages introduce what each part of a chart means within Human Design, following its own literature, so that you can explore it and decide for yourself what it means to you.</p>
+        <p>It's all free, without ads or tracking. If you're curious about the other things I make, you'll find them at <a href="https://uwyn.com">uwyn.com</a>.</p>
+        </div>
+        <!--v apps--><!--/v-->
+        <!--v embedding--><!--/v-->
+        <section class="learn-sources">
+        <h2>Credits</h2>
+        <p>These charts rely on the work of others.</p>
+        <ul>
+            <li>The city names, coordinates and time zones are from <a href="https://www.geonames.org">GeoNames</a>, licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>. The data was reduced to what the city search needs.</li>
+            <li>The planetary positions are fitted to ephemerides from the <a href="https://ssd.jpl.nasa.gov/horizons/">JPL Horizons</a> system of the Jet Propulsion Laboratory, California Institute of Technology.</li>
+            <li>The names of the Incarnation Crosses, the channels, the gates and their hexagrams are as given in <cite>The Definitive Book of Human Design</cite> by Ra Uru Hu and Lynda Bunnell.</li>
+            <li><a href="https://rife2.com">RIFE2</a> is licensed under the Apache License, Version 2.0, and has the <a href="https://asm.ow2.io">ASM</a> bytecode library and the <a href="https://www.antlr.org">ANTLR 4</a> runtime inside it, both licensed under the BSD 3-Clause License.</li>
+            <li><a href="https://projects.verou.me/awesomplete/">Awesomplete</a> by Lea Verou and <a href="https://github.com/necolas/normalize.css">normalize.css</a> by Nicolas Gallagher and Jonathan Neal are both licensed under the MIT License.</li>
+            <!--v program-credit--><!--/v-->
+        </ul>
+        </section>
+        <!--v program-version--><!--/v-->
+    </article>
+    <!--i footer/-->
+</div>
+</body>
+</html>
+<!--b apps-->
+        <div class="learn-card" id="apps">
+        <h2>The apps</h2>
+        <p>Gates of Humanity is also an app for iPhone, iPad, Apple Watch, Mac and Apple Vision Pro. It has the same charts as these pages and calculates them on the device, so it works without a connection. It adds widgets for what's happening now, and it keeps the people you save the same on your devices through your own iCloud. It's free too, and you can <a href="{{v app-store-url/}}">get it on the App Store</a>.</p>
+        </div>
+<!--/b-->
+<!--b embedding-->
+        <div class="learn-card" id="embed">
+        <h2>The transits on your own site</h2>
+        <p>If you have a site or a blog, you can show the transits of this moment on it. It's an image that's drawn again whenever it's asked for, with the gates and lines that the Sun, the Earth and the Moon are in, their hexagrams from the I Ching, and until when each one stays there, in UTC. Copy one of these into your page, and a click on it opens the transit chart here.</p>
+        <!--v embeds/-->
+        </div>
+<!--/b-->
+<!--b embed-->
+        <figure class="embed">
+            <img src="{{v embed-image/}}" width="{{v embed-width/}}" height="{{v embed-height/}}" alt="{{v embed-says/}}">
+            <pre><code><!--v embed-code/--></code></pre>
+        </figure>
+<!--/b-->
+<!--b program-credit--><li><!--v credit/--></li><!--/b-->
+<!--b program-version--><p class="learn-version">Version <!--v version/--><!--v program-build--><!--/v--></p><!--/b-->
+<!--b program-build-->, build <!--v build/--><!--/b-->

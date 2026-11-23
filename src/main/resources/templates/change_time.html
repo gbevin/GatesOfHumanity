@@ -1,0 +1,9 @@
+    <div id="change-time">
+        <button type="button" name="now" onclick="return showNow('{{v image-url/}}/');"><span id="now">Now</span></button>
+        <button type="button" id="day-min" aria-label="A day earlier" onclick="return showDate(getDateOffset(-86400), '{{v image-url/}}/');"><span>- Day</span></button>
+        <button type="button" id="day-plus" aria-label="A day later" onclick="return showDate(getDateOffset(86400), '{{v image-url/}}/');"><span>+ Day</span></button>
+        <button type="button" id="hour-min" aria-label="An hour earlier" onclick="return showDate(getDateOffset(-3600), '{{v image-url/}}/');"><span>- Hour</span></button>
+        <button type="button" id="hour-plus" aria-label="An hour later" onclick="return showDate(getDateOffset(3600), '{{v image-url/}}/');"><span>+ Hour</span></button>
+        <button type="button" id="minute-min" aria-label="A minute earlier" onclick="return showDate(getDateOffset(-60), '{{v image-url/}}/');"><span>- Minute</span></button>
+        <button type="button" id="minute-plus" aria-label="A minute later" onclick="return showDate(getDateOffset(60), '{{v image-url/}}/');"><span>+ Minute</span></button>
+    </div>

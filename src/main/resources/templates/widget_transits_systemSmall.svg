@@ -1,0 +1,30 @@
+<svg version="1.1" width="158" height="158" viewBox="0 0 158 158" xmlns="http://www.w3.org/2000/svg"
+     data-name-letters="{{v name_letters}}15{{/v}}" data-name-size="{{v name_size}}15{{/v}}" data-name-smallest="{{v name_smallest}}11{{/v}}" data-name-lines="{{v name_lines}}2{{/v}}">
+    <title>Transits Now</title>
+    <style>
+<!--i widget_style/-->
+    </style>
+<!--i widget_sky/-->
+    <rect id="background" width="158" height="158" rx="14" fill="url(#sky)"/>
+    <a href="{{v url/}}">
+        <text class="label quiet" x="16" y="27">SUN</text>
+        <!--v credit--><!--/v-->
+        <text class="figure gold" x="15" y="66" font-size="40"><!--v sun_place/--></text>
+        <g transform="translate(112, 37)"><!--v sun_hexagram/--></g>
+        <!--v sun/-->
+        <text class="name" x="16" y="142" font-size="12">Earth <!--v earth_place/--></text>
+        <text class="name" x="142" y="142" font-size="12" text-anchor="end">Moon <!--v moon_place/--></text>
+    </a>
+</svg>
+<!--b row_1-->
+        <text class="name" x="16" y="86" font-size="{{v size/}}"><!--v name_1/--></text>
+        <text class="quiet" x="16" y="102" font-size="12" data-time="{{v until/}}" data-text="until {EEEjmm}">until <!--v until_written/--><!--v zone--><!--/v--></text>
+<!--/b-->
+<!--b row_2-->
+        <text class="name" x="16" y="84" font-size="{{v size/}}"><!--v name_1/--></text>
+        <text class="name" x="16" y="98" font-size="{{v size/}}"><!--v name_2/--></text>
+        <text class="quiet" x="16" y="114" font-size="12" data-time="{{v until/}}" data-text="until {EEEjmm}">until <!--v until_written/--><!--v zone--><!--/v--></text>
+<!--/b-->
+<!--b zone--> UTC<!--/b-->
+<!--b credit--><text class="quiet" x="142" y="27" font-size="9" text-anchor="end"><!--v from/--></text><!--/b-->
+<!--i widget_hexagram/-->

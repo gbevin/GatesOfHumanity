@@ -1,0 +1,38 @@
+    <meta charset="UTF-8">
+    <title><!--v tab-title-->Gates of Humanity<!--/v--></title>
+    <meta name="description" content="{{v page-description/}}">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!--v context:nativeAppScript/-->
+    <link rel="canonical" href="{{v page-url/}}">
+    <link rel="icon" href="{{v webapp:rootUrl/}}images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{v webapp:rootUrl/}}images/apple-touch-icon.png">
+    <link rel="manifest" href="{{v webapp:rootUrl/}}site.webmanifest">
+    <!--v app-banner--><!--/v-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Gates of Humanity"/>
+    <meta property="og:title" content="{{v page-title/}}"/>
+    <meta property="og:description" content="{{v page-description/}}"/>
+    <meta property="og:url" content="{{v page-url/}}"/>
+    <meta property="og:image" content="{{v webapp:rootUrl/}}images/og-image.png?v=4"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="theme-color" content="#21214e"/>
+    <link rel="stylesheet" href="{{v webapp:rootUrl/}}css/normalize.css?{{v context:paramRandom/}}">
+    <link rel="stylesheet" href="{{v webapp:rootUrl/}}css/awesomplete.css?{{v context:paramRandom/}}">
+    <link rel="stylesheet" href="{{v webapp:rootUrl/}}css/main.css?{{v context:paramRandom/}}">
+    <style>:root { --column-width: {{v property:gatesofhumanity.columnWidth}}900px{{/v}}; }</style>
+    <script src="{{v webapp:rootUrl/}}js/store.js?{{v context:paramRandom/}}"></script>
+    <script src="{{v webapp:rootUrl/}}js/main.js?{{v context:paramRandom/}}"></script>
+    <script src="{{v webapp:rootUrl/}}js/app.js?{{v context:paramRandom/}}"></script>
+    <script src="{{v webapp:rootUrl/}}js/awesomplete.min.js?{{v context:paramRandom/}}"></script>
+    <script>
+        chart_type = '{{v chart-type}}{{/v}}';
+        kept_in = '{{v property:gatesofhumanity.keptIn}}this browser{{/v}}';
+        share_root = '{{v property:gatesofhumanity.shareRootUrl}}{{/v}}';
+        inApp('{{v property:gatesofhumanity.app}}{{/v}}');
+        routes = {cities: '{{v route:cities/}}', zone: '{{v route:zoneCity/}}', now: '{{v route:now/}}', cycle: '{{v route:cycle/}}', people: '{{v route:people/}}',
+                  explore: {'{{v route:wheelImage/}}': '{{v route:wheelExplore/}}', '{{v route:rangeTable/}}': '{{v route:rangeExplore/}}'}};
+    </script>
+<!--b app-banner--><meta name="apple-itunes-app" content="app-id={{v app-id/}}"><!--/b-->

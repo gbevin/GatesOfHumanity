@@ -1,0 +1,13 @@
+        .cone { fill: #34347c; stroke: #5a5aa8; stroke-width: 2px; }
+        .hd-channel-off, .hd-channel-off-stroke, .center-off { fill: #6464aa; }
+        .with-own .hd-channel-off, .with-own .hd-channel-off-stroke, .with-own .center-off { fill: #55559a; }
+        .hd-channel-on, .hd-channel-on-stroke, .hd-channel-both, .hd-channel-both-stroke { fill: #fff1cc; }
+        .hd-channel-design, .hd-channel-design-stroke { fill: #a4a4d4; }
+        .hd-channel-contour { fill: none; }
+        .hd-channel-hidden { display: none; }
+        .hd-center { stroke: #a4a4d8; stroke-width: 1.5px; }
+        .center-added { stroke: #a4a4d4; stroke-width: 4px; }
+        .gate-on-yellow { fill: #ffd900; }
+        .gate-on-green { fill: #75ce28; }
+        .gate-on-brown { fill: #d6992d; }
+        .gate-on-red { fill: #ff5b3b; }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.uwyn.gatesofhumanity">
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="34"/>
+    <!-- The app asks for no permission. Without the one for the network, nothing but the site
+         inside it loads in its web view.
+         The libraries are files beside the app, where the one that starts Java finds the other.
+         What the app keeps, the saved people among it, isn't copied to a backup elsewhere: they
+         stay in this app, as the welcome says. -->
+    <application android:name=".App" android:label="Gates" android:icon="@mipmap/ic_launcher" android:extractNativeLibs="true" android:allowBackup="false" android:theme="@style/App">
+        <!-- One of it, which a tap on a widget comes to. It stays as it is whatever changes about
+             the screen or the device: a page lays itself out again, and one that Android made
+             anew would have to load again. -->
+        <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"
+                  android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|density|uiMode|fontScale|keyboard|keyboardHidden|navigation|locale|layoutDirection">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- hands a file that a page saved to the app that it's shared with -->
+        <provider android:name="rife.nativeapp.android.NativeShared" android:authorities="com.uwyn.gatesofhumanity.rife2.files" android:exported="false" android:grantUriPermissions="true"/>
+
+        <receiver android:name=".Widgets$Transits" android:label="@string/transits" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_transits"/>
+        </receiver>
+        <receiver android:name=".Widgets$Bodygraph" android:label="@string/bodygraph" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_bodygraph"/>
+        </receiver>
+        <receiver android:name=".Widgets$Person" android:label="@string/person" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_person"/>
+        </receiver>
+        <!-- what a launcher shows to choose the person of a widget -->
+        <activity android:name=".PersonChoice" android:exported="true" android:theme="@android:style/Theme.DeviceDefault.Dialog">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

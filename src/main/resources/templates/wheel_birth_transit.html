@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--i head/-->
+    <link rel="stylesheet" href="{{v webapp:rootUrl/}}css/second-row.css?{{v context:paramRandom/}}">
+    <script>
+        window.onload = function () {
+            prepareCitiesForElements('#location-id', '#location', 'location');
+            prepareCitiesForElements('#second-location-id', '#second-location', 'birth');
+            prepareBirthDateForElement('second-datetime');
+            prepareSharing();
+            showFirstChart('{{v image-url/}}/', '{{v now-location}}{{/v}}');
+        };
+    </script>
+</head>
+<body>
+<div id="load-entries">
+    <div class="popup-content entries">
+    </div>
+</div>
+<!--i welcome/-->
+<div id="content">
+    <header id="controls">
+        <!--i menu/-->
+        <!--i date_navigation_birth_transit/-->
+    </header>
+<!--i chart_area/-->
+    <!--i footer/-->
+</div>
+</body>
+</html>

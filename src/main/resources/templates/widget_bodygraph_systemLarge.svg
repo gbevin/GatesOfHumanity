@@ -1,0 +1,37 @@
+<svg version="1.1" width="338" height="354" viewBox="0 0 338 354" xmlns="http://www.w3.org/2000/svg">
+    <title><!--v title-->The Body Graph Now<!--/v--></title>
+    <style>
+<!--i widget_style/-->
+<!--i widget_bodygraph_style/-->
+        .small-off { display: none; }
+        rect.small-on { fill: #151533; }
+        text.small-on { fill: white; font-size: 15px; font-weight: 700; text-anchor: middle; }
+    </style>
+<!--i widget_sky/-->
+    <rect id="background" width="338" height="354" rx="14" fill="url(#sky)"/>
+    <a href="{{v url/}}">
+        <g class="{{v graph}}{{/v}}" transform="translate(-51.3 -37.7) scale(0.459)">
+<!--i widget_bodygraph_cone/-->
+<!--i bodygraph/-->
+        </g>
+        <text class="label quiet" x="18" y="31"><!--v heading-->CHANNELS NOW<!--/v--></text>
+        <text class="quiet" x="320" y="31" font-size="11" text-anchor="end"><!--v centers/--> <!--v centers_are-->defined<!--/v--></text>
+        <!--v channels--><!--/v-->
+    </a>
+</svg>
+<!--b channel_1--><g transform="translate(18, 58)"><!--v row/--></g><!--/b-->
+<!--b channel_2--><g class="end" transform="translate(320, 58)"><!--v row/--></g><!--/b-->
+<!--b channel_3--><g transform="translate(18, 112)"><!--v row_small/--></g><!--/b-->
+<!--b channel_4--><g class="end" transform="translate(320, 112)"><!--v row_small/--></g><!--/b-->
+<!--b row-->
+            <text class="figure gold" x="0" y="0" font-size="19"><!--v channel/--></text>
+            <text class="name" x="0" y="17" font-size="13"><!--v name/--></text>
+            <text class="quiet" x="0" y="32" font-size="11" data-time="{{v until/}}" data-text="until {{v until_as/}}">until <!--v until_written/--></text>
+<!--/b-->
+<!--b row_small-->
+            <text class="figure gold" x="0" y="0" font-size="15"><!--v channel/--></text>
+            <text class="name" x="0" y="14" font-size="11"><!--v name/--></text>
+            <text class="quiet" x="0" y="27" font-size="10" data-time="{{v until/}}" data-text="until {{v until_as/}}">until <!--v until_written/--></text>
+<!--/b-->
+<!--b more--><text class="quiet" x="320" y="340" font-size="11" text-anchor="end">and <!--v count/--> more</text><!--/b-->
+<!--b no_channels--><text class="quiet" x="18" y="52" font-size="12"><!--v none-->No channel is defined now<!--/v--></text><!--/b-->

@@ -1,0 +1,253 @@
+name: GatesOfHumanity
+options:
+  bundleIdPrefix: com.uwyn
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "10.0"
+    visionOS: "26.0"
+    macOS: "14.0"
+settings:
+  base:
+    DEVELOPMENT_TEAM: AGZT8GVS7G
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    GENERATE_INFOPLIST_FILE: YES
+    # the library is built for Apple silicon, so a simulator on an Intel Mac has none
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": x86_64
+    "EXCLUDED_ARCHS[sdk=xrsimulator*]": x86_64
+    "EXCLUDED_ARCHS[sdk=macosx*]": x86_64
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: 55
+packages:
+  # RIFE2's Swift package, which runs the site inside an app and shows its pages: a checkout
+  # beside the folder of this project
+  RIFE2NativeApp:
+    path: ../../rife2/rife2-native-app
+  # draws the widgets, which the site describes in SVG; ios/build.sh builds this version for the simulator
+  SwiftDraw:
+    url: https://github.com/swhitty/SwiftDraw
+    exactVersion: 0.30.0
+targets:
+  GatesOfHumanity:
+    type: application
+    platform: iOS
+    # a scheme of the project's own: Xcode makes none by itself once it had the project open
+    scheme: {}
+    sources:
+      - path: app/Gates.swift
+      - path: app/Pages.swift
+      - path: app/Platform.swift
+      - path: app/People.swift
+      - path: app/Elsewhere.swift
+      - path: app/Probe.swift
+      - path: app/Menus.swift
+      - path: app/Site.swift
+      - path: app/Saved.swift
+      - path: app/Watch.swift
+      - path: watch/Drawings.swift
+      - path: widgets/Drawn.swift
+      - path: app/PrivacyInfo.xcprivacy
+      - path: app/Assets.xcassets
+    dependencies:
+      # the site as a native library for a device and for a simulator, which ./bld app-library
+      # builds and the widgets are linked to as well
+      - framework: ../native/gatesofhumanity.xcframework
+        embed: true
+      - package: RIFE2NativeApp
+      - target: Widgets
+      # the watch app is inside the app of the iPhone, which sends it what it shows
+      - target: Watch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity
+        # the folder that the app shares with its widgets, for the people that the pages saved,
+        # and the store of iCloud that keeps those people the same on someone's devices
+        CODE_SIGN_ENTITLEMENTS: app/App.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_KEY_CFBundleDisplayName: Gates
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        # asked by the sheet of iOS when the image of a chart is saved to the photos
+        INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: The image of a chart goes to your photos when you choose to save it there.
+        # light on the dark color that the app has behind the status bar
+        INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
+        INFOPLIST_KEY_UIViewControllerBasedStatusBarAppearance: NO
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+  # the app for visionOS, see vision/README.md: the files of the iOS app that visionOS takes as
+  # they are, and its own for what a window in a room has around it
+  Vision:
+    type: application
+    platform: visionOS
+    scheme: {}
+    sources:
+      - path: ../vision/app/Gates.swift
+      - path: ../vision/app/Explained.swift
+      - path: ../vision/app/Volume.swift
+      - path: ../vision/app/Outline.swift
+      - path: ../vision/app/Moves.swift
+      - path: ../vision/app/Shape.swift
+      - path: ../vision/app/Assets.xcassets
+      - path: app/Pages.swift
+      - path: app/Platform.swift
+      - path: app/People.swift
+      - path: app/Elsewhere.swift
+      - path: app/Probe.swift
+      - path: app/Menus.swift
+      - path: app/Site.swift
+      - path: app/Saved.swift
+      # its own: the iOS app declares what it keeps for the watch
+      - path: ../vision/app/PrivacyInfo.xcprivacy
+    dependencies:
+      # the site as a native library, which has visionOS in it once ./bld app-library vision built it
+      - framework: ../native/gatesofhumanity.xcframework
+        embed: true
+      - package: RIFE2NativeApp
+    settings:
+      base:
+        # the same app as on an iPhone, for someone who has it there
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity
+        PRODUCT_NAME: Gates
+        CODE_SIGN_ENTITLEMENTS: app/App.entitlements
+        # in layers, which ios/icon.py draws
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "7"
+        INFOPLIST_KEY_CFBundleDisplayName: Gates
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        # the chart in the room is a window beside the one of the pages
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsMultipleScenes: YES
+  # The Mac app as the Mac App Store takes it, see mac/README.md: mac/build.sh puts the same
+  # app together without Xcode, for this Mac and for other Macs outside the store. Xcode signs
+  # this one for the store, which only it can.
+  Mac:
+    type: application
+    platform: macOS
+    scheme: {}
+    sources:
+      - path: ../mac/app/Gates.swift
+      - path: ../mac/app/Platform.swift
+      - path: ../mac/app/Probe.swift
+      - path: ../mac/app/Assets.xcassets
+      - path: app/Pages.swift
+      - path: app/People.swift
+      - path: app/Elsewhere.swift
+      - path: app/Menus.swift
+      - path: app/Site.swift
+      - path: app/Saved.swift
+      - path: app/PrivacyInfo.xcprivacy
+    dependencies:
+      # the site as a native library for a Mac, which ./bld app-library mac builds
+      - framework: ../native/mac/gatesofhumanity.framework
+        embed: true
+      - package: RIFE2NativeApp
+      - target: MacWidgets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity
+        PRODUCT_NAME: Gates
+        CODE_SIGN_ENTITLEMENTS: ../mac/app/Gates.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # the folder that the app shares with its widgets, which a Mac names after the team
+        INFOPLIST_FILE: ../mac/app/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Gates of Humanity
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.lifestyle
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        INFOPLIST_KEY_NSPrincipalClass: NSApplication
+  MacWidgets:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: widgets/Widgets.swift
+      - path: widgets/Entries.swift
+      - path: widgets/Drawn.swift
+      - path: app/Site.swift
+      - path: app/Saved.swift
+    dependencies:
+      - package: SwiftDraw
+      - package: RIFE2NativeApp
+      - framework: ../native/mac/gatesofhumanity.framework
+        embed: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity.widgets
+        PRODUCT_NAME: Widgets
+        CODE_SIGN_ENTITLEMENTS: ../mac/widgets/Widgets.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        INFOPLIST_FILE: ../mac/widgets/Extension.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Gates of Humanity
+        # the library is in the app that the widgets are inside of
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks @executable_path/../../../../Frameworks"
+        SKIP_INSTALL: YES
+  # the widgets, which load the library of the app they're inside of
+  Widgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: widgets/Widgets.swift
+      - path: widgets/Entries.swift
+      - path: widgets/Drawn.swift
+      - path: app/Site.swift
+      - path: app/Saved.swift
+    dependencies:
+      - package: SwiftDraw
+      - package: RIFE2NativeApp
+      - framework: ../native/gatesofhumanity.xcframework
+        embed: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity.widgets
+        # the shared folder alone, a widget has nothing to do with iCloud
+        CODE_SIGN_ENTITLEMENTS: widgets/Widgets.entitlements
+        # what says that it's an extension for widgets, the rest of its Info.plist is generated
+        INFOPLIST_FILE: widgets/Extension.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Gates
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SKIP_INSTALL: YES
+  # the watch app, which shows drawings that the app on the iPhone sends it
+  Watch:
+    type: application
+    platform: watchOS
+    scheme: {}
+    sources:
+      - path: watch/Gates.swift
+      - path: watch/Received.swift
+      - path: watch/Drawings.swift
+      - path: watch/Assets.xcassets
+      - path: widgets/Drawn.swift
+      - path: widgets/Entries.swift
+      - path: watch/Emblem.swift
+    dependencies:
+      - package: SwiftDraw
+      - target: Complications
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity.watchkitapp
+        PRODUCT_NAME: Gates
+        # the folder that the watch app shares with what it has on a watch face
+        CODE_SIGN_ENTITLEMENTS: widgets/Widgets.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_CFBundleDisplayName: Gates
+        INFOPLIST_KEY_WKApplication: YES
+        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.uwyn.gatesofhumanity
+        SKIP_INSTALL: YES
+  # what a watch face shows of the transits, from what the watch app keeps
+  Complications:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: watch/Complications.swift
+      - path: watch/Drawings.swift
+      - path: widgets/Drawn.swift
+      - path: widgets/Entries.swift
+    dependencies:
+      - package: SwiftDraw
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.uwyn.gatesofhumanity.watchkitapp.complications
+        CODE_SIGN_ENTITLEMENTS: widgets/Widgets.entitlements
+        INFOPLIST_FILE: widgets/Extension.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Gates
+        SKIP_INSTALL: YES

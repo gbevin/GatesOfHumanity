@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- how round the corners of a widget are, where Android doesn't say -->
+    <dimen name="widget_radius">16dp</dimen>
+    <string name="transits">Transits Now</string>
+    <string name="transits_description">The gates and lines that the Sun, the Earth and the Moon are in, and until when.</string>
+    <string name="bodygraph">Body Graph Now</string>
+    <string name="bodygraph_description">The centers and the channels that the planets define at this moment, and until when.</string>
+    <string name="person">Transits of a Person</string>
+    <string name="person_description">The body graph of someone you saved, with the channels and the centers that the transits add to it now.</string>
+</resources>

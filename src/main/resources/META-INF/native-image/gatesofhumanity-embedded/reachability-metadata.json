@@ -1,0 +1,318 @@
+{
+  "reflection": [
+    {
+      "type": "gatesofhumanity.AppSiteEmbedded",
+      "fields": [
+        {
+          "name": "bodygraphWidget"
+        },
+        {
+          "name": "born"
+        },
+        {
+          "name": "panel"
+        },
+        {
+          "name": "personWidget"
+        },
+        {
+          "name": "transitsWidget"
+        },
+        {
+          "name": "wheelVolume"
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.BodygraphWidget",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.Born",
+      "fields": [
+        {
+          "name": "datetime"
+        },
+        {
+          "name": "locationId"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.Panel",
+      "fields": [
+        {
+          "name": "site"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.PersonWidget",
+      "fields": [
+        {
+          "name": "birth"
+        },
+        {
+          "name": "name"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.TransitsEmbed",
+      "fields": [
+        {
+          "name": "site"
+        },
+        {
+          "name": "size"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.TransitsWidget",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.WheelVolume",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "gatesofhumanity.elements.Widget",
+      "fields": [
+        {
+          "name": "ahead"
+        },
+        {
+          "name": "datetime"
+        },
+        {
+          "name": "family"
+        },
+        {
+          "name": "site"
+        }
+      ]
+    },
+    {
+      "type": "rife.template.html.panel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.bodygraph",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_bodygraph_cone",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_bodygraph_style",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_bodygraph_systemLarge",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_bodygraph_systemMedium",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_bodygraph_systemSmall",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_hexagram",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_sky",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_style",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_transits_accessoryCircular",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_transits_accessoryInline",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_transits_accessoryRectangular",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_transits_systemMedium",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "rife.template.svg.widget_transits_systemSmall",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "glob": "rife/template/html/panel.class"
+    },
+    {
+      "glob": "rife/template/svg/bodygraph.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_bodygraph_cone.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_bodygraph_style.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_bodygraph_systemLarge.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_bodygraph_systemMedium.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_bodygraph_systemSmall.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_hexagram.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_sky.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_style.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_transits_accessoryCircular.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_transits_accessoryInline.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_transits_accessoryRectangular.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_transits_systemMedium.class"
+    },
+    {
+      "glob": "rife/template/svg/widget_transits_systemSmall.class"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<svg version="1.1" width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+    <title>Transits Now</title>
+    <style>
+<!--i widget_style/-->
+        text { text-anchor: middle; }
+    </style>
+    <circle id="background" cx="36" cy="36" r="36" fill="white" fill-opacity="0.18"/>
+    <a href="{{v url/}}">
+        <text x="36" y="27" font-size="10" font-weight="700">SUN</text>
+        <text x="36" y="50" font-size="20" font-weight="700"><!--v sun_place/--></text>
+    </a>
+</svg>
