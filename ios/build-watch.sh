@@ -14,11 +14,7 @@ cd "$(dirname "$0")/.."
 sdk=$(xcrun --sdk watchsimulator --show-sdk-path)
 triple=arm64-apple-watchos10.0-simulator
 # SwiftDraw draws what the site describes in SVG, as for the widgets: the version of project.yml
-swiftdraw_version=$(sed -n '/^  SwiftDraw:/,/exactVersion/s/.*exactVersion: *//p' ios/project.yml)
-swiftdraw="ios/build/SwiftDraw-$swiftdraw_version"
-if [ ! -d "$swiftdraw" ]; then
-    git clone --depth 1 --branch "$swiftdraw_version" -q https://github.com/swhitty/SwiftDraw.git "$swiftdraw"
-fi
+. ios/swiftdraw.sh
 (cd "$swiftdraw" && swift build -c release --product SwiftDraw --scratch-path .build-watch --triple "$triple" --sdk "$sdk" > /dev/null)
 drawing=(-I "$swiftdraw/.build-watch/release" -L "$swiftdraw/.build-watch/release" -lSwiftDraw)
 # the folder that the watch app shares with what it has on a watch face

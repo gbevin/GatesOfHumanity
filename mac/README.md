@@ -50,7 +50,8 @@ lists, and compares the answers with the JVM's.
 `build.sh` builds `build/Gates.app` around the library with `swiftc`, as
 `ios/build.sh` does for the simulator. The widgets are an extension inside it,
 and it uses RIFE2's Swift package for native apps, which starts the site and
-answers the web view with it.
+answers the web view with it. The first time, it fetches the sources of SwiftDraw into
+`ios/build`, as the iOS build does, with `ios/swiftdraw.sh`.
 
 ### An app that checks can look into
 

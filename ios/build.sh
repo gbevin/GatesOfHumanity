@@ -23,11 +23,7 @@ native_app arm64-apple-ios17.0-simulator iphonesimulator ios/build/sim/rife2-nat
 sdk=$(xcrun --sdk iphonesimulator --show-sdk-path)
 # SwiftDraw draws the widgets, which the site describes in SVG: the version that project.yml names
 # for the device build, built from its sources for the simulator
-swiftdraw_version=$(sed -n '/^  SwiftDraw:/,/exactVersion/s/.*exactVersion: *//p' ios/project.yml)
-swiftdraw="ios/build/SwiftDraw-$swiftdraw_version"
-if [ ! -d "$swiftdraw" ]; then
-    git clone --depth 1 --branch "$swiftdraw_version" -q https://github.com/swhitty/SwiftDraw.git "$swiftdraw"
-fi
+. ios/swiftdraw.sh
 (cd "$swiftdraw" && swift build -c release --product SwiftDraw --triple arm64-apple-ios17.0-simulator --sdk "$sdk" > /dev/null)
 drawing=(-I "$swiftdraw/.build/release" -L "$swiftdraw/.build/release" -lSwiftDraw)
 # The folder that the app shares with its widgets: a simulator reads what a program may do from

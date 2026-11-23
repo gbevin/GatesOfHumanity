@@ -39,13 +39,8 @@ xcrun swiftc -target arm64-apple-macos14.0 -module-name Gates -parse-as-library 
 cp -R "$library/gatesofhumanity.framework" "$app/Contents/Frameworks/"
 
 # The widgets are an extension inside the app, the ones of the iOS app with SwiftDraw as it's
-# built for a Mac: the version that ios/project.yml names, from the sources that ios/build.sh
-# fetched.
-swiftdraw="ios/build/SwiftDraw-$(sed -n '/^  SwiftDraw:/,/exactVersion/s/.*exactVersion: *//p' ios/project.yml)"
-if [ ! -d "$swiftdraw" ]; then
-    echo "ios/build.sh has to run once first: it fetches the sources of SwiftDraw" >&2
-    exit 1
-fi
+# built for a Mac: the version that ios/project.yml names.
+. ios/swiftdraw.sh
 (cd "$swiftdraw" && swift build -c release --product SwiftDraw --scratch-path .build-mac > /dev/null)
 widgets="$app/Contents/PlugIns/Widgets.appex"
 mkdir -p "$widgets/Contents/MacOS" "$widgets/Contents/Resources"
