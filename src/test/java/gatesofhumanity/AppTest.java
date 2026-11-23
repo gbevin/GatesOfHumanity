@@ -1587,6 +1587,20 @@ public class AppTest {
     }
 
     @Test
+    void theAboutPageLinksToTheSourceOnTheWebAndInAnApp() {
+        var properties = new HierarchicalProperties();
+        properties.put("gatesofhumanity.shareRootUrl", "https://charts.example.com");
+        for (var site : List.of(new HierarchicalProperties(), properties)) {
+            try (var m = new MockConversation(new AppSite(), site)) {
+                var card = Jsoup.parse(m.doRequest("/about").getText()).selectFirst("article#learn > div.learn-card");
+                var source = card.select("a[href=https://github.com/gbevin/GatesOfHumanity]");
+                assertEquals(List.of("GitHub"), source.eachText());
+                assertTrue(source.parents().first().text().startsWith("The code of these pages and of the apps is open source, under the Apache License"), card.text());
+            }
+        }
+    }
+
+    @Test
     void whatPresentsTheChartsNamesTheWheelInItsOwnWords() throws IOException {
         // Jovian Archive claims the name Rave Mandala: the texts that explain a chart say what the wheel is called,
         // the bar, the descriptions for search engines and the link preview don't
