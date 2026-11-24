@@ -221,10 +221,14 @@ Under Test and release. The bundle is `android/build/Gates.aab`, which `android/
 ### Play App Signing
 
 ```
-Use Google-generated key
+Export and upload a key from Java keystore
 ```
 
-Google Play signs the apps that it makes from the bundle with a key that it keeps. The key that signs the bundle, `~/.android/gatesofhumanity.jks`, is then the upload key. That key also signs the APK that uwyn.com publishes, and Android only installs an app over one that the same key signed. So someone who installed that APK has to remove it before installing the app from Google Play, with the people saved in it. Giving Google Play that key instead keeps the two the same, and the Play Console explains how under "Use a different app signing key".
+Under "Use a different app signing key". Google Play signs the apps that it makes from the bundle with the key it's given here, `~/.android/gatesofhumanity.jks` (alias `gates`), which also signs the APK that uwyn.com publishes. Android only installs an app over one that the same key signed, so someone who installed that APK can update it from Google Play and keep the people saved in it.
+
+The Play Console offers its public encryption key and PEPK, the tool that encrypts the key for it, and shows the command with the encryption key filled in. For this keystore it's `java -jar pepk.jar --keystore=$HOME/.android/gatesofhumanity.jks --alias=gates --output=gates-signing-key.zip --include-cert --rsa-aes-encryption --encryption-key-path=encryption_public_key.pem`, run in the folder with the two files that the Play Console offers. The password it asks for is in `~/.android/gatesofhumanity.jks.pass`.
+
+The zip it writes is uploaded on the same page. The bundle is signed with that key too, which makes it the upload key as well.
 
 ### Release name
 
@@ -252,6 +256,6 @@ All countries and regions
 
 ## Testing before production
 
-A developer account for an organization can send a first release to production directly. A personal account made after November 13, 2023 has to run a closed test first: at least 12 testers who stay opted in for 14 days in a row. After that, the Play Console lets you apply for production access.
+The account is an organization's, so the first release goes to production directly. A personal account made after November 13, 2023 has to run a closed test first: at least 12 testers who stay opted in for 14 days in a row. After that, the Play Console lets you apply for production access.
 
 A closed test takes the same bundle. Its testers join with a link that the Play Console makes, from an email list of their Google accounts.
