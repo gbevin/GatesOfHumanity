@@ -1,6 +1,6 @@
 # Google Play listing
 
-For the Play Console, from what the Android app does in version 1.0.0, build 55. Everything it says was checked against the app. The text is the one of the App Store with what Android does in its own way: the widgets on the home screen, no Lock Screen, no watch, and the people kept on the phone alone.
+For the Play Console, from what the Android app does in version 1.0.1, build 56. Everything it says was checked against the app. The text is the one of the App Store with what Android does in its own way: the widgets on the home screen, no Lock Screen, no watch, and the people kept on the phone alone.
 
 Every value to paste is in a block of its own, under the name of its field in the Play Console, so that it's copied whole. `ios/Store/listing_page.py OUT.html android/Store/PlayStoreListing.md "Play Console"` checks the limits and makes a page of this file with a button that copies each value.
 
@@ -216,7 +216,7 @@ The descriptions say what the parts of a chart mean within Human Design, without
 
 ## Release
 
-Under Test and release. The bundle is `android/build/Gates.aab`, which `android/build.sh bundle` makes, version 1.0.0, build 55.
+Under Test and release. The bundle is `android/build/Gates.aab`, which `android/build.sh bundle` makes, version 1.0.1, build 56.
 
 ### Play App Signing
 
@@ -235,7 +235,7 @@ The zip it writes is uploaded on the same page. The bundle is signed with that k
 Limit: 50
 
 ```
-1.0.0 (55)
+1.0.1 (56)
 ```
 
 ### Release notes
