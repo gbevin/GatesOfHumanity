@@ -17,7 +17,7 @@ settings:
     "EXCLUDED_ARCHS[sdk=xrsimulator*]": x86_64
     "EXCLUDED_ARCHS[sdk=macosx*]": x86_64
     MARKETING_VERSION: "1.0.0"
-    CURRENT_PROJECT_VERSION: 55
+    CURRENT_PROJECT_VERSION: 56
 packages:
   # RIFE2's Swift package, which runs the site inside an app and shows its pages: a checkout
   # beside the folder of this project
