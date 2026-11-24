@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.uwyn.gatesofhumanity">
-    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="34"/>
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="36"/>
     <!-- The app asks for no permission. Without the one for the network, nothing but the site
          inside it loads in its web view.
          The libraries are files beside the app, where the one that starts Java finds the other.

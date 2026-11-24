@@ -19,6 +19,7 @@ With what's listed in [What it needs](#what-it-needs) installed:
 ./bld app-jdk-libs android   # once, with an emulator or a device connected
 android/build.sh             # builds, installs and starts the app
 android/build.sh app         # the app alone, around the library that was built last
+android/build.sh bundle      # the library and the app bundle for Google Play
 ./bld app-check android      # compares what the library answers on Android with the JVM
 android/check-app.sh         # checks what the app does around its pages and what its widgets draw
 ```
@@ -57,12 +58,16 @@ emulator and starts it:
 
 ```console
 sdkmanager --sdk_root=$HOME/Library/Android/sdk "cmdline-tools;latest" "ndk;28.2.13676358" \
-    "platforms;android-35" "build-tools;35.0.0" "platform-tools" "emulator" \
-    "system-images;android-35;google_apis;arm64-v8a"
+    "platforms;android-36" "build-tools;36.0.0" "platform-tools" "emulator" \
+    "system-images;android-36;google_apis;arm64-v8a"
 $HOME/Library/Android/sdk/cmdline-tools/latest/bin/avdmanager create avd -n gatesofhumanity \
-    -k "system-images;android-35;google_apis;arm64-v8a" -d pixel_8
+    -k "system-images;android-36;google_apis;arm64-v8a" -d pixel_8
+sed -i '' 's/^hw.ramSize=.*/hw.ramSize=4G/' ~/.android/avd/gatesofhumanity.avd/config.ini
 $HOME/Library/Android/sdk/emulator/emulator -avd gatesofhumanity -no-window -no-audio
 ```
+
+The emulator gets 4 GB instead of the 2 GB it's made with. With 2 GB, Android 16
+stops the web view's renderer during the checks, which then lose the page.
 
 The oldest Android that the app is for is worth an emulator of its own, with
 `system-images;android-29;google_apis;arm64-v8a`. The checks pass there as on
@@ -274,9 +279,20 @@ download. With a cable and USB debugging turned on, this does the same:
 adb install -r android/build/Gates.apk
 ```
 
+## The bundle for Google Play
+
+Google Play takes an app bundle instead of the app itself, and makes the app for
+each device from it. `android/build.sh bundle` builds the library again and
+makes `android/build/Gates.aab` with `./bld app-android-bundle`. It's signed with
+the same key, which is the upload key for Google Play. With an emulator or a
+device connected, it's installed there from the bundle as Google Play would.
+
+The version code that Google Play asks to rise with each upload is the build
+number of the iOS app, `CURRENT_PROJECT_VERSION` in `ios/project.yml`.
+
 ## What isn't there yet
 
 * The saved people on the other devices of whoever uses the app, which the apps
   for Apple devices keep in iCloud.
-* A release for the Play Store: its own format and requirements, and other
-  processors than arm64.
+* Other processors than arm64. Google Play only offers the app to devices with
+  an arm64 processor, which most phones have.

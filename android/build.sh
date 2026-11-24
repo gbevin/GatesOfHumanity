@@ -7,6 +7,7 @@
 #
 #   android/build.sh         the library and the app
 #   android/build.sh app     the app alone, around the library that was built last
+#   android/build.sh bundle  the library and the app bundle for Google Play, android/build/Gates.aab
 #
 # With GATES_PROBED set, the app is one whose pages a program on this Mac can look into, for
 # android/check-app.sh: android/build/Gates-probed.apk, which isn't one to hand to anyone.
@@ -27,4 +28,8 @@ fi
 if [ "${1:-}" != app ] || [ ! -f native/android/libgatesofhumanity.so ]; then
     ./bld app-library android
 fi
-./bld app-android
+if [ "${1:-}" = bundle ]; then
+    ./bld app-android-bundle
+else
+    ./bld app-android
+fi

@@ -3,8 +3,6 @@ package com.uwyn.gatesofhumanity;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowInsets;
 import rife.nativeapp.android.NativeActivity;
 import rife.nativeapp.android.NativePages;
 
@@ -37,13 +35,6 @@ public class MainActivity extends NativeActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         open(intent);
-    }
-
-    // beside the camera, when the screen is on its side and has one in it
-    @Override
-    protected void fit(View shown, WindowInsets insets) {
-        var camera = insets.getDisplayCutout();
-        shown.setPadding(camera == null ? 0 : camera.getSafeInsetLeft(), 0, camera == null ? 0 : camera.getSafeInsetRight(), 0);
     }
 
     /**

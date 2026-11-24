@@ -57,6 +57,9 @@ public class AppBuild extends NativeAppProject {
             .bundleIdentifier("com.uwyn.gatesofhumanity.site")
             .privacyManifest(new File(workDirectory(), "ios/app/Library-PrivacyInfo.xcprivacy"))
             .frameworkVersion(appSetting("MARKETING_VERSION"), appSetting("CURRENT_PROJECT_VERSION"))
+            // the Android that the manifest targets, which Google Play asks to be at most a year old
+            .androidPlatform(36)
+            .androidBuildTools("36.0.0")
             .addresses(
                 "/robots.txt",
                 "/wheel/image/202403011000/1850147",
@@ -129,7 +132,9 @@ public class AppBuild extends NativeAppProject {
             .version(appSetting("MARKETING_VERSION"), Long.parseLong(appSetting("CURRENT_PROJECT_VERSION")))
             .debuggable(probed)
             .key(key, new File(key.getPath() + ".pass"), "gates")
-            .apk(new File(workDirectory(), "android/build/Gates" + (probed ? "-probed" : "") + ".apk"));
+            .apk(new File(workDirectory(), "android/build/Gates" + (probed ? "-probed" : "") + ".apk"))
+            // what Google Play takes, which ./bld app-android-bundle makes
+            .bundle(new File(workDirectory(), "android/build/Gates.aab"));
     }
 
     // the version and the build number of every app are those of the iOS app
