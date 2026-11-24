@@ -1,6 +1,6 @@
 # App Store listing
 
-For App Store Connect, from what the apps do in version 1.0.0. One app record, Gates of Humanity, with a version
+For App Store Connect, from what the apps do in version 1.0.1. One app record, Gates of Humanity, with a version
 for iOS, which has the watch app in it, one for macOS and one for visionOS. Everything it says was checked against the
 app.
 
@@ -104,9 +104,18 @@ No, we do not collect data from this app
 
 The app makes no network connection of its own: the charts are calculated on the device, and the saved people are kept inside the app, which shares them with its own widgets on the same device and with the person's own iCloud, through the key-value store of iCloud, so that they're the same on their devices. Nobody but that person can read them there, so nothing is collected. A file of exported people, a saved image and a shared link only go where the person sends them, through the sheet of iOS. Saving an image adds to the photos, which iOS asks permission for, and the app can't read them.
 
-## Version 1.0.0 for iOS
+## Version 1.0.1 for iOS
 
-The page of the iOS app version, under Distribution, which has the watch app in it. What's New isn't asked for a first version. The keywords, the two addresses and the copyright are the same for every system.
+The page of the iOS app version, under Distribution, which has the watch app in it. The keywords, the two addresses and the copyright are the same for every system.
+
+### What's New
+
+Limit: 4000
+
+```
+• Added a link to the source code on the About page, now that Gates of Humanity is open source.
+• Fixed the planet symbols that were cut off in the transit tables and in the list of planets under a chart.
+```
 
 ### Promotional text
 
@@ -236,9 +245,18 @@ The descriptions are my own writing. The positions of the planets are fitted to 
 
 What the reviewer needs to know: what the app is, that it needs no account and no network, how to try every part of it, the one permission it asks for, what leaves the app, how it's built and where its content comes from.
 
-## Version 1.0.0 for Mac
+## Version 1.0.1 for Mac
 
 The page of the macOS app version. It's the description for iOS with what a Mac does in its own way: a click for a tap, the widgets on the desktop, a menu bar and no watch.
+
+### What's New
+
+Limit: 4000
+
+```
+• Added a link to the source code on the About page, now that Gates of Humanity is open source.
+• Fixed the planet symbols that were cut off in the transit tables and in the list of planets under a chart.
+```
 
 ### Promotional text
 
@@ -328,9 +346,18 @@ The descriptions are my own writing. The positions of the planets are fitted to 
 
 For App Review, on the page of the macOS version. It says why the app asks for outgoing connections, which a reviewer of a Mac app sees in its entitlements.
 
-## Version 1.0.0 for visionOS
+## Version 1.0.1 for visionOS
 
 The page of the visionOS app version. It leads with the chart in the room, which only this app has, and leaves out the widgets, which it doesn't have.
+
+### What's New
+
+Limit: 4000
+
+```
+• Added a link to the source code on the About page, now that Gates of Humanity is open source.
+• Fixed the planet symbols that were cut off in the transit tables and in the list of planets under a chart.
+```
 
 ### Promotional text
 
@@ -549,7 +576,7 @@ been yet, so none for the first release.
 
 ## Before submitting
 
-- `MARKETING_VERSION` in `project.yml` is 1.0.0. The version in App Store Connect was created as 1.0: check that it
-  takes a build of 1.0.0, and rename it to 1.0.0 there if it doesn't.
+- `MARKETING_VERSION` in `project.yml` is the version of every system, 1.0.1, which App Store Connect has to have a
+  version of the same number for.
 - Try the widgets on an iPhone and an iPad, on the Home Screen and the Lock Screen.
 - Try the app on an iPad and on its side.
