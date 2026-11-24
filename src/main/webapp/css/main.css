@@ -1688,7 +1688,7 @@ button, input[type=submit], summary {
 #range-table th svg {
     display: block;
     width: 24px;
-    height: 22px;
+    height: 27px;
     margin: 0 auto;
     fill: currentColor;
 }
@@ -2058,7 +2058,7 @@ button, input[type=submit], summary {
     }
     #chart-summary .summary-planet > svg {
         width: 24px;
-        height: 22px;
+        height: 27px;
         fill: currentColor;
     }
     /* the triangles of the drawing, one over the other for a line that has both */

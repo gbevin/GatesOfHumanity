@@ -1146,6 +1146,31 @@ public class AppTest {
     }
 
     @Test
+    void thePlanetSymbolsFitTheBoxesTheyAreShownIn() throws IOException {
+        // the symbols are made of absolute points alone, so their points bound what's drawn
+        var templates = Path.of("src/main/resources/templates");
+        var paths = Pattern.compile("id=\"(planet-[a-z_]+)\" d=\"([^\"]+)\"").matcher(Files.readString(templates.resolve("planet_paths.svg"))).results()
+            .collect(Collectors.toMap(r -> r.group(1), r -> r.group(2)));
+        assertTrue(paths.containsKey("planet-saturn"), paths.keySet().toString());
+        for (var page : List.of("wheel_summary.html", "range_table.html")) {
+            var template = Files.readString(templates.resolve(page));
+            var shown = Pattern.compile("<svg viewBox=\"([^\"]+)\"[^>]*><use href=\"#(planet-[a-z_]+)\"").matcher(template).results().toList();
+            assertEquals(paths.keySet(), shown.stream().map(symbol -> symbol.group(2)).collect(Collectors.toSet()), page);
+            assertEquals(template.split("href=\"#planet-", -1).length - 1, shown.size(), page);
+            for (var symbol : shown) {
+                var box = Arrays.stream(symbol.group(1).split(" ")).mapToDouble(Double::parseDouble).toArray();
+                var d = paths.get(symbol.group(2));
+                assertTrue(d.matches("[MCLZ0-9.,\\s-]+"), symbol.group(2));
+                var numbers = Pattern.compile("-?[0-9.]+").matcher(d).results().mapToDouble(r -> Double.parseDouble(r.group())).toArray();
+                for (var i = 0; i < numbers.length; i += 2) {
+                    assertTrue(numbers[i] >= box[0] && numbers[i] <= box[0] + box[2] && numbers[i + 1] >= box[1] && numbers[i + 1] <= box[1] + box[3],
+                        page + " cuts " + symbol.group(2) + " off at " + numbers[i] + "," + numbers[i + 1]);
+                }
+            }
+        }
+    }
+
+    @Test
     void rangeTablesCanBeExplored() {
         try (var m = new MockConversation(new AppSite())) {
             for (var range : List.of("202403011000/2643743", "d/202403011000/2643743")) {
