@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Checks AppStoreListing.md and makes a page of it on which every value has a button that
-copies it, to paste into App Store Connect field by field.
+copies it, to paste into App Store Connect field by field. Another listing that's written the same
+way, android/Store/PlayStoreListing.md, is given with the name of where it's pasted.
 
     ios/Store/listing_page.py OUT.html
+    ios/Store/listing_page.py OUT.html android/Store/PlayStoreListing.md "Play Console"
 
 The listing is read as it's written: a `## ` heading starts a section, a `### ` heading a field
 whose value is the block between ``` lines below it, with `Limit: N` above the block when the
@@ -88,7 +90,7 @@ def slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
 
-def page(title, intro, sections):
+def page(title, intro, sections, console):
     with open(os.path.join(HERE, "listing_page.html")) as f:
         template = f.read()
     paste = [s for s in sections if s["fields"]]
@@ -106,25 +108,26 @@ def page(title, intro, sections):
 <button type="button" class="copy" aria-label="Copy {html.escape(field["label"], quote=True)}">Copy</button></header>
 <pre class="value {rows}" tabindex="0">{html.escape(field["value"], quote=False)}</pre>
 {('<div class="note">' + prose(field["parts"]) + '</div>') if field["parts"] else ""}
-<label class="entered"><input type="checkbox" id="entered-{key}"> Entered in App Store Connect</label>
+<label class="entered"><input type="checkbox" id="entered-{key}"> Entered in {html.escape(console)}</label>
 </article>''')
         body.append("</section>")
     nav = "".join(f'<a href="#{slug(s["name"])}">{html.escape(s["name"])}</a>' for s in sections)
     fields = sum(len(s["fields"]) for s in paste)
     return (template.replace("<!--title-->", html.escape(title)).replace("<!--intro-->", prose(intro[:1]))
-            .replace("<!--nav-->", nav).replace("<!--sections-->", "\n".join(body)).replace("<!--fields-->", str(fields)))
+            .replace("<!--nav-->", nav).replace("<!--sections-->", "\n".join(body)).replace("<!--fields-->", str(fields)).replace("<!--console-->", html.escape(console)))
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) not in (2, 4):
         sys.exit(__doc__)
-    with open(os.path.join(HERE, "AppStoreListing.md")) as f:
+    listing, console = (sys.argv[2], sys.argv[3]) if len(sys.argv) == 4 else (os.path.join(HERE, "AppStoreListing.md"), "App Store Connect")
+    with open(listing) as f:
         title, intro, sections = parse(f.read())
     wrong = check(sections)
     if wrong:
         sys.exit("the listing is wrong: " + "; ".join(wrong))
     with open(sys.argv[1], "w") as f:
-        f.write(page(title, intro, sections))
+        f.write(page(title, intro, sections, console))
     print(f"{sum(len(s['fields']) for s in sections)} values within their limits, written to {sys.argv[1]}")
 
 

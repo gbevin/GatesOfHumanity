@@ -290,6 +290,22 @@ device connected, it's installed there from the bundle as Google Play would.
 The version code that Google Play asks to rise with each upload is the build
 number of the iOS app, `CURRENT_PROJECT_VERSION` in `ios/project.yml`.
 
+`Store/PlayStoreListing.md` has every value that the Play Console asks for, with
+why each one is what it is. These make what goes on the listing beside it:
+
+```console
+android/Store/screenshots.py capture RAW   # the screens, in the emulator that adb sees
+android/Store/screenshots.py frame RAW OUT # each under its headline, 1080 x 1920
+android/Store/graphics.py OUT              # the icon of 512 x 512 and the feature graphic
+ios/Store/listing_page.py OUT.html android/Store/PlayStoreListing.md "Play Console"
+```
+
+The screenshots are the screens, people and headlines of the App Store's, see
+`ios/Store/screenshots.py`. Like `check-app.sh`, `capture` looks into the pages
+through `cdp.mjs` and removes what the app keeps first, so it only runs in an
+emulator. The last line makes a page of the listing with a button that copies
+each value.
+
 ## What isn't there yet
 
 * The saved people on the other devices of whoever uses the app, which the apps

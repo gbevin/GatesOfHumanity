@@ -504,10 +504,11 @@ def gold(mask):
     return fill.resize((width, height), Image.BILINEAR)
 
 
-def frame(shot, raw, out):
+def frame(shot, raw, out, size=None):
+    """A frame at the size of the capture, or at the size that's given."""
     file, headline, _, _ = shot
     screen = Image.open(os.path.join(raw, file + ".png")).convert("RGB")
-    size = screen.size
+    size = size or screen.size
     width, height = size
     # sized by the narrower side, so that a tall phone and a squarer tablet set the words alike
     unit = min(width, height * 0.62)
@@ -531,7 +532,7 @@ def frame(shot, raw, out):
         y += round(letter * 1.24)
 
     shown_width = round(width * (0.84 if tablet else 0.86))
-    shown = screen.resize((shown_width, round(screen.height * shown_width / width)), Image.LANCZOS)
+    shown = screen.resize((shown_width, round(screen.height * shown_width / screen.width)), Image.LANCZOS)
     left, down = (width - shown_width) // 2, y + round(letter * 0.62)
     # the corners of the device, an iPad's are tighter
     radius = round(shown_width * (0.03 if tablet else 0.075))
