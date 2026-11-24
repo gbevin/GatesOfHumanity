@@ -30,8 +30,8 @@ yourself:
 * `./bld app-library android` builds the site into
   `native/android/libgatesofhumanity.so`, with the bld extension of RIFE2 for
   native apps, see `AppBuild.java`.
-* `./bld app-android` builds the app around it, `build/Gates.apk`, and installs
-  and starts it, as `AppBuild.java` describes the app.
+* `./bld app-android` builds the app around it, `android/build/Gates.apk`,
+  and installs and starts it, as `AppBuild.java` describes the app.
 
 These are the two checks you run yourself:
 
@@ -259,9 +259,9 @@ hand: no check does those.
 
 ## Installing it on a phone
 
-`./bld app-android` signs `build/Gates.apk` with a key that it makes once and
-keeps outside the project, `~/.android/gatesofhumanity.jks`, with its password
-in the file beside it.
+`./bld app-android` signs `android/build/Gates.apk` with a key that it makes
+once and keeps outside the project, `~/.android/gatesofhumanity.jks`, with its
+password in the file beside it.
 
 Android only installs a newer build over an older one when the same key signed
 both, so that key is worth a backup. Without it, the app has to be removed from
