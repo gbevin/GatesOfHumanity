@@ -235,14 +235,12 @@ Under Test and release. The bundle is `android/build/Gates.aab`, which `android/
 ### Play App Signing
 
 ```
-Export and upload a key from Java keystore
+Google-generated key
 ```
 
-Under "Use a different app signing key". Google Play signs the apps that it makes from the bundle with the key it's given here, `~/.android/gatesofhumanity.jks` (alias `gates`), which also signs the APK that uwyn.com publishes. Android only installs an app over one that the same key signed, so someone who installed that APK can update it from Google Play and keep the people saved in it.
+Google Play signs the apps that it makes from the bundle with a key of its own, which it made when the first bundle was uploaded and upgraded to a quantum-ready one. It's under Protected with Play, Play Store protection, Play app signing. The bundles are signed with `~/.android/gatesofhumanity.jks` (alias `gates`, SHA-256 `78:51:B3:6B:...:D5:BC`), which is the upload key. Its password is in `~/.android/gatesofhumanity.jks.pass`.
 
-The Play Console offers its public encryption key and PEPK, the tool that encrypts the key for it, and shows the command with the encryption key filled in. For this keystore it's `java -jar pepk.jar --keystore=$HOME/.android/gatesofhumanity.jks --alias=gates --output=gates-signing-key.zip --include-cert --rsa-aes-encryption --encryption-key-path=encryption_public_key.pem`, run in the folder with the two files that the Play Console offers. The password it asks for is in `~/.android/gatesofhumanity.jks.pass`.
-
-The zip it writes is uploaded on the same page. The bundle is signed with that key too, which makes it the upload key as well.
+The APK that uwyn.com publishes is signed with the upload key, so Android won't install the app from Google Play over it, or the other way round. Someone who moves from one to the other exports their people to a file, uninstalls, installs the other and imports the file.
 
 ### Release name
 
