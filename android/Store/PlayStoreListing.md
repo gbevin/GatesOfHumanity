@@ -16,6 +16,14 @@ Limit: 30
 Gates of Humanity
 ```
 
+### Package name
+
+```
+com.uwyn.gatesofhumanity
+```
+
+The one in the bundle and in the APK that uwyn.com publishes. Google Play never lets it change.
+
 ### Default language
 
 ```
@@ -112,7 +120,7 @@ The graphics go on the same page:
 
 Under Grow users, Store presence, Store settings.
 
-The tags are up to five from the list that Google Play offers, the ones closest to astrology and to reference. The email address is your support address, which the listing shows. The phone number is optional and stays empty, so that no number is shown.
+The tags are up to five from the list that Google Play offers, the ones closest to astrology and to reference. The listing shows the email address. The phone number is optional and stays empty, so that no number is shown.
 
 ### App category
 
@@ -121,6 +129,12 @@ Lifestyle
 ```
 
 The category of the App Store listing, which is where astrology apps are on Google Play too.
+
+### Email address
+
+```
+gates-support@uwyn.com
+```
 
 ### Website
 
@@ -168,7 +182,7 @@ No, my app does not contain ads
 All Other App Types
 ```
 
-The category of the questionnaire, then No to every question: no violence, no sexual content, no bad language, no controlled substances, no crude humor, no gambling, no interaction between people, no sharing of where someone is, no digital purchases and no web browser. The email address of the questionnaire is your support address.
+The category of the questionnaire, then No to every question: no violence, no sexual content, no bad language, no controlled substances, no crude humor, no gambling, no interaction between people, no sharing of where someone is, no digital purchases and no web browser. The email address of the questionnaire is `gates-support@uwyn.com` too.
 
 ### Target audience
 
