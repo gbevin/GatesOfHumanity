@@ -3076,6 +3076,30 @@ public class MainTest {
     }
 
     @Test
+    void androidGetsTheAppFromGooglePlay() {
+        var link = """
+            var link = elements['app-link'] = new FakeElement('app-link');
+            link.href = 'https://apps.apple.com/app/id6834835560';
+            link.dataset.android = 'https://play.google.com/store/apps/details?id=com.uwyn.gatesofhumanity';
+            """;
+        load(link + "navigator.userAgent = 'Mozilla/5.0 (Linux; Android 16; Pixel 9) AppleWebKit/537.36 Chrome/142.0 Mobile Safari/537.36';");
+        eval("document.dispatch('DOMContentLoaded')");
+        assertEquals("https://play.google.com/store/apps/details?id=com.uwyn.gatesofhumanity", eval("link.href"));
+
+        for (var agent : new String[]{"'Mozilla/5.0 (iPhone; CPU iPhone OS 26_1 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1'",
+                                      "'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/142.0 Safari/537.36'", "undefined"}) {
+            load(link + "navigator.userAgent = " + agent + ";");
+            eval("document.dispatch('DOMContentLoaded')");
+            assertEquals("https://apps.apple.com/app/id6834835560", eval("link.href"), agent);
+        }
+
+        // inside an app the pages don't offer it
+        load("navigator.userAgent = 'Mozilla/5.0 (Linux; Android 16; wv) Chrome/142.0 Mobile Safari/537.36';");
+        eval("document.dispatch('DOMContentLoaded')");
+        assertEquals("undefined", eval("typeof elements['app-link']"));
+    }
+
+    @Test
     void theWelcomeIsShownAgainForWhoeverAsksWithTheLinkOfTheFooter() {
         // on a page that has the welcome, the link shows it there and leads nowhere
         loadWithWelcome("");

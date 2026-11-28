@@ -1,10 +1,11 @@
 # Gates of Humanity
 
 Gates of Humanity draws Human Design charts and transits. You can use it on the
-web at [hd.uwyn.com](https://hd.uwyn.com), or as an app for iPhone, iPad, Apple
+web at [hd.uwyn.com](https://hd.uwyn.com), as an app for iPhone, iPad, Apple
 Watch, Mac and Apple Vision Pro from the
-[App Store](https://apps.apple.com/app/id6834835560). It's free, without ads or
-tracking.
+[App Store](https://apps.apple.com/app/id6834835560), or as an app for Android
+from [Google Play](https://play.google.com/store/apps/details?id=com.uwyn.gatesofhumanity).
+It's free, without ads or tracking.
 
 Human Design reads a chart from the positions of the Sun, the Moon and the
 planets at two moments: the birth, and the moment the Sun was 88 degrees

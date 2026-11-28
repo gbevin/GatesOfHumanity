@@ -2435,7 +2435,15 @@ function welcomeFirstVisit() {
     }
     showWelcome();
 }
+// Android gets the app from Google Play, everyone else from the App Store
+function offerAppForDevice() {
+    const link = document.getElementById('app-link');
+    if (link && /Android/.test(navigator.userAgent || '')) {
+        link.href = link.dataset.android;
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
+    offerAppForDevice();
     welcomeAsked();
     welcomeFirstVisit();
 });

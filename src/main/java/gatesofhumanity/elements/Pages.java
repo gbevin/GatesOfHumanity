@@ -11,6 +11,7 @@ import rife.template.Template;
 final class Pages {
     static final String APP_ID = "6834835560";
     static final String APP_STORE = "https://apps.apple.com/app/id" + APP_ID;
+    static final String GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.uwyn.gatesofhumanity";
 
     private Pages() {
     }
@@ -43,6 +44,7 @@ final class Pages {
         // an app doesn't offer itself
         if (onTheWeb(c)) {
             t.setValue("app-store-url", APP_STORE);
+            t.setValueEncoded("google-play-url", GOOGLE_PLAY);
             t.setBlock("app-link");
             // Safari on an iPhone or an iPad offers the app above the page from this
             t.setValue("app-id", APP_ID);

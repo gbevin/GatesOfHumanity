@@ -1693,19 +1693,23 @@ public class AppTest {
     @Test
     void thePagesOnTheWebOfferTheAppAndAnAppDoesnt() {
         var store = "https://apps.apple.com/app/id6834835560";
+        var play = "https://play.google.com/store/apps/details?id=com.uwyn.gatesofhumanity";
         try (var m = new MockConversation(new AppSite())) {
             for (var path : PAGE_PATHS.values()) {
                 var page = Jsoup.parse(m.doRequest(path).getText());
                 var links = page.select("#site-footer nav a");
                 assertEquals(List.of("Learn about Human Design", "About these charts", "Get the app", "Show the welcome again"), links.eachText(), path);
                 assertEquals(store, links.get(2).attr("href"), path);
+                // which Android has its scripts take instead
+                assertEquals(play, links.get(2).attr("data-android"), path);
                 // and Safari on an iPhone or an iPad offers it above the page
                 assertEquals(List.of("app-id=6834835560"), page.select("head > meta[name=apple-itunes-app]").eachAttr("content"), path);
             }
             var card = Jsoup.parse(m.doRequest("/about").getText()).selectFirst("article#learn > div#apps.learn-card");
             assertEquals("The apps", card.selectFirst("h2").text());
-            assertTrue(card.text().contains("an app for iPhone, iPad, Apple Watch, Mac and Apple Vision Pro"), card.text());
-            assertEquals(List.of(store), card.select("a").eachAttr("href"));
+            assertTrue(card.text().contains("an app for iPhone, iPad, Apple Watch, Mac, Apple Vision Pro and Android"), card.text());
+            assertEquals(List.of("App Store", "Google Play"), card.select("a").eachText());
+            assertEquals(List.of(store, play), card.select("a").eachAttr("href"));
             assertEquals("embed", card.nextElementSibling().id());
         }
         var properties = new HierarchicalProperties();
@@ -1717,6 +1721,8 @@ public class AppTest {
                     Jsoup.parse(html).select("#site-footer nav a").eachText(), path);
                 assertFalse(html.contains("apps.apple.com"), path);
                 assertFalse(html.contains("app-store-url"), path);
+                assertFalse(html.contains("play.google.com"), path);
+                assertFalse(html.contains("google-play-url"), path);
                 assertFalse(html.contains("apple-itunes-app"), path);
                 assertFalse(html.contains("app-id"), path);
             }
