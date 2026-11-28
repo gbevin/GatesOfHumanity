@@ -493,7 +493,7 @@ against a server started with `./bld compile run`:
 * `shot.mjs` screenshots a page at desktop and phone width.
 * `check-entry.mjs` checks that the rows with the dates and the cities have the
   same sizes on every chart page, at twelve widths from a small phone to a wide
-  screen.
+  screen, and that the cities a field suggests open below it.
 * `check-install.mjs` checks that Chrome can install the site from
   `site.webmanifest`, and that the installed site scrolls inside its window and
   leaves the welcome out.

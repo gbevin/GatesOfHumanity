@@ -1195,8 +1195,9 @@ button, input[type=submit], summary {
     min-width: 0;
     margin: var(--input-margin);
 }
-/* a list of cities that scrolls rather than covering the page */
+/* a list of cities that scrolls rather than covering the page, below its field even where the field is in a flex box */
 .awesomplete > ul {
+    top: 100%;
     /* its own color, whatever the color of the text around the field is */
     color: var(--input-text-color);
     max-height: min(50vh, 340px);

@@ -1,17 +1,20 @@
 // Checks that the entries of the chart pages, the rows with the dates and the cities, have the
 // same sizes on every page and at every width: the first row is the same wherever it has the same
 // parts, a field is as high as the button beside it, and the rows of the people below it take
-// their sizes from the first one. Needs the site on GATES_URL and Tools/browser/chrome.sh started.
+// their sizes from the first one, and a city's suggestions open below its field. Needs the site on
+// GATES_URL and Tools/browser/chrome.sh started.
 //
 //   node Tools/browser/check-entry.mjs [width ...]
-import { newPage, done } from './lib.mjs';
+import { newPage, done, sleep } from './lib.mjs';
 
 const widths = process.argv.slice(2).map(Number);
 const PAGES = ['/wheel/birth', '/wheel/connection', '/wheel', '/wheel/birth-transit', '/wheel/connection-transit', '/range', '/range/d'];
 const wrong = [];
 const near = (one, other) => Math.abs(one - other) < 0.6;
+let width;
+const check = (right, what) => { if (!right) wrong.push(`at ${width}: ${what}`); };
 
-for (const width of widths.length ? widths : [320, 360, 402, 440, 600, 640, 720, 768, 820, 1024, 1280, 1440]) {
+for (width of widths.length ? widths : [320, 360, 402, 440, 600, 640, 720, 768, 820, 1024, 1280, 1440]) {
   const page = await newPage({ width, height: 800, mobile: width < 700, touch: width < 700, log: false });
   const found = {};
   for (const path of PAGES) {
@@ -26,7 +29,6 @@ for (const width of widths.length ? widths : [320, 360, 402, 440, 600, 640, 720,
     })())`));
   }
   await page.close();
-  const check = (right, what) => { if (!right) wrong.push(`at ${width}: ${what}`); };
   const same = (one, other, sides, what) => {
     for (const side of sides) check(near(one[side], other[side]), `${what} differs in ${side}, ${one[side]} and ${other[side]}`);
   };
@@ -62,9 +64,30 @@ for (const width of widths.length ? widths : [320, 360, 402, 440, 600, 640, 720,
   }
 }
 
+// the cities that a field suggests are below what's typed in it, in the first row and in a person's
+for (width of widths.length ? widths : [390, 820, 1280]) {
+  const page = await newPage({ width, height: 800, mobile: width < 700, touch: width < 700, log: false });
+  await page.goto('/wheel/connection', 700);
+  for (const field of ['location', 'second-location']) {
+    await page.click('#' + field);
+    await page.eval(`document.getElementById('${field}').select()`);
+    await page.type('Brussel');
+    await sleep(1200);
+    const [bottom, top, items] = JSON.parse(await page.eval(`JSON.stringify((() => {
+      const input = document.getElementById('${field}');
+      const list = input.parentElement.querySelector('ul');
+      return [input.getBoundingClientRect().bottom, list.getBoundingClientRect().top, list.children.length];
+    })())`));
+    check(items > 0, `${field} suggests no city for Brussel`);
+    check(top >= bottom - 0.6, `the cities that ${field} suggests start at ${top}, above the bottom of the field at ${bottom}`);
+    await page.key('Escape', 'Escape', 27);
+  }
+  await page.close();
+}
+
 if (wrong.length) {
-  console.error(`The entries differ between the pages:\n  ${wrong.join('\n  ')}`);
+  console.error(`The entries aren't as they should be:\n  ${wrong.join('\n  ')}`);
   process.exit(1);
 }
-console.log('The entries have the same sizes on every chart page at every width');
+console.log('The entries have the same sizes on every chart page at every width, and the cities a field suggests open below it');
 done();
